@@ -1,0 +1,10 @@
+config,reranker,pool,ms_per_claim,tuning_ndcg@10,tuning_recall@20,tuning_p@5,evaluation_ndcg@10,evaluation_recall@20,evaluation_p@5
+hybrid+minilm-ce@20,minilm-ce,20,46.3,0.8,0.9406,0.1808,0.8267,0.9491,0.1946
+hybrid+minilm-ce@50,minilm-ce,50,105.8,0.8016,0.9312,0.1846,0.8202,0.9476,0.1889
+hybrid+minilm-ce@100,minilm-ce,100,171.9,0.7967,0.9361,0.1817,0.8181,0.9424,0.1876
+hybrid+bge-rerank@20,bge-rerank,20,140.7,0.8203,0.9406,0.1846,0.8355,0.9491,0.1938
+hybrid+bge-rerank@50,bge-rerank,50,341.1,0.8301,0.9418,0.1856,0.8214,0.9473,0.193
+hybrid+bge-rerank@100,bge-rerank,100,548.6,0.8249,0.9279,0.1856,0.8134,0.94,0.1913
+hybrid+medcpt-ce@20,medcpt-ce,20,94.0,0.8624,0.9406,0.1962,0.867,0.9491,0.2016
+hybrid+medcpt-ce@50,medcpt-ce,50,243.6,0.8748,0.9683,0.1981,0.871,0.9694,0.2033
+hybrid+medcpt-ce@100,medcpt-ce,100,425.6,0.8721,0.9683,0.1981,0.869,0.9711,0.2033

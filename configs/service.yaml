@@ -1,0 +1,16 @@
+# Demo / review service (runtime settings only; experiment parameters stay in the experiment configs).
+# Local research demo: binds to localhost only. Outputs are research outputs, never medical advice.
+snapshot: "2026-11-20"
+seed: 42
+host: 127.0.0.1
+port: 8501                             # Streamlit interface (scripts/run_app.py)
+llm_model: qwen3-8b                    # extraction, standalone rewrite and second opinion (ADR-0010 / ADR-0014)
+configuration_source: EXP-08-002       # the selected configuration (verifier, numeric guard, INS threshold, second-opinion policy) is read from this experiment's results
+evidence_top_k: 3
+generation_passages: 5                 # evidence passages given to the LLM when it answers the question itself (retrieval-augmented)
+review:
+  sample_size: 120                     # stratified review queue drawn from the real-claim verdicts (seeded)
+  verdicts_file: verdicts_v2.jsonl     # in data/processed/<snapshot>/responses/
+  baseline_verdicts_file: verdicts_calibrated.jsonl
+  annotations_file: data/annotations/expert_review_round1.jsonl
+max_answer_chars: 6000

@@ -1,0 +1,367 @@
+{
+ "sample": "20 claims tagged context-dependent + 20 tagged self-contained (seed 42), real NB03 claims",
+ "annotator": "AI developer (Claude); NOT a human or clinician annotation",
+ "label": "context_dependent = the claim cannot be understood or checked as intended without the question/answer (unresolved referent, or the entity/condition/population it is about is missing)",
+ "items": [
+  {
+   "claim_id": "qwen3-8b:kqa_golden:49#c1",
+   "question": "Does metformin generally work pretty well?",
+   "claim": "Metformin is often the first-line medication prescribed because it is effective, affordable, and has a good safety profile.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:kqa_silver:80#c1",
+   "question": "No conflict with eliquis , right?",
+   "claim": "It does not typically interact with common medications, but it is important to inform your healthcare provider about all medications, supplements, and herbal products you are taking.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:kqa_silver:262#c1",
+   "question": "So with me having type 2 diabetes do not qualify for the Covid meds they have out now?",
+   "claim": "Eligibility for these medications typically depends on factors such as your risk of severe illness, vaccination status, and whether you are experiencing symptoms.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:kqa_silver:493#c1",
+   "question": "I guess my only question is it normal for nystatin to not take care of yeast infection?",
+   "claim": "It may not always be effective for certain types of yeast infections, especially if the infection is caused by a different type of fungus, such as Candida albicans, or if the infection is more severe or recurrent.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:kqa_silver:591#c3",
+   "question": "With my blood pressure being higher in the last week, should I also talk with my primary to see about adding in another medication to help manage it?",
+   "claim": "Your doctor will consider factors such as your current medications, overall health, and any other risk factors before deciding whether to add another medication.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": false,
+   "note": "generic but complete statement about adding a medication"
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:53#c4",
+   "question": "what medicines raise blood sugar",
+   "claim": "Thiazide diuretics (e.g., hydrochlorothiazide): They can reduce the body's ability to excrete glucose through urine.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:56#c8",
+   "question": "how reduce cholesterol",
+   "claim": "If lifestyle changes aren't enough, your doctor may prescribe statins or other cholesterol-lowering drugs.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:78#c10",
+   "question": "how to take your medicine diabetes",
+   "claim": "Proper medication management helps control blood sugar levels and reduces the risk of complications.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:125#c5",
+   "question": "what if i eat grapefruit on simvastatin",
+   "claim": "They can provide personalized advice based on your medical history and current medications.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:139#c5",
+   "question": "what foods should a person taking warfarin eat",
+   "claim": "Sudden changes in diet can affect INR levels.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": "INR meaningful only for warfarin users; population missing"
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:153#c11",
+   "question": "amiodarone for \"afib what\" are side effects",
+   "claim": "Consult your doctor if you experience unusual symptoms.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": "non-verifiable advice; depends on the amiodarone context"
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:183#c6",
+   "question": "when you stop taking spironolactone do you bleed",
+   "claim": "If you are concerned about bleeding or have other symptoms after stopping the medication, it is important to consult your healthcare provider.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:202#c5",
+   "question": "norvasc and depression?",
+   "claim": "Norvasc can also cause side effects such as dizziness, swelling, and fatigue, which may be more pronounced in individuals with depression.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:238#c5",
+   "question": "is lasix the only diuretic drug for fluid build up in heart failure patients?",
+   "claim": "Spironolactone helps retain potassium and can be used in combination with other diuretics.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:356#c2",
+   "question": "how to stop taking bisoprolol",
+   "claim": "Your doctor will likely recommend a tapering schedule, which involves slowly reducing the dose over several weeks.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:420#c4",
+   "question": "what ppis this medication for simvastatin",
+   "claim": "Simvastatin is typically used in combination with a healthy diet and regular exercise to manage cholesterol levels.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:445#c0",
+   "question": "metformin after dinner and bed time?",
+   "claim": "Metformin is typically taken twice daily, usually with meals.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:625#c6",
+   "question": "can a patient stop using enalapril if the condition \"stabilize?\"",
+   "claim": "It is important to follow the prescribed treatment plan to maintain stable health and prevent potential complications.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:632#c3",
+   "question": "how to stop taking atorvastatin",
+   "claim": "A healthcare provider may suggest alternative cholesterol-lowering treatments if needed.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": true,
+   "note": "missing condition: alternatives when stopping atorvastatin"
+  },
+  {
+   "claim_id": "qwen3-8b:medication_qa:660#c11",
+   "question": "what are the side effects of taking the two medication amlodipine metoprolol together",
+   "claim": "It is important to follow the prescribed dosage and not to stop or change the medication without medical advice.",
+   "tag": true,
+   "reason": "unresolved referent",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:103#c4",
+   "question": "4,Can Diabetes Type 2 Be Cured?",
+   "claim": "Weight loss through diet and exercise is often achieved",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:145#c7",
+   "question": "6,Can intracranial hypertension be cured?",
+   "claim": "Early intervention generally leads to better outcomes.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:746#c6",
+   "question": "3,How does aspirin trigger Reye\\'s syndrome?",
+   "claim": "If Reye's syndrome is suspected, immediate medical attention is critical to prevent severe complications or death.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": false,
+   "note": "complete on its own (Reye's syndrome named)"
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1296#c7",
+   "question": "22,What actually causes heart failure?",
+   "claim": "6. **Congenital heart defects**: Structural issues present at birth can lead to heart failure later in life.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1416#c7",
+   "question": "51,What are signs of a high blood sugar?",
+   "claim": "It's important to monitor blood sugar levels regularly, especially for people with diabetes.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1520#c7",
+   "question": "66,What are the 4 stages of hypertension?",
+   "claim": "This is a severe form of hypertension with blood pressure above 180/120 mmHg, often accompanied by signs of organ damage (e.g., chest pain, shortness of breath, vision changes).",
+   "tag": false,
+   "reason": "",
+   "context_dependent": true,
+   "note": "'This' unresolved (hypertensive crisis)"
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1650#c3",
+   "question": "04,What are the four stages of diabetic retinopathy?",
+   "claim": "More blood vessels are affected, and some may leak fluid into the retina, causing swelling and blurred vision in Moderate NPDR.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": "borderline: 'Moderate NPDR' acronym only; 'diabetic retinopathy' not named"
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1769#c3",
+   "question": "27,What are the warning signs of atrial fibrillation?",
+   "claim": "The warning signs of AFib include: fatigue or weakness.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:1917#c4",
+   "question": "79,What causes low blood sugar without diabetes?",
+   "claim": "Intense physical activity without adequate food intake may deplete glucose stores.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:2532#c0",
+   "question": "14,What is the difference between diabetes mellitus and insipidus?",
+   "claim": "Diabetes mellitus and diabetes insipidus are both conditions that cause increased thirst and urination.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-8b:healthsearch_qa:3022#c0",
+   "question": "16,Why do they call it diabetes insipidus?",
+   "claim": "Diabetes insipidus is named for its similarity to diabetes mellitus, a more common condition, but it is not related to blood sugar.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:medication_qa:154#c9",
+   "question": "how to combine dapaliflozin with metformin",
+   "claim": "Always consult your doctor before combining medications.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:medication_qa:176#c3",
+   "question": "how to stop taking amlodipine",
+   "claim": "If you're experiencing symptoms of a heart attack or stroke, you should seek medical attention immediately.",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": false,
+   "note": "complete generic safety statement"
+  },
+  {
+   "claim_id": "qwen3-1.7b:medication_qa:360#c2",
+   "question": "foods to avoid when taking metformin",
+   "claim": "Alcohol consumption should be limited when taking metformin, as it can increase side effects such as lactic acidosis.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:145#c6",
+   "question": "6,Can intracranial hypertension be cured?",
+   "claim": "Most patients with acute ICP can be stabilized, but long-term management depends on the underlying cause (e.g., tumors, brain injury, or infections).",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": false,
+   "note": "complete on its own (acute ICP named)"
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:1280#c0",
+   "question": "06,Should diabetics get eye exams?",
+   "claim": "Diabetics should get regular eye exams.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": false,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:1773#c6",
+   "question": "31,What are the warning signs of diabetic retinopathy?",
+   "claim": "Warning signs include: Large floaters or flashes of light in vision",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:2363#c3",
+   "question": "37,What is diabetes insipidus and its symptoms?",
+   "claim": "Increased thirst (polydipsia)",
+   "tag": true,
+   "reason": "key entity only in question",
+   "context_dependent": true,
+   "note": ""
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:2507#c1",
+   "question": "88,What is the cause of atrial fibrillation?",
+   "claim": "The primary cause is structural changes in the atria, such as those seen in hypertension, heart failure, or coronary artery disease.",
+   "tag": false,
+   "reason": "",
+   "context_dependent": true,
+   "note": "'The primary cause' of what (atrial fibrillation) unresolved"
+  },
+  {
+   "claim_id": "qwen3-1.7b:healthsearch_qa:2623#c3",
+   "question": "07,What is the main cause of high cholesterol?",
+   "claim": "These factors increase levels of LDL cholesterol (often called \"bad\" cholesterol) and reduce levels of high-density lipoprotein (HDL cholesterol) (often called \"good\" cholesterol).",
+   "tag": false,
+   "reason": "",
+   "context_dependent": true,
+   "note": "'These factors' unresolved"
+  }
+ ]
+}

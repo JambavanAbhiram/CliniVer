@@ -1,0 +1,31 @@
+# Notebook 02 — document processing and chunking (RQ1 / H1). Experiment parameters only.
+corpus_snapshot: "2026-11-20"          # frozen NB01 output (approved 2026-11-20)
+
+retriever:                              # FIXED reference retrievers (selection of the final retriever is NB05)
+  dense_model: BAAI/bge-small-en-v1.5   # MIT, 33M params, 384-d, max 512 tokens
+  dense_revision: 5c38ec7c405ec4b44b94cc5a9bb96e735b38267a
+  query_prefix: "Represent this sentence for searching relevant passages: "   # BGE v1.5 retrieval instruction
+  batch_size: 64
+
+benchmark:
+  name: COVID-QA                        # Möller et al. 2020; 2,019 expert questions, 147 full-text articles; Apache-2.0
+  url: https://raw.githubusercontent.com/deepset-ai/COVID-QA/master/data/question-answering/COVID-QA.json
+  dev_fraction: 0.3                     # split BY ARTICLE; configurations are selected on dev, reported on test
+  top_k: 100
+
+grid:
+  fixed_sizes: [128, 256, 512]
+  fixed_overlaps: [0.0, 0.15, 0.25]
+  structured_sizes: [128, 256, 512]     # sentence / paragraph / recursive / section / semantic
+  semantic_pcts: [90]
+  header_variants: true                 # also test "title / section" headers on section chunks
+
+budgets: [512, 1024, 2048]              # token budgets for budget-matched recall
+primary_metric: "hit@1024t"             # pre-registered selection metric (strict containment within 1,024 tokens)
+
+qualifiers:
+  validation_sample: 150                # detections inspected manually to estimate rule precision
+  max_words: 12
+
+final:
+  max_tokens_whole_doc: 512             # NOT USED by EXP-02-001: the selected strategy is applied to every document (a document at or below the chunk size stays one chunk). Remove in the next config revision

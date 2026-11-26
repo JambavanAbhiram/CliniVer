@@ -1,0 +1,38 @@
+# Notebook 06 — claim–evidence verification (RQ5 / H5a–H5c). Experiment parameters only.
+snapshot: "2026-11-20"
+seed: 42
+
+datasets:
+  scifact_url: https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz        # claims CC BY 4.0; abstracts ODC-By 1.0
+  healthver: {commit: b5feab16b849e78164ef30ea4f41972ebebc42c8, license: "CC BY 4.0"}       # train → fine-tuning; dev → tuning/selection; test → evaluation
+  healthfc: {commit: 9f31d765e5d4a99bd9fff667e82de503bc5684f5, license: "CC BY-NC-ND 4.0", use: evaluation only (no training, no redistribution)}
+  healthfc_label_map: {"0": SUP, "1": INS, "2": CON}   # verified against the German verdict wording in the notebook before use
+
+models:
+  zero_shot_nli: {repo: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli, revision: b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7, license: mit}
+  finetune_base: {repo: MoritzLaurer/DeBERTa-v3-base-mnli-fever-anli, revision: 6f5cf0a2b59cabb106aca4c287eed12e357e90eb, license: mit}
+  minicheck: {repo: lytang/MiniCheck-RoBERTa-Large, revision: 74c8919647e61ed0f71bc177d94f10930f090068, license: mit}
+  llm_verifiers: [qwen3-8b, granite-3.3-8b]   # configs/llm.yaml; Granite = a different family from the extractor (R12)
+
+finetune: {epochs: 2, lr: 2.0e-5, batch_size: 16, max_length: 384}
+
+llm_samples:                      # fixed-seed samples, the same for every verifier (all verifiers are also reported on the full sets)
+  healthver_dev: 200
+  healthver_test: 400
+  scifact_dev: all
+  healthfc: 250
+  synthetic: 300
+  granite_only: [healthver_dev, healthver_test]   # Granite: smaller scope (family comparison)
+
+retrieval_eval:                   # H5c: SciFact dev claims (incl. NEI) with ADR-0012 retrieval over SciFact + CliniVer abstracts
+  ks: [1, 3, 5]
+  primary_k: 3
+
+decision_rules:                   # fixed before running
+  h5a: "an adapted verifier (fine-tuned NLI, or the Qwen3-8B LLM verifier) beats zero-shot NLI on macro-F1 (SUP/CON/INS) with 95% CI > 0 on BOTH HealthVer test and SciFact dev (LLM on the fixed samples)"
+  h5b: "for the similarity baseline, false support (predicted SUP; gold CON or INS) is > 50% of its errors on HealthVer test and SciFact dev"
+  h5c: "claim-level macro-F1 with top-3 aggregated retrieved evidence − top-1 > 0 (95% CI excludes 0) on SciFact dev claims"
+  selection: "the verifier for real claims is the one with the highest HealthVer-dev macro-F1 (LLMs on the dev sample); ties within 0.01 → the faster one"
+  n_boot: 2000
+
+real_claims: {top_k: 3}

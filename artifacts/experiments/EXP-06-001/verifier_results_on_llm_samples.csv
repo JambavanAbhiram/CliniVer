@@ -1,0 +1,9 @@
+verifier,healthfc,healthver_dev,healthver_test,scifact_dev,synthetic
+LLM granite-3.3-8b,,0.4393,0.3832,,
+LLM qwen3-8b,0.6953,0.6871,0.5708,0.7624,0.2853
+MiniCheck,0.1832,0.4111,0.3826,0.4879,0.0383
+fine-tuned NLI,0.2759,0.8532,0.7563,0.7855,0.148
+hybrid NLI+rules,0.2759,0.8532,0.7563,0.7855,0.1577
+majority,0.2415,0.2281,0.2037,0.1854,0.0
+similarity,0.1978,0.4421,0.3829,0.3886,0.0411
+zero-shot NLI,0.3335,0.6016,0.4425,0.7671,0.1942

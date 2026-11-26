@@ -1,0 +1,45 @@
+# CliniVer — project-wide configuration.
+# Paths are relative to the project root (the folder containing pyproject.toml).
+# Component-specific settings live in their own files (data.yaml, models.yaml,
+# retrieval.yaml, evaluation.yaml), created when the corresponding phase needs them.
+
+project:
+  name: CliniVer
+  version: 0.1.0
+  phase: 1                      # current research phase (see docs/roadmap.md)
+
+reproducibility:
+  seed: 42                      # global default seed; experiments may override and must log it
+  deterministic_torch: false    # true = slower, bit-reproducible GPU kernels where supported
+
+paths:
+  data_raw: data/raw
+  data_interim: data/interim
+  data_processed: data/processed
+  data_benchmark: data/benchmark
+  data_synthetic: data/synthetic
+  artifacts: artifacts
+  experiments: artifacts/experiments
+  environment_reports: artifacts/environment
+  logs: logs
+  reports: reports
+
+hardware:
+  device: auto                  # auto | cuda | cpu   (env CLINIVER_DEVICE overrides)
+  vram_budget_gb: 6.0           # measured 2026-11-19: 7.96 GB total, 6.69 GB free after CUDA context + display;
+                                # 6.0 keeps ~0.7 GB headroom for activations/fragmentation
+  one_model_on_gpu: true        # design rule: load one large model at a time (see ADR-0004)
+
+logging:
+  level: INFO                   # env CLINIVER_LOG_LEVEL overrides
+  to_file: true
+
+domain:
+  # D1 (ADR-0001): adult cardiometabolic pharmacotherapy
+  name: adult_cardiometabolic_pharmacotherapy
+  conditions:
+    - type 2 diabetes
+    - hypertension
+    - dyslipidaemia
+    - atrial fibrillation / anticoagulation
+    - heart failure

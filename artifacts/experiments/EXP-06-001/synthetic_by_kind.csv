@@ -1,0 +1,8 @@
+verifier,hedge→PART,negation→CON,number→CON,paraphrase→SUP,population→PART
+LLM qwen3-8b,0.562,0.45,0.061,0.714,1.0
+MiniCheck,0.0,0.0,0.0,0.712,0.0
+fine-tuned NLI,0.0,0.526,0.053,0.82,0.0
+hybrid NLI+rules,0.025,0.526,0.053,0.712,0.0
+majority,0.0,0.0,0.0,0.0,0.0
+similarity,0.0,0.0,0.0,0.64,0.0
+zero-shot NLI,0.0,0.459,0.118,0.342,0.0

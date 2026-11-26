@@ -1,0 +1,2 @@
+model,load_s,gpu_baseline_mb,gpu_peak_mb,gpu_peak_minus_baseline_mb,tokens_per_s,answer_tokens,probe_json_valid,probe_claims,replayed
+qwen3-1.7b,2.1,0,2434,2434,112.83,98,True,5,False

@@ -1,0 +1,4 @@
+model,load_s,gpu_baseline_mb,gpu_peak_mb,gpu_peak_minus_baseline_mb,tokens_per_s,answer_tokens,probe_json_valid,probe_claims,replayed
+qwen3-1.7b,2.1,215,2644,2429,139.91,98,True,5,False
+qwen3-8b,3.1,215,5532,5317,50.92,167,True,8,False
+granite-3.3-8b,4.1,215,5056,4841,50.72,256,False,0,False

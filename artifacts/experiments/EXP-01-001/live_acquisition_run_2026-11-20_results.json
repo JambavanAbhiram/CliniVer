@@ -1,0 +1,347 @@
+{
+  "acquisition_timing": {
+    "jobs_s": {
+      "clinicaltrials": 6.192833699984476,
+      "openfda": 8.617363500059582,
+      "who_gho": 5.568491299985908,
+      "pubmed_counts": 41.210548499948345,
+      "pubmed_sample+pubtator": 43.18745900003705,
+      "rxnav+pubchem": 43.558277500094846,
+      "europepmc_oa": 190.42067919997498
+    },
+    "wall_s": 190.42766389995813,
+    "requests": {
+      "pubmed": {
+        "requests": 89.0,
+        "retries": 14.0,
+        "min_interval_s": 0.4,
+        "floor_s_if_rate_bound": 35.6
+      },
+      "pubtator": {
+        "requests": 5.0,
+        "retries": 0.0,
+        "min_interval_s": 0.4,
+        "floor_s_if_rate_bound": 2.0
+      },
+      "openfda": {
+        "requests": 10.0,
+        "retries": 0.0,
+        "min_interval_s": 0.5,
+        "floor_s_if_rate_bound": 5.0
+      },
+      "clinicaltrials": {
+        "requests": 5.0,
+        "retries": 0.0,
+        "min_interval_s": 1.3,
+        "floor_s_if_rate_bound": 6.5
+      },
+      "europepmc": {
+        "requests": 18.0,
+        "retries": 3.0,
+        "min_interval_s": 0.2,
+        "floor_s_if_rate_bound": 3.6
+      },
+      "rxnav": {
+        "requests": 196.0,
+        "retries": 0.0,
+        "min_interval_s": 0.1,
+        "floor_s_if_rate_bound": 19.6
+      },
+      "pubchem": {
+        "requests": 95.0,
+        "retries": 0.0,
+        "min_interval_s": 0.25,
+        "floor_s_if_rate_bound": 23.8
+      },
+      "who_gho": {
+        "requests": 10.0,
+        "retries": 0.0,
+        "min_interval_s": 0.5,
+        "floor_s_if_rate_bound": 5.0
+      }
+    },
+    "comparison": {
+      "sequential_snapshot": "2026-11-19",
+      "sequential_span_s": 784.0,
+      "sequential_raw_files": 408,
+      "parallel_snapshot": "2026-11-20",
+      "parallel_span_s": 189.0,
+      "parallel_raw_files": 408,
+      "parallel_wall_s_in_notebook": 190.4,
+      "speedup_span_ratio": 4.15
+    }
+  },
+  "pubmed_population_total_per_condition": {
+    "t2d": 40779,
+    "hypertension": 40306,
+    "dyslipidaemia": 15107,
+    "af_anticoagulation": 15744,
+    "heart_failure": 18325
+  },
+  "clinicaltrials_population_completed_drug_trials": {
+    "t2d": 4177,
+    "hypertension": 2971,
+    "dyslipidaemia": 1360,
+    "af_anticoagulation": 537,
+    "heart_failure": 1129
+  },
+  "europepmc_oa_population_hits": {
+    "t2d": 73460,
+    "hypertension": 109598,
+    "dyslipidaemia": 42416,
+    "af_anticoagulation": 34948,
+    "heart_failure": 43941
+  },
+  "record_counts": {
+    "snapshot": "2026-11-20",
+    "stage": "A",
+    "created_at": "2026-11-19T18:40:10+00:00",
+    "counts": {
+      "documents": 4075,
+      "concepts": 189,
+      "pubtator_entities": 4065,
+      "pubtator_relations": 567
+    },
+    "by_source": {
+      "pubmed": 494,
+      "openfda_label": 30,
+      "clinicaltrials": 97,
+      "europepmc_oa": 10,
+      "who_gho": 3444
+    }
+  },
+  "composition": {
+    "clinicaltrials": {
+      "docs": 97,
+      "words_median": 97.0,
+      "words_p10": 29.6,
+      "words_p90": 391.20000000000005,
+      "words_max": 2146,
+      "sections_median": 2.0,
+      "empty_text": 0
+    },
+    "europepmc_oa": {
+      "docs": 10,
+      "words_median": 4298.5,
+      "words_p10": 2055.2,
+      "words_p90": 7647.099999999999,
+      "words_max": 9934,
+      "sections_median": 8.5,
+      "empty_text": 0
+    },
+    "openfda_label": {
+      "docs": 30,
+      "words_median": 8603.5,
+      "words_p10": 5670.5,
+      "words_p90": 17121.0,
+      "words_max": 19923,
+      "sections_median": 14.5,
+      "empty_text": 0
+    },
+    "pubmed": {
+      "docs": 494,
+      "words_median": 67.0,
+      "words_p10": 25.0,
+      "words_p90": 111.69999999999999,
+      "words_max": 196,
+      "sections_median": 1.0,
+      "empty_text": 10
+    },
+    "who_gho": {
+      "docs": 3444,
+      "words_median": 30.0,
+      "words_p10": 29.0,
+      "words_p90": 36.0,
+      "words_max": 36,
+      "sections_median": 1.0,
+      "empty_text": 0
+    }
+  },
+  "completeness": {
+    "pubmed": {
+      "title": 1.0,
+      "text": 0.98,
+      "pub_date": 1.0,
+      "date_day_precision": 0.573,
+      "publication_types": 1.0,
+      "mesh_terms": 1.0,
+      "journal": 1.0,
+      "language": 1.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.909
+    },
+    "openfda_label": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 1.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    },
+    "clinicaltrials": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 0.969,
+      "date_day_precision": 0.598,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    },
+    "europepmc_oa": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 1.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 1.0,
+      "language": 1.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 1.0
+    },
+    "who_gho": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 0.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    }
+  },
+  "duplicates": {
+    "pubmed_same_pmid_multiple_conditions": 6,
+    "clinicaltrials_same_nct_multiple_conditions": 3,
+    "pubmed_duplicate_dois": 0,
+    "europepmc_oa_also_in_pubmed_sample": 0,
+    "openfda_label_pairs_same_drug": 30,
+    "openfda_near_dup_pairs_jaccard>=0.8": 15
+  },
+  "quality_flags": {
+    "pubmed_retracted": 0,
+    "pubmed_with_correction_or_concern": 10,
+    "pubmed_structured_abstract_share": 0.02,
+    "pubmed_abstract_lt_50_words": 169,
+    "pubmed_non_english": 0,
+    "openfda_labels_missing_any_key_section": 0,
+    "openfda_otc_labels": 0,
+    "openfda_combination_product_labels": 5,
+    "clinicaltrials_with_posted_results": 27,
+    "clinicaltrials_without_detailed_description": 47,
+    "europepmc_oa_without_body": 0,
+    "europepmc_oa_tables_total": 19
+  },
+  "normalization_coverage": {
+    "drugs": 49,
+    "rxnorm_found": 49,
+    "with_rxclass": 48,
+    "pubchem_found": 46,
+    "not_in_pubchem": [
+      "dulaglutide",
+      "evolocumab",
+      "alirocumab"
+    ],
+    "not_in_rxnorm": []
+  },
+  "pubtator_coverage": {
+    "docs": 494,
+    "with_any_entity": 478,
+    "with_chemical": 282,
+    "with_disease": 446,
+    "with_chemical_and_disease": 259,
+    "mentioning_in_scope_drug_exact": 101,
+    "chemical_mentions_with_identifier_share": 0.741,
+    "entity_types": {
+      "Disease": 2339,
+      "Chemical": 1047,
+      "Species": 540,
+      "Gene": 139
+    },
+    "relation_types": {
+      "Negative_Correlation": 333,
+      "Positive_Correlation": 106,
+      "Association": 96,
+      "Cotreatment": 14,
+      "Comparison": 18
+    }
+  },
+  "stageB_projection": {
+    "pubmed_population_sum_over_conditions_upper_bound": 130261,
+    "efetch_requests_needed": 652,
+    "est_minutes_at_2.5_req_s_including_esearch": 4.4,
+    "pubtator_requests_needed": 1303,
+    "est_normalized_jsonl_mb": 317.7
+  },
+  "errors": {
+    "openfda_no_label_for_name": [],
+    "europepmc_fulltext_failures": [],
+    "pubmed_ids_not_parsed": [],
+    "pubtator_pmids_missing": [
+      "17396070",
+      "18050136",
+      "22750917",
+      "24149712",
+      "27302283",
+      "30156444",
+      "31679885",
+      "32936845",
+      "34304579",
+      "38674212",
+      "38900436",
+      "39037784",
+      "39073988",
+      "39084821",
+      "39093567",
+      "39167005"
+    ],
+    "http": {
+      "pubmed": {
+        "requests": 89,
+        "retries": 14
+      },
+      "pubtator": {
+        "requests": 5,
+        "retries": 0
+      },
+      "openfda": {
+        "requests": 10,
+        "retries": 0
+      },
+      "clinicaltrials": {
+        "requests": 5,
+        "retries": 0
+      },
+      "europepmc": {
+        "requests": 18,
+        "retries": 3
+      },
+      "rxnav": {
+        "requests": 196,
+        "retries": 0
+      },
+      "pubchem": {
+        "requests": 95,
+        "retries": 0
+      },
+      "who_gho": {
+        "requests": 10,
+        "retries": 0
+      }
+    }
+  }
+}

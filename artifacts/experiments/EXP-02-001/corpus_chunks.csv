@@ -1,0 +1,6 @@
+,docs,chunks,chunks_per_doc_mean,single_chunk_docs_share,tokens
+pubmed,124918.0,485220.0,3.88,0.04,46488462.0
+openfda_label,338.0,39963.0,118.23,0.065,4053425.0
+clinicaltrials,9665.0,30746.0,3.18,0.41,2664985.0
+europepmc_oa,398.0,33557.0,84.31,0.0,2615279.0
+who_gho,3444.0,3444.0,1.0,1.0,172730.0

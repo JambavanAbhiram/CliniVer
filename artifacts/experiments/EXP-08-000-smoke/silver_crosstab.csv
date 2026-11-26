@@ -1,0 +1,7 @@
+source,silver,ABSTAINED,CON,INS,SUP
+LLM-generated (MedLFQA),CON,30,19,42,79
+LLM-generated (MedLFQA),SUP,91,15,87,451
+LLM-generated (MedLFQA),UNK,270,36,301,1142
+physician (K-QA),CON,8,4,5,14
+physician (K-QA),SUP,13,0,8,37
+physician (K-QA),UNK,21,1,19,84

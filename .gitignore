@@ -1,0 +1,87 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Environments / secrets ---
+.venv/
+venv/
+.env
+
+# --- Notebooks ---
+.ipynb_checkpoints/
+
+# --- Data (large, and partly under third-party licenses: never commit raw text) ---
+# Only README/manifest files inside data/ are tracked.
+data/**
+!data/**/
+!data/**/README.md
+!data/**/manifest*.json
+# Our own annotations (no third-party text beyond short quoted spans for audit)
+!data/annotations/*.json
+
+# --- Generated artifacts (models, indexes, embeddings, environment reports) ---
+artifacts/**
+!artifacts/**/
+!artifacts/**/README.md
+# Experiment results are small and are the evidence for the research: keep them tracked.
+!artifacts/experiments/**
+# Environment validation reports are small and record the hardware behind every measurement.
+!artifacts/environment/**
+
+# --- Logs ---
+logs/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# --- Local third-party tools (binaries, models): never committed ---
+tools/
+models/
+
+# --- Office working files (template copies, backups, lock files) ---
+docs/**/template_copy.*
+docs/**/*.backup*.*
+~$*
+*.tmp
+
+# --- Local caches ---
+.claude/
+*.log
+
+# --- College submission material (report, thesis, presentation and their builders): kept local only ---
+docs/project_report/
+configs/report.yaml
+scripts/build_project_report.py
+scripts/build_thesis.py
+scripts/thesis_*.py
+scripts/build_presentation.py
+scripts/presentation_*.py
+*.docx
+*.dotx
+*.pptx
+*.potx
+
+# --- Documentation (research notes, ADRs, status, reports): kept local only ---
+docs/
+
+# --- Annotations containing third-party article text: only the ID-only copies (*.ids.json) are tracked ---
+data/annotations/nb02_qualifier_validation_round1.json
+data/annotations/nb02_qualifier_validation_round2.json
+# Superseded pilot snapshot
+data/interim/2026-11-19/
+
+# --- Local-only Claude instructions (refer to the git-ignored docs/) ---
+CLAUDE.local.md

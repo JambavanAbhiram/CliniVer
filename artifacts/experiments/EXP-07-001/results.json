@@ -1,0 +1,120 @@
+{
+  "temperature": 1.9999132745966723,
+  "multi_signal_coefficients": {
+    "verifier_conf": -0.409,
+    "margin": 0.454,
+    "entropy": -1.077,
+    "unit_mismatch": 0.059,
+    "unsupported_numbers": 0.015,
+    "claim_words": -0.086,
+    "evidence_words": 0.061,
+    "lexical_overlap": -0.039
+  },
+  "qwen_replay": {
+    "live_server_started": false,
+    "stats": null
+  },
+  "hypotheses": {
+    "H6a": {
+      "healthver_test": {
+        "diff": -0.0941,
+        "ci_low": -0.0964,
+        "ci_high": -0.0816
+      },
+      "scifact_dev": {
+        "diff": -0.0803,
+        "ci_low": -0.087,
+        "ci_high": -0.0344
+      },
+      "healthfc": {
+        "diff": -0.1426,
+        "ci_low": -0.146,
+        "ci_high": -0.138
+      },
+      "supported": true
+    },
+    "H6b": {
+      "healthver_test": {
+        "diff": -0.0026,
+        "ci_low": -0.0049,
+        "ci_high": -0.0005
+      },
+      "scifact_dev": {
+        "diff": 0.013,
+        "ci_low": -0.0073,
+        "ci_high": 0.0392
+      },
+      "healthfc": {
+        "diff": -0.0022,
+        "ci_low": -0.0113,
+        "ci_high": 0.0083
+      },
+      "supported": false
+    },
+    "H6c": {
+      "threshold": 0.741,
+      "healthver_test": {
+        "diff": -0.0342,
+        "ci_low": -0.0468,
+        "ci_high": -0.0206,
+        "coverage": 0.771
+      },
+      "supported": true,
+      "calibration_coverage_at_FSR<=eps": 0.8500000000000001
+    }
+  },
+  "aggregation": {
+    "macro_F1": {
+      "top1": 0.706,
+      "naive_any": 0.6646,
+      "max_confidence": 0.5291
+    },
+    "claims": 300,
+    "selected": "top1"
+  },
+  "real_claims": {
+    "claims": 2777,
+    "final": {
+      "SUP": 1807,
+      "INS": 462,
+      "ABSTAINED": 433,
+      "CON": 75
+    },
+    "nli_before": {
+      "SUP": 1919,
+      "INS": 664,
+      "CON": 194
+    },
+    "routed_to_llm": 983,
+    "second_opinion_disagreements_abstained": 433,
+    "decisive_source_tier": {
+      "regulatory_label": 887,
+      "review": 821,
+      "trial_registry": 512,
+      "other": 348,
+      "rct": 75,
+      "case_report": 68,
+      "systematic_review": 21,
+      "meta_analysis": 15,
+      "observational": 14,
+      "guideline": 10,
+      "clinical_trial_other": 6
+    },
+    "final_by_generator": {
+      "qwen3-1.7b": {
+        "ABSTAINED": 0.168,
+        "CON": 0.033,
+        "INS": 0.178,
+        "SUP": 0.62
+      },
+      "qwen3-8b": {
+        "ABSTAINED": 0.147,
+        "CON": 0.023,
+        "INS": 0.157,
+        "SUP": 0.673
+      }
+    },
+    "claims_with_unsupported_numbers": 162,
+    "second_opinion_server": null
+  }
+}

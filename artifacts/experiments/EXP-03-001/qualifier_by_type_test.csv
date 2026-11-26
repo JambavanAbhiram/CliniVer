@@ -1,0 +1,7 @@
+,mean,mean,mean,size,size,size
+method,atomic,qualified,sentence,atomic,qualified,sentence
+kind,,,,,,
+negation,0.986,1.0,1.0,74,74,74
+population,1.0,1.0,1.0,12,12,12
+quantity,1.0,1.0,1.0,33,33,33
+threshold,1.0,1.0,1.0,8,8,8

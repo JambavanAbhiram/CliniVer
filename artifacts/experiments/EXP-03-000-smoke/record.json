@@ -1,0 +1,139 @@
+{
+  "exp_id": "EXP-03-000-smoke",
+  "title": "LLM responses and claim extraction",
+  "research_question": "RQ2 / H2",
+  "status": "completed",
+  "started_at": "2026-11-20T12:40:05+00:00",
+  "updated_at": "2026-11-20T12:42:45+00:00",
+  "seed": 42,
+  "config": {
+    "llm": {
+      "runtime": {
+        "name": "llama.cpp",
+        "release": "b12560",
+        "dir": "tools/llama.cpp/b12560/bin",
+        "sha256": {
+          "llama-b12560-bin-win-cuda-13.5-x64.zip": "536ca9415074e5b64e747f6c35d5c92786f092432c338da1edb725b4810cb97d",
+          "cudart-llama-bin-win-cuda-13.5-x64.zip": "c2bf4cc202bfbaaa7a0b75f5082457c3811326947bb216059b72839d844e9cba"
+        },
+        "host": "127.0.0.1",
+        "port": 8089,
+        "ctx_size": 8192,
+        "gpu_layers": 999,
+        "vram_budget_gb": 6.0,
+        "extra_args": [
+          "--flash-attn",
+          "on",
+          "--cache-type-k",
+          "q8_0",
+          "--cache-type-v",
+          "q8_0"
+        ]
+      },
+      "models_dir": "models",
+      "models": {
+        "qwen3-1.7b": {
+          "repo": "Qwen/Qwen3-1.7B-GGUF",
+          "revision": "90862c4b9d2787eaed51d12237eafdfe7c5f6077",
+          "file": "Qwen3-1.7B-Q8_0.gguf",
+          "license": "apache-2.0",
+          "role": "weaker generator (by design: natural errors)"
+        },
+        "qwen3-8b": {
+          "repo": "Qwen/Qwen3-8B-GGUF",
+          "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+          "file": "Qwen3-8B-Q4_K_M.gguf",
+          "license": "apache-2.0",
+          "role": "stronger generator; extractor candidate"
+        },
+        "granite-3.3-8b": {
+          "repo": "ibm-granite/granite-3.3-8b-instruct-GGUF",
+          "revision": "e40e9dd739c7be00fa965c16ce167088190ce114",
+          "file": "granite-3.3-8b-instruct-Q4_K_M.gguf",
+          "license": "apache-2.0",
+          "role": "second family (generator / extractor candidate; candidate NB06 verifier family)"
+        }
+      }
+    },
+    "claims": {
+      "snapshot": "2026-11-20",
+      "seed": 42,
+      "datasets": {
+        "kqa": {
+          "url": "https://raw.githubusercontent.com/Itaymanes/K-QA/ef403d012e199fcfa0d8c02b38a96ff95164f4d0/dataset/questions_w_answers.jsonl",
+          "license": "MIT"
+        },
+        "medlfqa": {
+          "base_url": "https://huggingface.co/datasets/dmis-lab/MedLFQA/resolve/c3f55428864c4374ac84a86786fc9337afe34653",
+          "license": "CC-BY-4.0 (dataset card); component datasets keep their own terms",
+          "files": [
+            "kqa_silver_wogold_test_MedLFQA",
+            "live_qa_test_MedLFQA",
+            "medication_qa_test_MedLFQA",
+            "healthsearch_qa_test_MedLFQA"
+          ]
+        }
+      },
+      "generation": {
+        "generators": [
+          "qwen3-8b",
+          "qwen3-1.7b"
+        ],
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "max_tokens": 512,
+        "system_prompt": "You are a helpful medical assistant. Answer the patient's question accurately and concisely in at most 200 words."
+      },
+      "extraction": {
+        "candidates": [
+          "qwen3-8b",
+          "granite-3.3-8b",
+          "qwen3-1.7b"
+        ],
+        "dev_size": 60,
+        "min_json_validity": 0.95,
+        "selection_metric": "f1",
+        "nli_model": "MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli",
+        "nli_revision": "b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7",
+        "entail_threshold": 0.5
+      },
+      "h2": {
+        "precision_margin": 0.03,
+        "n_boot": 2000.0
+      },
+      "nli_spot_check": {
+        "sample": 40
+      }
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.23.0",
+    "pandas": "3.1.1",
+    "pysbd": "0.3.4",
+    "cliniver": "0.1.0"
+  }
+}

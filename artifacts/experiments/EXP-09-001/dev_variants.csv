@@ -1,0 +1,5 @@
+variant,questions,ref_recall,ref_contradiction,drug_naming_templates,drug_naming_real_treatment_q,non_answer,words_median,latency_median_s
+G0,70.0,0.3956,0.1058,0.7,1.0,0.4143,119.0,3.9371
+G1,70.0,0.4219,0.1238,1.0,1.0,0.2143,123.5,4.5158
+G2,70.0,0.4451,0.0769,1.0,1.0,0.1571,120.0,5.1351
+G3,70.0,0.4701,0.0686,1.0,1.0,0.1714,119.0,5.2863

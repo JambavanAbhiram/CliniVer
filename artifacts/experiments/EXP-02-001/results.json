@@ -1,0 +1,550 @@
+{
+  "corpus_token_lengths": {
+    "pubmed": {
+      "docs": 124918,
+      "tokens_median": 375,
+      "tokens_p90": 537,
+      "tokens_max": 2213,
+      "share_gt_128": 0.96,
+      "share_gt_256": 0.793,
+      "share_gt_512": 0.129,
+      "total_tokens_M": 46.49
+    },
+    "clinicaltrials": {
+      "docs": 9665,
+      "tokens_median": 142,
+      "tokens_p90": 614,
+      "tokens_max": 7702,
+      "share_gt_128": 0.526,
+      "share_gt_256": 0.326,
+      "share_gt_512": 0.137,
+      "total_tokens_M": 2.67
+    },
+    "who_gho": {
+      "docs": 3444,
+      "tokens_median": 45,
+      "tokens_p90": 60,
+      "tokens_max": 60,
+      "share_gt_128": 0.0,
+      "share_gt_256": 0.0,
+      "share_gt_512": 0.0,
+      "total_tokens_M": 0.17
+    },
+    "europepmc_oa": {
+      "docs": 398,
+      "tokens_median": 6287,
+      "tokens_p90": 10431,
+      "tokens_max": 38234,
+      "share_gt_128": 1.0,
+      "share_gt_256": 1.0,
+      "share_gt_512": 1.0,
+      "total_tokens_M": 2.62
+    },
+    "openfda_label": {
+      "docs": 339,
+      "tokens_median": 11263,
+      "tokens_p90": 24272,
+      "tokens_max": 38111,
+      "share_gt_128": 0.932,
+      "share_gt_256": 0.932,
+      "share_gt_512": 0.932,
+      "total_tokens_M": 4.05
+    }
+  },
+  "long_docs": {
+    "europepmc_oa": {
+      "docs": 398,
+      "tokens_median": 6287.0,
+      "sections_declared": 3350,
+      "sections_located": 3350
+    },
+    "openfda_label": {
+      "docs": 338,
+      "tokens_median": 11270.5,
+      "sections_declared": 3876,
+      "sections_located": 3857
+    }
+  },
+  "covidqa": {
+    "articles": 147,
+    "questions": 2019,
+    "dev_articles": 44,
+    "test_articles": 103,
+    "dev_questions": 736,
+    "test_questions": 1283,
+    "article_tokens_median": 5601,
+    "answer_tokens_median": 14,
+    "answer_tokens_p90": 48,
+    "answer_tokens_max": 181,
+    "answers_over_128_tokens": 5,
+    "contexts_changed_by_normalization": 91,
+    "detected_sections_median": 3
+  },
+  "normalization_check": {
+    "documents_checked": 884,
+    "documents_changed": 117,
+    "chars_removed_total": 424,
+    "invariant_violations": 0
+  },
+  "qualifiers_detected": {
+    "europepmc_oa": {
+      "effect": 146,
+      "negation": 12332,
+      "population": 6599,
+      "quantity": 26850,
+      "threshold": 8935
+    },
+    "openfda_label": {
+      "effect": 70,
+      "negation": 20503,
+      "population": 14282,
+      "quantity": 79168,
+      "threshold": 13584
+    }
+  },
+  "rule_precision": {
+    "round2_reproduced_from_current_rules": "150/150",
+    "round2_boundary_ok": 144,
+    "table": [
+      {
+        "round": 1,
+        "kind": "dose",
+        "valid": 27,
+        "n": 30,
+        "precision": 0.9,
+        "ci_low": 0.744,
+        "ci_high": 0.965
+      },
+      {
+        "round": 1,
+        "kind": "effect",
+        "valid": 24,
+        "n": 30,
+        "precision": 0.8,
+        "ci_low": 0.627,
+        "ci_high": 0.905
+      },
+      {
+        "round": 1,
+        "kind": "negation",
+        "valid": 28,
+        "n": 30,
+        "precision": 0.933,
+        "ci_low": 0.787,
+        "ci_high": 0.982
+      },
+      {
+        "round": 1,
+        "kind": "population",
+        "valid": 24,
+        "n": 30,
+        "precision": 0.8,
+        "ci_low": 0.627,
+        "ci_high": 0.905
+      },
+      {
+        "round": 1,
+        "kind": "threshold",
+        "valid": 27,
+        "n": 30,
+        "precision": 0.9,
+        "ci_low": 0.744,
+        "ci_high": 0.965
+      },
+      {
+        "round": 2,
+        "kind": "effect",
+        "valid": 30,
+        "n": 30,
+        "precision": 1.0,
+        "ci_low": 0.886,
+        "ci_high": 1.0
+      },
+      {
+        "round": 2,
+        "kind": "negation",
+        "valid": 30,
+        "n": 30,
+        "precision": 1.0,
+        "ci_low": 0.886,
+        "ci_high": 1.0
+      },
+      {
+        "round": 2,
+        "kind": "population",
+        "valid": 29,
+        "n": 30,
+        "precision": 0.967,
+        "ci_low": 0.833,
+        "ci_high": 0.994
+      },
+      {
+        "round": 2,
+        "kind": "quantity",
+        "valid": 30,
+        "n": 30,
+        "precision": 1.0,
+        "ci_low": 0.886,
+        "ci_high": 1.0
+      },
+      {
+        "round": 2,
+        "kind": "threshold",
+        "valid": 30,
+        "n": 30,
+        "precision": 1.0,
+        "ci_low": 0.886,
+        "ci_high": 1.0
+      },
+      {
+        "round": 1,
+        "kind": "ALL",
+        "valid": 130,
+        "n": 150,
+        "precision": 0.867,
+        "ci_low": 0.803,
+        "ci_high": 0.912
+      },
+      {
+        "round": 2,
+        "kind": "ALL",
+        "valid": 149,
+        "n": 150,
+        "precision": 0.993,
+        "ci_low": 0.963,
+        "ci_high": 0.999
+      }
+    ]
+  },
+  "selection": {
+    "selected": "paragraph-128",
+    "best_fixed": "fixed-128-o25",
+    "best_structure_aware": "paragraph-128",
+    "baseline": "fixed-256-o0"
+  },
+  "h1_retrieval_test": [
+    {
+      "retriever": "bm25",
+      "metric": "hit@1024t",
+      "structure_aware": 0.643,
+      "fixed": 0.655,
+      "diff": -0.0117,
+      "ci_low": -0.0528,
+      "ci_high": 0.0209,
+      "p_two_sided": 0.589,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "bm25",
+      "metric": "hit@5",
+      "structure_aware": 0.556,
+      "fixed": 0.61,
+      "diff": -0.0538,
+      "ci_low": -0.0925,
+      "ci_high": -0.0217,
+      "p_two_sided": 0.0,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "bm25",
+      "metric": "rr",
+      "structure_aware": 0.461,
+      "fixed": 0.487,
+      "diff": -0.0269,
+      "ci_low": -0.0657,
+      "ci_high": 0.0037,
+      "p_two_sided": 0.095,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "bm25",
+      "metric": "cover@1024t",
+      "structure_aware": 0.681,
+      "fixed": 0.695,
+      "diff": -0.0145,
+      "ci_low": -0.0457,
+      "ci_high": 0.0123,
+      "p_two_sided": 0.324,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "dense",
+      "metric": "hit@1024t",
+      "structure_aware": 0.638,
+      "fixed": 0.609,
+      "diff": 0.0288,
+      "ci_low": -0.0279,
+      "ci_high": 0.0722,
+      "p_two_sided": 0.27,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "dense",
+      "metric": "hit@5",
+      "structure_aware": 0.562,
+      "fixed": 0.542,
+      "diff": 0.0203,
+      "ci_low": -0.0351,
+      "ci_high": 0.0667,
+      "p_two_sided": 0.449,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "dense",
+      "metric": "rr",
+      "structure_aware": 0.439,
+      "fixed": 0.42,
+      "diff": 0.0186,
+      "ci_low": -0.0255,
+      "ci_high": 0.0555,
+      "p_two_sided": 0.386,
+      "n_clusters": 103
+    },
+    {
+      "retriever": "dense",
+      "metric": "cover@1024t",
+      "structure_aware": 0.678,
+      "fixed": 0.65,
+      "diff": 0.0284,
+      "ci_low": -0.0196,
+      "ci_high": 0.064,
+      "p_two_sided": 0.21,
+      "n_clusters": 103
+    }
+  ],
+  "test_summary_selected": {
+    "fixed-128-o25": {
+      "bm25": {
+        "hit@1": 0.382,
+        "hit@5": 0.61,
+        "hit@10": 0.674,
+        "rr": 0.487,
+        "ndcg@10": 0.632,
+        "hit@512t": 0.592,
+        "hit@1024t": 0.655,
+        "hit@2048t": 0.718,
+        "cover@1024t": 0.695,
+        "gold_in_one_chunk": 0.952
+      },
+      "dense": {
+        "hit@1": 0.316,
+        "hit@5": 0.542,
+        "hit@10": 0.635,
+        "rr": 0.42,
+        "ndcg@10": 0.552,
+        "hit@512t": 0.512,
+        "hit@1024t": 0.609,
+        "hit@2048t": 0.68,
+        "cover@1024t": 0.65,
+        "gold_in_one_chunk": 0.952
+      }
+    },
+    "fixed-256-o0": {
+      "bm25": {
+        "hit@1": 0.419,
+        "hit@5": 0.655,
+        "hit@10": 0.705,
+        "rr": 0.522,
+        "ndcg@10": 0.595,
+        "hit@512t": 0.526,
+        "hit@1024t": 0.625,
+        "hit@2048t": 0.691,
+        "cover@1024t": 0.663,
+        "gold_in_one_chunk": 0.924
+      },
+      "dense": {
+        "hit@1": 0.288,
+        "hit@5": 0.525,
+        "hit@10": 0.608,
+        "rr": 0.395,
+        "ndcg@10": 0.472,
+        "hit@512t": 0.39,
+        "hit@1024t": 0.493,
+        "hit@2048t": 0.59,
+        "cover@1024t": 0.531,
+        "gold_in_one_chunk": 0.924
+      }
+    },
+    "paragraph-128": {
+      "bm25": {
+        "hit@1": 0.38,
+        "hit@5": 0.556,
+        "hit@10": 0.613,
+        "rr": 0.461,
+        "ndcg@10": 0.518,
+        "hit@512t": 0.571,
+        "hit@1024t": 0.643,
+        "hit@2048t": 0.695,
+        "cover@1024t": 0.681,
+        "gold_in_one_chunk": 0.896
+      },
+      "dense": {
+        "hit@1": 0.343,
+        "hit@5": 0.562,
+        "hit@10": 0.624,
+        "rr": 0.439,
+        "ndcg@10": 0.505,
+        "hit@512t": 0.57,
+        "hit@1024t": 0.638,
+        "hit@2048t": 0.679,
+        "cover@1024t": 0.678,
+        "gold_in_one_chunk": 0.896
+      }
+    }
+  },
+  "h1_qualifiers": {
+    "metric": "truncation rate",
+    "structure_aware": 0.0043,
+    "fixed": 0.0954,
+    "diff": -0.09114972954310047,
+    "ci_low": -0.09319752713403527,
+    "ci_high": -0.08913965933558222,
+    "p_two_sided": 0.0,
+    "n_clusters": 715,
+    "secondary_split_rate": {
+      "structure_aware": 0.0043,
+      "fixed": 0.0,
+      "diff": 0.004285659481884594,
+      "ci_low": 0.0038334372885086257,
+      "ci_high": 0.0047576628126716385,
+      "p_two_sided": 0.0,
+      "n_clusters": 715
+    }
+  },
+  "h1_verdict": {
+    "retrieval_part": false,
+    "qualifier_part": true,
+    "verdict": "PARTIALLY SUPPORTED"
+  },
+  "e4_raw_vs_normalized": [
+    {
+      "variant": "normalized",
+      "retriever": "bm25",
+      "chunks": 12708,
+      "hit@1": 0.38,
+      "hit@5": 0.556,
+      "hit@10": 0.613,
+      "rr": 0.461,
+      "ndcg@10": 0.518,
+      "hit@512t": 0.571,
+      "hit@1024t": 0.643,
+      "hit@2048t": 0.695,
+      "cover@1024t": 0.681,
+      "gold_in_one_chunk": 0.896
+    },
+    {
+      "variant": "normalized",
+      "retriever": "dense",
+      "chunks": 12708,
+      "hit@1": 0.343,
+      "hit@5": 0.562,
+      "hit@10": 0.624,
+      "rr": 0.439,
+      "ndcg@10": 0.505,
+      "hit@512t": 0.57,
+      "hit@1024t": 0.638,
+      "hit@2048t": 0.679,
+      "cover@1024t": 0.678,
+      "gold_in_one_chunk": 0.896
+    },
+    {
+      "variant": "raw",
+      "retriever": "bm25",
+      "chunks": 12708,
+      "hit@1": 0.379,
+      "hit@5": 0.556,
+      "hit@10": 0.612,
+      "rr": 0.46,
+      "ndcg@10": 0.518,
+      "hit@512t": 0.571,
+      "hit@1024t": 0.642,
+      "hit@2048t": 0.694,
+      "cover@1024t": 0.68,
+      "gold_in_one_chunk": 0.896
+    },
+    {
+      "variant": "raw",
+      "retriever": "dense",
+      "chunks": 12708,
+      "hit@1": 0.341,
+      "hit@5": 0.561,
+      "hit@10": 0.624,
+      "rr": 0.438,
+      "ndcg@10": 0.505,
+      "hit@512t": 0.569,
+      "hit@1024t": 0.637,
+      "hit@2048t": 0.678,
+      "cover@1024t": 0.678,
+      "gold_in_one_chunk": 0.896
+    }
+  ],
+  "error_categories_dev": {
+    "bm25": {
+      "hit": 530,
+      "right document, wrong chunk": 77,
+      "split (chunking)": 35,
+      "wrong document": 94
+    },
+    "dense": {
+      "hit": 469,
+      "right document, wrong chunk": 85,
+      "split (chunking)": 35,
+      "wrong document": 147
+    }
+  },
+  "corpus_chunking": {
+    "config": "paragraph-128",
+    "snapshot": "2026-11-20",
+    "tokenizer": "BAAI/bge-small-en-v1.5@5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+    "documents": 138763,
+    "chunks": 592930,
+    "seconds": 683,
+    "pubtator_mentions": 2712609,
+    "pubtator_unaligned": 16169,
+    "rxnorm_mentions": 326250,
+    "mentions_cut_by_chunking": 975,
+    "skipped_empty_documents": 1,
+    "pubtator_alignment_rate": 0.994,
+    "files_mb": {
+      "chunks.jsonl": 593.5,
+      "chunk_entities.jsonl": 772.1
+    },
+    "by_source": {
+      "pubmed": {
+        "docs": 124918.0,
+        "chunks": 485220.0,
+        "chunks_per_doc_mean": 3.88,
+        "single_chunk_docs_share": 0.04,
+        "tokens": 46488462.0
+      },
+      "openfda_label": {
+        "docs": 338.0,
+        "chunks": 39963.0,
+        "chunks_per_doc_mean": 118.23,
+        "single_chunk_docs_share": 0.065,
+        "tokens": 4053425.0
+      },
+      "clinicaltrials": {
+        "docs": 9665.0,
+        "chunks": 30746.0,
+        "chunks_per_doc_mean": 3.18,
+        "single_chunk_docs_share": 0.41,
+        "tokens": 2664985.0
+      },
+      "europepmc_oa": {
+        "docs": 398.0,
+        "chunks": 33557.0,
+        "chunks_per_doc_mean": 84.31,
+        "single_chunk_docs_share": 0.0,
+        "tokens": 2615279.0
+      },
+      "who_gho": {
+        "docs": 3444.0,
+        "chunks": 3444.0,
+        "chunks_per_doc_mean": 1.0,
+        "single_chunk_docs_share": 1.0,
+        "tokens": 172730.0
+      }
+    }
+  }
+}

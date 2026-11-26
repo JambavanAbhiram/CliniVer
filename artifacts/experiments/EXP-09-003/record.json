@@ -1,0 +1,65 @@
+{
+  "exp_id": "EXP-09-003",
+  "title": "Answer generation, round 3 (intent routing)",
+  "research_question": "RQ9 round 3",
+  "status": "completed",
+  "started_at": "2026-11-23T04:49:03+00:00",
+  "updated_at": "2026-11-23T05:12:37+00:00",
+  "seed": 42,
+  "config": {
+    "round3": {
+      "variants": {
+        "H1": {
+          "route": {
+            "treatment_choice": "G3",
+            "default": "G0"
+          }
+        }
+      },
+      "evaluation": {
+        "seen": "EXP-09-001 test questions and the EXP-09-002 fresh questions: SEEN; routed answers reuse the cached G0 / G3 answers",
+        "fresh_test_2": {
+          "drugs": "remaining",
+          "drug_questions": [
+            "What is {drug} used for?",
+            "What are the serious risks of {drug}?"
+          ],
+          "treatment_questions": [
+            "Which medications treat {condition}?",
+            "What are the first-line drugs for {condition}?"
+          ],
+          "metrics": "CliniVer verification of every answer (G0 vs H1): share of claims Supported / Contradicted; drug naming; non-answers"
+        }
+      },
+      "adoption": "H1 replaces G0 in the service if ALL hold: (a) EXP-09-001 test: reference_contradiction \u2264 G0 + 0.02 and reference_recall \u2265 G0 \u2212 0.01; (b) fresh_test_2: verified Contradicted share \u2264 G0 + 0.02 and verified Supported share \u2265 G0 \u2212 0.02; (c) drug naming on all treatment questions \u2265 G0's"
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.23.0",
+    "cliniver": "0.1.0"
+  }
+}

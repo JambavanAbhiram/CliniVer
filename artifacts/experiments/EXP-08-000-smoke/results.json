@@ -1,0 +1,250 @@
+{
+  "confidence_model": {
+    "temperature": 1.9999132745966723,
+    "route_threshold": 0.8055806842617087,
+    "abstain_threshold": 0.7410391066051759
+  },
+  "retrieval": {
+    "rerank_ms_per_claim": 235.5,
+    "top1_is_gold_evidence_doc": {
+      "pipeline": 0.625,
+      "bm25_only": 0.6,
+      "dense_only": 0.7,
+      "hybrid_no_rerank": 0.7,
+      "hybrid_bge_base": 0.6,
+      "weighted_hybrid": 0.625
+    }
+  },
+  "e2e_ablations": [
+    {
+      "config": "pipeline",
+      "coverage": 0.95,
+      "macro_F1_answered": 0.8386,
+      "macro_F1_e2e": 0.8114,
+      "FSR_answered": 0.0556,
+      "accuracy_answered": 0.8421
+    },
+    {
+      "config": "bm25_only",
+      "coverage": 0.925,
+      "macro_F1_answered": 0.7584,
+      "macro_F1_e2e": 0.7265,
+      "FSR_answered": 0.0556,
+      "accuracy_answered": 0.7838
+    },
+    {
+      "config": "dense_only",
+      "coverage": 0.9,
+      "macro_F1_answered": 0.8793,
+      "macro_F1_e2e": 0.8279,
+      "FSR_answered": 0.0588,
+      "accuracy_answered": 0.8889
+    },
+    {
+      "config": "hybrid_no_rerank",
+      "coverage": 0.875,
+      "macro_F1_answered": 0.87,
+      "macro_F1_e2e": 0.8051,
+      "FSR_answered": 0.0625,
+      "accuracy_answered": 0.8857
+    },
+    {
+      "config": "hybrid_bge_base",
+      "coverage": 0.95,
+      "macro_F1_answered": 0.8386,
+      "macro_F1_e2e": 0.8114,
+      "FSR_answered": 0.0556,
+      "accuracy_answered": 0.8421
+    },
+    {
+      "config": "weighted_hybrid",
+      "coverage": 0.925,
+      "macro_F1_answered": 0.8593,
+      "macro_F1_e2e": 0.8194,
+      "FSR_answered": 0.0,
+      "accuracy_answered": 0.8649
+    },
+    {
+      "config": "top3_naive",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7473,
+      "macro_F1_e2e": 0.7473,
+      "FSR_answered": 0.2,
+      "accuracy_answered": 0.775
+    },
+    {
+      "config": "qwen_only",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7645,
+      "macro_F1_e2e": 0.7645,
+      "FSR_answered": 0.1,
+      "accuracy_answered": 0.8
+    },
+    {
+      "config": "zero_shot_nli",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.6934,
+      "macro_F1_e2e": 0.6934,
+      "FSR_answered": 0.05,
+      "accuracy_answered": 0.7
+    },
+    {
+      "config": "uncalibrated",
+      "coverage": 0.9,
+      "macro_F1_answered": 0.8519,
+      "macro_F1_e2e": 0.7992,
+      "FSR_answered": 0.0,
+      "accuracy_answered": 0.8611
+    },
+    {
+      "config": "no_second_opinion",
+      "coverage": 0.825,
+      "macro_F1_answered": 0.8169,
+      "macro_F1_e2e": 0.7364,
+      "FSR_answered": 0.0625,
+      "accuracy_answered": 0.8182
+    },
+    {
+      "config": "no_abstention",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7868,
+      "macro_F1_e2e": 0.7868,
+      "FSR_answered": 0.05,
+      "accuracy_answered": 0.8
+    },
+    {
+      "config": "nli_only_no_conf",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.8492,
+      "macro_F1_e2e": 0.8492,
+      "FSR_answered": 0.05,
+      "accuracy_answered": 0.85
+    }
+  ],
+  "H7": {
+    "errors": 6,
+    "retrieval_attributable": 3,
+    "verifier_attributable": 3,
+    "retrieval_share": 0.5,
+    "share_difference_ci": [
+      -1.0,
+      1.0
+    ],
+    "oracle_evidence_macro_F1": 0.9214,
+    "retrieved_macro_F1": 0.8492,
+    "errors_by_gold": {
+      "SUP": {
+        "retrieval": 2,
+        "verifier": 2
+      },
+      "CON": {
+        "retrieval": 0,
+        "verifier": 1
+      },
+      "INS": {
+        "retrieval": 1,
+        "verifier": 0
+      }
+    },
+    "supported": false
+  },
+  "context_ablation": {
+    "items": 40,
+    "macro_F1_SUP_CON": {
+      "claim_only (verify as written)": 0.5947,
+      "question+claim (verify as written)": 0.72,
+      "rewrite F (verify as written)": 0.773,
+      "rewrite F (verify the rewrite)": 0.8706,
+      "oracle original claim": 0.8706
+    },
+    "llm_replay_live_server": false
+  },
+  "silver": {
+    "LLM-generated (MedLFQA)": {
+      "claims": 2563,
+      "silver_labelled": 814,
+      "silver_SUP": 644,
+      "silver_CON": 170,
+      "pipeline_SUP_given_silver_SUP": 0.7,
+      "pipeline_SUP_given_silver_CON (silver false support)": 0.465,
+      "pipeline_CON_or_ABST_given_silver_CON": 0.288
+    },
+    "physician (K-QA)": {
+      "claims": 214,
+      "silver_labelled": 89,
+      "silver_SUP": 58,
+      "silver_CON": 31,
+      "pipeline_SUP_given_silver_SUP": 0.638,
+      "pipeline_SUP_given_silver_CON (silver false support)": 0.452,
+      "pipeline_CON_or_ABST_given_silver_CON": 0.387
+    }
+  },
+  "cost": {
+    "llm_stage_stats": {
+      "answer_generation (NB03)": {
+        "calls": 186,
+        "median_s": 3.65,
+        "p95_s": 4.84,
+        "not_stopped": 0
+      },
+      "claim_extraction (NB03)": {
+        "calls": 372,
+        "median_s": 18.76,
+        "p95_s": 30.2,
+        "not_stopped": 0
+      },
+      "standalone_rewrite (NB04)": {
+        "calls": 1382,
+        "median_s": 0.88,
+        "p95_s": 1.33,
+        "not_stopped": 0
+      },
+      "second_opinion (NB07)": {
+        "calls": 968,
+        "median_s": 2.33,
+        "p95_s": 3.9,
+        "not_stopped": 0
+      }
+    },
+    "per_claim": {
+      "rewrite_s": 0.88,
+      "retrieval_p95_s": 0.369,
+      "second_opinion_expected_s": 0.82
+    },
+    "vram_mb": {
+      "llm_qwen3_8b_server": {
+        "model": "qwen3-8b",
+        "load_s": 3.1,
+        "gpu_baseline_mb": 196,
+        "gpu_peak_mb": 5395,
+        "gpu_peak_minus_baseline_mb": 5199
+      },
+      "retrieval_peak_mb": 2381
+    },
+    "routed_share": 0.354
+  },
+  "final_selection": {
+    "candidates_meeting_constraints": [
+      "pipeline",
+      "bm25_only",
+      "hybrid_bge_base",
+      "weighted_hybrid",
+      "zero_shot_nli",
+      "uncalibrated",
+      "no_abstention",
+      "nli_only_no_conf"
+    ],
+    "within_0.01_of_best": [
+      "weighted_hybrid",
+      "uncalibrated"
+    ],
+    "selected": "uncalibrated",
+    "selected_metrics": {
+      "coverage": 0.9,
+      "macro_F1_answered": 0.8519,
+      "macro_F1_e2e": 0.7992,
+      "FSR_answered": 0.0,
+      "accuracy_answered": 0.8611
+    }
+  }
+}

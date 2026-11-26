@@ -1,0 +1,4 @@
+model,calls,completion_tokens,gpu_seconds,tokens_per_s_median
+granite-3.3-8b,713,352599,9222.437,47.69
+qwen3-1.7b,308,71781,569.3019999999999,138.20499999999998
+qwen3-8b,6743,1002975,23463.537,46.2

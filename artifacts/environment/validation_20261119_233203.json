@@ -1,0 +1,119 @@
+{
+  "timestamp_utc": "2026-11-19T18:02:03+00:00",
+  "overall": "WARN",
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "python_version",
+      "status": "PASS",
+      "detail": "Python 3.12 (validated version)",
+      "data": {
+        "version": "3.12.0",
+        "executable": "D:\\Projects\\CliniVer\\.venv\\Scripts\\python.exe"
+      }
+    },
+    {
+      "name": "packages",
+      "status": "PASS",
+      "detail": "9 packages installed",
+      "data": {
+        "versions": {
+          "torch": "2.14.1+cu130",
+          "numpy": "2.5.5",
+          "pyyaml": "6.0.3",
+          "pydantic": "2.14.4",
+          "python-dotenv": "1.2.4",
+          "psutil": "7.2.2",
+          "ipykernel": "7.4.0",
+          "pytest": "9.2.0",
+          "cliniver": "0.1.0"
+        },
+        "missing": []
+      }
+    },
+    {
+      "name": "project_config",
+      "status": "PASS",
+      "detail": "configs/project.yaml valid (phase 1, seed 42)",
+      "data": {
+        "seed": 42,
+        "device_pref": "auto"
+      }
+    },
+    {
+      "name": "torch_cuda",
+      "status": "PASS",
+      "detail": "NVIDIA GeForce RTX 5070 Laptop GPU (sm_120), CUDA build 13.0",
+      "data": {
+        "torch": "2.14.1+cu130",
+        "cuda_build": "13.0",
+        "cuda_available": true,
+        "gpu": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96,
+        "compiled_arch_list": [
+          "sm_75",
+          "sm_80",
+          "sm_86",
+          "sm_90",
+          "sm_100",
+          "sm_120"
+        ],
+        "cudnn": 92400,
+        "bf16_supported": true
+      }
+    },
+    {
+      "name": "gpu_compute",
+      "status": "PASS",
+      "detail": "matmul correct (rel err 5.3e-07), fp16/bf16 OK, 2 GiB alloc OK",
+      "data": {
+        "fp32_matmul_max_rel_err_vs_cpu": 5.308990012053982e-07,
+        "fp16_bf16_matmul_ok": true,
+        "fp16_matmul_tflops_measured": 25.5,
+        "vram_free_gb_before_alloc": 6.69,
+        "vram_total_gb": 7.96,
+        "alloc_2gib_ok": true,
+        "peak_allocated_gb": 2.06
+      }
+    },
+    {
+      "name": "seeding",
+      "status": "PASS",
+      "detail": "set_seed reproduces identical random draws",
+      "data": {}
+    },
+    {
+      "name": "disk_space",
+      "status": "PASS",
+      "detail": "308 GB free",
+      "data": {
+        "free_gb": 308.4
+      }
+    },
+    {
+      "name": "env_file",
+      "status": "WARN",
+      "detail": ".env present; not yet set: NCBI_API_KEY, NCBI_EMAIL (needed for Notebook 01)",
+      "data": {}
+    }
+  ]
+}

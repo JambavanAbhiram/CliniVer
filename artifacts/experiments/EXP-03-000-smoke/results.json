@@ -1,0 +1,193 @@
+{
+  "datasets": {
+    "kqa_answers": 201,
+    "kqa_dev": 4,
+    "kqa_test": 4,
+    "kqa_statements_must": 889,
+    "kqa_statements_nice": 697,
+    "kqa_answer_words_median": 83,
+    "medlfqa_questions": {
+      "kqa_silver": 904,
+      "live_qa": 100,
+      "medication_qa": 666,
+      "healthsearch_qa": 3077
+    },
+    "domain_queries": 4,
+    "domain_queries_by_source": {
+      "kqa_golden": 4
+    }
+  },
+  "runtime_check": [
+    {
+      "model": "qwen3-1.7b",
+      "load_s": 2.1,
+      "gpu_baseline_mb": 0,
+      "gpu_peak_mb": 2434,
+      "gpu_peak_minus_baseline_mb": 2434,
+      "tokens_per_s": 112.83,
+      "answer_tokens": 98,
+      "probe_json_valid": true,
+      "probe_claims": 5,
+      "replayed": false
+    }
+  ],
+  "generation_summary": {
+    "qwen3-1.7b": {
+      "answers": 4,
+      "words_median": 73,
+      "truncated": 0,
+      "empty": 0,
+      "tokens_per_s": 116.26,
+      "latency_s_median": 0.81
+    }
+  },
+  "extractor_selection": {
+    "selected_extractor": "qwen3-1.7b",
+    "eligible": [
+      "qwen3-1.7b"
+    ],
+    "dev_f1": {
+      "qwen3-1.7b": 0.905
+    },
+    "dev_valid_json": {
+      "qwen3-1.7b": 1.0
+    },
+    "server_stats": {
+      "qwen3-1.7b": {
+        "model": "qwen3-1.7b",
+        "load_s": 1.6,
+        "gpu_baseline_mb": 0,
+        "gpu_peak_mb": 2436,
+        "gpu_peak_minus_baseline_mb": 2436
+      }
+    }
+  },
+  "extraction_test": [
+    {
+      "method": "atomic",
+      "model": "qwen3-1.7b",
+      "answers": 4,
+      "valid_json": 1.0,
+      "claims": 5.25,
+      "precision": 0.8,
+      "recall": 0.646,
+      "recall_must": 0.712,
+      "recall_set": 0.677,
+      "claims_per_sentence": 0.958,
+      "words_per_claim": 18.809,
+      "pronoun_start": 0.0,
+      "latency_s": 1.217,
+      "qualifier_preservation": 0.875,
+      "f1": 0.715
+    },
+    {
+      "method": "qualified",
+      "model": "qwen3-1.7b",
+      "answers": 4,
+      "valid_json": 1.0,
+      "claims": 5.5,
+      "precision": 0.738,
+      "recall": 0.639,
+      "recall_must": 0.725,
+      "recall_set": 0.739,
+      "claims_per_sentence": 1.0,
+      "words_per_claim": 18.3,
+      "pronoun_start": 0.113,
+      "latency_s": 6.108,
+      "qualifier_preservation": 1.0,
+      "f1": 0.685
+    },
+    {
+      "method": "sentence",
+      "model": NaN,
+      "answers": 4,
+      "valid_json": 1.0,
+      "claims": 5.5,
+      "precision": 0.738,
+      "recall": 0.639,
+      "recall_must": 0.725,
+      "recall_set": 0.739,
+      "claims_per_sentence": 1.0,
+      "words_per_claim": 18.3,
+      "pronoun_start": 0.113,
+      "latency_s": 0.0,
+      "qualifier_preservation": 1.0,
+      "f1": 0.685
+    }
+  ],
+  "h2": {
+    "qualifier_preservation": {
+      "qualified_vs_atomic": {
+        "diff": 0.125,
+        "ci_low": 0.0,
+        "ci_high": 0.5
+      },
+      "qualified_vs_sentence": {
+        "diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      }
+    },
+    "precision": {
+      "qualified_vs_atomic": {
+        "diff": -0.0625,
+        "ci_low": -0.1875,
+        "ci_high": 0.0
+      },
+      "qualified_vs_sentence": {
+        "diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      }
+    },
+    "recall": {
+      "qualified_vs_atomic": {
+        "diff": -0.0069,
+        "ci_low": -0.1389,
+        "ci_high": 0.1597
+      },
+      "qualified_vs_sentence": {
+        "diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0
+      }
+    },
+    "verdict": {
+      "qualifier_part": false,
+      "precision_part": false,
+      "verdict": "NOT SUPPORTED"
+    }
+  },
+  "qualified_unfaithful_claims_test": 5,
+  "nli_spot_check": "NOT EVALUATED (sample written for annotation)",
+  "claims_from_responses": {
+    "responses": 4,
+    "claims": 20,
+    "valid_json_rate": 1.0,
+    "claims_per_response": {
+      "qwen3-1.7b": 5.0
+    },
+    "claim_types": {
+      "dosing": 12,
+      "recommendation": 5,
+      "efficacy": 2,
+      "mechanism": 1
+    },
+    "verifiable_share": 1.0,
+    "negated_share": 0.0,
+    "with_dose": 0,
+    "with_population": 13,
+    "certainty": {
+      "definite": 17,
+      "probable": 3
+    }
+  },
+  "llm_call_summary": {
+    "qwen3-1.7b": {
+      "calls": 26,
+      "completion_tokens": 12536,
+      "gpu_seconds": 102.92599999999999,
+      "tokens_per_s_median": 125.08
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+ "sample": "all 10 claims the NLI judge rated NOT entailed + 20 random claims it rated entailed (qualified method, Qwen3-8B, K-QA test)",
+ "annotator": "AI developer (Claude), reading each claim against its source answer; NOT a human or clinician annotation",
+ "labels": {
+  "entailed": "the answer states the claim's content (referents resolved from the answer)",
+  "standalone": "the claim is understandable and checkable without the answer"
+ },
+ "items": [
+  {
+   "qid": "kqa_golden:7",
+   "claim": "Muscle relaxants are medications used for the treatment of muscle pain, spasm, and spasticity.",
+   "nli_entailed": false,
+   "p": 0.078,
+   "entailed": true,
+   "standalone": true,
+   "note": "verbatim answer sentence"
+  },
+  {
+   "qid": "kqa_golden:7",
+   "claim": "Antispasmodic muscle relaxants are prescribed for the short-term relief of musculoskeletal pain, such as acute low back pain and neck pain.",
+   "nli_entailed": false,
+   "p": 0.423,
+   "entailed": true,
+   "standalone": true,
+   "note": "verbatim answer sentence"
+  },
+  {
+   "qid": "kqa_golden:7",
+   "claim": "Antispasmodics are only recommended if initial therapy with over-the-counter pain relievers like ibuprofen (Advil) or acetaminophen (Tylenol) fails, because they can have a sedating effect that can limit the ability to work or drive.",
+   "nli_entailed": false,
+   "p": 0.08,
+   "entailed": true,
+   "standalone": true,
+   "note": "verbatim answer sentence"
+  },
+  {
+   "qid": "kqa_golden:7",
+   "claim": "Antispasmodic muscle relaxants must be used with caution in older adults, as the risk of adverse effects increases with age.",
+   "nli_entailed": false,
+   "p": 0.057,
+   "entailed": true,
+   "standalone": true,
+   "note": "verbatim answer sentence"
+  },
+  {
+   "qid": "kqa_golden:9",
+   "claim": "Some medicines are available over-the-counter and they are recommended for the treatment of persistent nasal allergy symptoms.",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": true,
+   "note": "referent generalized ('some medicines' = nasal corticosteroid sprays); still entailed"
+  },
+  {
+   "qid": "kqa_golden:9",
+   "claim": "Nasal decongestant sprays can be beneficial for reducing the swelling of the blood vessels and tissues within the nasal passages.",
+   "nli_entailed": true,
+   "p": 0.997,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:9",
+   "claim": "Nasal decongestant sprays are better for treating nasal congestion caused by a cold rather than allergies.",
+   "nli_entailed": true,
+   "p": 0.99,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:9",
+   "claim": "Elevation of the head at night may help as congestion is sometimes worse when lying down.",
+   "nli_entailed": true,
+   "p": 0.988,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:26",
+   "claim": "However, some antibiotics should not be combined with painkillers due to potential drug interactions.",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:27",
+   "claim": "If you think you have jugular vein distention, you should contact your healthcare provider.",
+   "nli_entailed": true,
+   "p": 0.998,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:29",
+   "claim": "Lifestyle changes may include quitting smoking and alcohol.",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:33",
+   "claim": "Please seek medical attention if you have neck muscle stiffness while swallowing in order to evaluate the cause and provide you with the correct treatment.",
+   "nli_entailed": true,
+   "p": 0.97,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:40",
+   "claim": "Please seek medical attention if you experience symptoms you consider unusual for your typical migraine episode or if your migraine is severe, getting worse, or lasting longer than usual.",
+   "nli_entailed": true,
+   "p": 0.997,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:67",
+   "claim": "Cough and malaise can persist for 2 weeks or longer in most adults with uncomplicated influenza",
+   "nli_entailed": false,
+   "p": 0.006,
+   "entailed": false,
+   "standalone": false,
+   "note": "distorts the quantifier: the answer says MOST adults recover within a week; only cough/malaise CAN persist ≥ 2 weeks"
+  },
+  {
+   "qid": "kqa_golden:67",
+   "claim": "Longer recovering period is more common among elderly patients, or patients with chronic lung disease",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:68",
+   "claim": "If the 3 mg daily maintenance dose is not tolerated, it is recommended that treatment be discontinued.",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:72",
+   "claim": "Elevated ALT levels may indicate liver injury or disease, which could be caused by a wide range of conditions, such as non alcoholic or alcoholic fatty liver, viral hepatitis and drugs adverse effects.",
+   "nli_entailed": true,
+   "p": 0.998,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:77",
+   "claim": "Serum thyroid-stimulating hormone (TSH) levels and serum thyroxine (T4) and triiodothyronine (T3) concentrations are common thyroid function tests measured in a blood sample.",
+   "nli_entailed": true,
+   "p": 1.0,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:85",
+   "claim": "Your doctor will take a full history, perform a physical examination, and possibly request laboratory studies and imaging.",
+   "nli_entailed": true,
+   "p": 0.998,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:90",
+   "claim": "Apply the medication once or twice a day until the infection goes away, which usually takes around four weeks.",
+   "nli_entailed": false,
+   "p": 0.084,
+   "entailed": true,
+   "standalone": false,
+   "note": "'the medication' unresolved (topical antifungal)"
+  },
+  {
+   "qid": "kqa_golden:102",
+   "claim": "It is important to note that you should space out taking any other medication at least one hour apart from your hypothyroidism medication.",
+   "nli_entailed": false,
+   "p": 0.034,
+   "entailed": true,
+   "standalone": true,
+   "note": "verbatim answer sentence"
+  },
+  {
+   "qid": "kqa_golden:129",
+   "claim": "There are two types of tapeworms that can infect cats.",
+   "nli_entailed": true,
+   "p": 1.0,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:138",
+   "claim": "The eye is not usually itchy but the discharge is prominent.",
+   "nli_entailed": false,
+   "p": 0.034,
+   "entailed": true,
+   "standalone": false,
+   "note": "condition (bacterial conjunctivitis) missing"
+  },
+  {
+   "qid": "kqa_golden:138",
+   "claim": "Vision is usually not affected in any of the cases.",
+   "nli_entailed": false,
+   "p": 0.015,
+   "entailed": true,
+   "standalone": false,
+   "note": "'any of the cases' unresolved"
+  },
+  {
+   "qid": "kqa_golden:157",
+   "claim": "Anogenital warts are a sign of HPV infection.",
+   "nli_entailed": true,
+   "p": 1.0,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  },
+  {
+   "qid": "kqa_golden:173",
+   "claim": "The maximal safe amount of Ibuprofen (Advil, Motrin) for healthy adults is 800 milligrams per dose or 3200 mg per day (4 maximum doses)",
+   "nli_entailed": true,
+   "p": 0.996,
+   "entailed": true,
+   "standalone": true,
+   "note": "supported, but drops the qualifier 'only safe short-term, not for chronic use' (not detected by either metric)"
+  },
+  {
+   "qid": "kqa_golden:179",
+   "claim": "Treatments include applying on the affected areas an over the counter moisturizer, preferably with ammonium lactate (AmLactin) or with alpha hydroxyl acids (CeraVe), or using topical retinoids such as Tretinoin (Retin-A, Altreno), Adapalene (Differin) and Tazarotene (Arazlo,Tazorac).",
+   "nli_entailed": false,
+   "p": 0.097,
+   "entailed": true,
+   "standalone": false,
+   "note": "condition (keratosis pilaris) not named"
+  },
+  {
+   "qid": "kqa_golden:180",
+   "claim": "It typically affects one side of the head, usually in or around the eye area, and is commonly described as a stabbing or sharp pain.",
+   "nli_entailed": true,
+   "p": 0.998,
+   "entailed": true,
+   "standalone": false,
+   "note": "'It' unresolved (cluster headache)"
+  },
+  {
+   "qid": "kqa_golden:182",
+   "claim": "A diagnosis is made through a lumbar puncture, which evaluates the cerebrospinal fluid (CSF) surrounding the brain and spinal cord.",
+   "nli_entailed": true,
+   "p": 0.999,
+   "entailed": true,
+   "standalone": false,
+   "note": "diagnosis of what (meningitis) not named"
+  },
+  {
+   "qid": "kqa_golden:191",
+   "claim": "Treatment for chlamydia includes an antibiotic course",
+   "nli_entailed": true,
+   "p": 1.0,
+   "entailed": true,
+   "standalone": true,
+   "note": ""
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+set,coverage,FSR_all,FSR_answered,risk_all,risk_answered
+healthver_test,0.771,0.125,0.0908,0.2139,0.128
+scifact_dev,0.829,0.1089,0.0663,0.2029,0.1383
+healthfc,0.585,0.7956,0.8868,0.6587,0.6697

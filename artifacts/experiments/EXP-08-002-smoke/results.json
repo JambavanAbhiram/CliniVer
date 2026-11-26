@@ -1,0 +1,336 @@
+{
+  "splits": {
+    "train": {
+      "claims": 406,
+      "e2e_items": 0,
+      "gold": {}
+    },
+    "dev": {
+      "claims": 162,
+      "e2e_items": 30,
+      "gold": {
+        "INS": 16,
+        "CON": 6,
+        "SUP": 8
+      }
+    },
+    "test": {
+      "claims": 241,
+      "e2e_items": 30,
+      "gold": {
+        "INS": 11,
+        "SUP": 12,
+        "CON": 7
+      }
+    }
+  },
+  "finetune": {
+    "v1r": {
+      "pairs": 300,
+      "labels": {
+        "SUP": 116,
+        "INS": 121,
+        "CON": 63
+      },
+      "seconds": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.2451750664412975,
+          "peak_vram_mb": 4933
+        }
+      ],
+      "dir": "nli_opt_v1r_7a425346c39a"
+    },
+    "v2": {
+      "pairs": 300,
+      "labels": {
+        "SUP": 112,
+        "INS": 115,
+        "CON": 73
+      },
+      "seconds": 2,
+      "history": [
+        {
+          "epoch": 1,
+          "train_loss": 1.2937173767884573,
+          "peak_vram_mb": 5861
+        }
+      ],
+      "dir": "nli_opt_v2_de1cd6c8f656"
+    },
+    "augmentation": {
+      "perturbations": {
+        "paraphrase": 118,
+        "negation": 511,
+        "number": 700,
+        "hedge": 400,
+        "population": 9
+      },
+      "hard_negatives": 80
+    }
+  },
+  "selection": {
+    "baseline": "v1r|guard=0|tau=None|so=abstain",
+    "baseline_dev_FSR": 0.5,
+    "within_0.01_of_best": [
+      "v1r|guard=0|tau=None|so=llm_label",
+      "v1r|guard=0|tau=0.1|so=llm_label",
+      "v1r|guard=0|tau=0.2|so=llm_label",
+      "v1r|guard=0|tau=0.3|so=llm_label",
+      "v1r|guard=1|tau=None|so=llm_label",
+      "v1r|guard=1|tau=0.1|so=llm_label",
+      "v1r|guard=1|tau=0.2|so=llm_label",
+      "v1r|guard=1|tau=0.3|so=llm_label",
+      "v2|guard=0|tau=None|so=llm_label",
+      "v2|guard=0|tau=0.1|so=llm_label",
+      "v2|guard=0|tau=0.2|so=llm_label",
+      "v2|guard=0|tau=0.3|so=llm_label",
+      "v2|guard=1|tau=None|so=llm_label",
+      "v2|guard=1|tau=0.1|so=llm_label",
+      "v2|guard=1|tau=0.2|so=llm_label",
+      "v2|guard=1|tau=0.3|so=llm_label"
+    ],
+    "selected": "v1r|guard=0|tau=None|so=llm_label",
+    "tau_values": {
+      "0.1": 0.7488585472106934,
+      "0.2": 0.9901701807975769,
+      "0.3": 0.9976949214935302
+    }
+  },
+  "fresh_tests": {
+    "test": {
+      "table": {
+        "baseline (v1r, v1 policy)": {
+          "coverage": 0.7,
+          "macro_F1_e2e": 0.7283,
+          "macro_F1_answered": 0.8864,
+          "FSR_answered": 0.1818,
+          "accuracy_e2e": 0.6333
+        },
+        "selected": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.7539,
+          "macro_F1_answered": 0.7539,
+          "FSR_answered": 0.1111,
+          "accuracy_e2e": 0.7667
+        },
+        "v2, v1 policy": {
+          "coverage": 0.633,
+          "macro_F1_e2e": 0.6362,
+          "macro_F1_answered": 0.8889,
+          "FSR_answered": 0.25,
+          "accuracy_e2e": 0.5667
+        },
+        "v2, verifier only": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.5651,
+          "macro_F1_answered": 0.5651,
+          "FSR_answered": 0.6667,
+          "accuracy_e2e": 0.6
+        },
+        "v1r, verifier only": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.6577,
+          "macro_F1_answered": 0.6577,
+          "FSR_answered": 0.5,
+          "accuracy_e2e": 0.6667
+        }
+      },
+      "selected_vs_baseline": {
+        "delta_F1_e2e": 0.0255,
+        "ci_F1_e2e": [
+          -0.0926,
+          0.164
+        ],
+        "delta_FSR": -0.0697,
+        "ci_FSR": [
+          -0.2083,
+          0.0
+        ]
+      }
+    },
+    "pubhealth": {
+      "table": {
+        "baseline (v1r, v1 policy)": {
+          "coverage": 0.917,
+          "macro_F1_e2e": 0.4567,
+          "macro_F1_answered": 0.4844,
+          "FSR_answered": 0.25,
+          "accuracy_e2e": 0.5667
+        },
+        "selected": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.483,
+          "macro_F1_answered": 0.483,
+          "FSR_answered": 0.2609,
+          "accuracy_e2e": 0.6
+        },
+        "v2, v1 policy": {
+          "coverage": 0.95,
+          "macro_F1_e2e": 0.4561,
+          "macro_F1_answered": 0.4695,
+          "FSR_answered": 0.1818,
+          "accuracy_e2e": 0.5333
+        },
+        "v2, verifier only": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.4584,
+          "macro_F1_answered": 0.4584,
+          "FSR_answered": 0.1739,
+          "accuracy_e2e": 0.55
+        },
+        "v1r, verifier only": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.4613,
+          "macro_F1_answered": 0.4613,
+          "FSR_answered": 0.2609,
+          "accuracy_e2e": 0.6
+        },
+        "v1 deployed, v1 policy": {
+          "coverage": 0.883,
+          "macro_F1_e2e": 0.4123,
+          "macro_F1_answered": 0.4426,
+          "FSR_answered": 0.2222,
+          "accuracy_e2e": 0.55
+        },
+        "v1 deployed, verifier only": {
+          "coverage": 1.0,
+          "macro_F1_e2e": 0.4742,
+          "macro_F1_answered": 0.4742,
+          "FSR_answered": 0.1739,
+          "accuracy_e2e": 0.6
+        }
+      },
+      "selected_vs_baseline": {
+        "delta_F1_e2e": 0.0263,
+        "ci_F1_e2e": [
+          -0.0109,
+          0.0828
+        ],
+        "delta_FSR": 0.01,
+        "ci_FSR": [
+          -0.0587,
+          0.0982
+        ]
+      }
+    }
+  },
+  "seen_sets": {
+    "scifact_dev_e2e": {
+      "v1 deployed, v1 policy (EXP-08-001 pipeline)": {
+        "coverage": 0.95,
+        "macro_F1_e2e": 0.8114,
+        "macro_F1_answered": 0.8386,
+        "FSR_answered": 0.0556,
+        "accuracy_e2e": 0.8
+      },
+      "baseline (v1r, v1 policy)": {
+        "coverage": 0.725,
+        "macro_F1_e2e": 0.5952,
+        "macro_F1_answered": 0.6904,
+        "FSR_answered": 0.0909,
+        "accuracy_e2e": 0.6
+      },
+      "selected": {
+        "coverage": 1.0,
+        "macro_F1_e2e": 0.7645,
+        "macro_F1_answered": 0.7645,
+        "FSR_answered": 0.1,
+        "accuracy_e2e": 0.8
+      }
+    },
+    "verifier_level": {
+      "healthver_test|v1": {
+        "macro_F1": 0.753
+      },
+      "healthver_test|v1r": {
+        "macro_F1": 0.4852
+      },
+      "healthver_test|v2": {
+        "macro_F1": 0.4984
+      },
+      "healthfc|v1": {
+        "macro_F1": 0.2239
+      },
+      "healthfc|v1r": {
+        "macro_F1": 0.1874
+      },
+      "healthfc|v2": {
+        "macro_F1": 0.1856
+      },
+      "synthetic|v1": {
+        "macro_F1": 0.2698,
+        "number_edit_caught (CON)": 0.178,
+        "negation_edit_caught (CON)": 0.726,
+        "hedge/population_edit_not_SUP": 0.355,
+        "paraphrase_kept_SUP": 0.759
+      },
+      "synthetic|v1r": {
+        "macro_F1": 0.2159,
+        "number_edit_caught (CON)": 0.267,
+        "negation_edit_caught (CON)": 0.442,
+        "hedge/population_edit_not_SUP": 0.258,
+        "paraphrase_kept_SUP": 0.862
+      },
+      "synthetic|v2": {
+        "macro_F1": 0.2164,
+        "number_edit_caught (CON)": 0.378,
+        "negation_edit_caught (CON)": 0.379,
+        "hedge/population_edit_not_SUP": 0.29,
+        "paraphrase_kept_SUP": 0.897
+      }
+    },
+    "context_items_verify_rewrite_selected_verifier": 0.7802
+  },
+  "context_fairness_check": {
+    "v1": {
+      "all": 0.8706,
+      "seen by v1 only (dev/test splits) (n=23)": 0.9113,
+      "seen by v1, v1r, v2 (train split) (n=17)": 0.8182
+    },
+    "v1r": {
+      "all": 0.7802,
+      "seen by v1 only (dev/test splits) (n=23)": 0.8516,
+      "seen by v1, v1r, v2 (train split) (n=17)": 0.6886
+    },
+    "v2": {
+      "all": 0.6762,
+      "seen by v1 only (dev/test splits) (n=23)": 0.6439,
+      "seen by v1, v1r, v2 (train split) (n=17)": 0.7167
+    }
+  },
+  "real_claims": {
+    "silver": {
+      "physician (K-QA)": {
+        "silver_SUP": 15,
+        "silver_CON": 3,
+        "v1: SUP|silver SUP": 0.8,
+        "selected: SUP|silver SUP": 0.933,
+        "v1: SUP|silver CON (silver false support)": 0.333,
+        "selected: SUP|silver CON (silver false support)": 0.667,
+        "v1: CON or ABST|silver CON": 0.333,
+        "selected: CON or ABST|silver CON": 0.0
+      }
+    },
+    "verdict_distribution": {
+      "v1 (EXP-07-001)": {
+        "SUP": 0.675,
+        "INS": 0.2,
+        "ABSTAINED": 0.125
+      },
+      "selected": {
+        "SUP": 0.8,
+        "INS": 0.2
+      }
+    },
+    "verified_as_rewrite": 5
+  },
+  "adoption": {
+    "selected": "v1r|guard=0|tau=None|so=llm_label",
+    "e2e_F1_gain_on_fresh_scifact": true,
+    "fsr_within_0.02": true,
+    "pubhealth_not_worse_than_0.02": true,
+    "adopted_as_baseline_v2": true
+  }
+}

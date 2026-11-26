@@ -1,0 +1,30 @@
+# Notebook 07 — confidence, calibration, abstention (RQ6 / H6a–H6c). Experiment parameters only.
+snapshot: "2026-11-20"
+seed: 42
+verifier: fine-tuned NLI            # ADR-0013 first-pass verifier (cached weights from EXP-06-001)
+calibration_split: healthver_dev    # temperature / isotonic / Platt / multi-signal model / thresholds are fitted here only
+heldout_sets: [healthver_test, scifact_dev, healthfc]
+ece_bins: 15                        # equal-mass
+signals:                            # multi-signal confidence (logistic regression predicting "verifier correct")
+  - verifier_conf                   # calibrated top-label probability
+  - margin                          # top-1 minus top-2 probability
+  - entropy
+  - unit_mismatch                   # cliniver.verification.consistency (NB07)
+  - unsupported_numbers
+  - claim_words
+  - evidence_words
+  - lexical_overlap                 # share of claim content words found in the evidence
+  - llm_agrees                      # Qwen3-8B label equals the NLI label (only on the fixed LLM samples; exploratory)
+abstention:
+  target_coverage: 0.80
+  epsilon_false_support: 0.05       # report the coverage at which the calibration split reaches FSR ≤ ε
+aggregation_candidates: [top1, naive_any, max_confidence]   # claim level, SciFact dev claims with retrieved evidence (H5c set)
+second_opinion:
+  model: qwen3-8b
+  route_below_quantile: 0.25        # NLI decisions in the lowest 25% of confidence (threshold from the calibration split) go to the LLM
+n_boot: 2000
+decision_rules:                     # fixed before running
+  h6a: "temperature scaling lowers ECE on held-out data: ECE(after) − ECE(before) < 0 with 95% CI excluding 0 on BOTH healthver_test and scifact_dev"
+  h6b: "multi-signal confidence (without llm_agrees) has lower AURC than verifier_conf alone: CI of the difference < 0 on BOTH healthver_test and scifact_dev"
+  h6c: "at the confidence threshold giving 80% coverage on the calibration split, the false-support rate among answered items on healthver_test is lower than without abstention (CI of the difference < 0), with coverage ≥ 0.75 on that set"
+  aggregation: "for real claims use the aggregation with the highest SciFact-dev claim-level macro-F1 (H5c set); ties within 0.01 → top1"

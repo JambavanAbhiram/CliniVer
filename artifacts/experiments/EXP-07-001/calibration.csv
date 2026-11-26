@@ -1,0 +1,17 @@
+,set,method,ECE,Brier,accuracy,mean_conf
+0,healthver_dev,uncalibrated,0.1002,0.2475,0.8482,0.9482
+1,healthver_dev,temperature,0.0257,0.224,0.8482,0.8581
+2,healthver_dev,isotonic,0.0084,,0.8482,0.8482
+3,healthver_dev,platt,0.0671,,0.8482,0.8482
+4,healthver_test,uncalibrated,0.1561,0.355,0.7861,0.9421
+5,healthver_test,temperature,0.062,0.3072,0.7861,0.8447
+6,healthver_test,isotonic,0.0449,,0.7861,0.8302
+7,healthver_test,platt,0.0938,,0.7861,0.843
+8,scifact_dev,uncalibrated,0.1406,0.3401,0.7971,0.9373
+9,scifact_dev,temperature,0.0603,0.3007,0.7971,0.8323
+10,scifact_dev,isotonic,0.0667,,0.7971,0.8206
+11,scifact_dev,platt,0.0933,,0.7971,0.8374
+12,healthfc,uncalibrated,0.5654,1.1671,0.3413,0.9067
+13,healthfc,temperature,0.4227,0.9574,0.3413,0.7641
+14,healthfc,isotonic,0.3994,,0.3413,0.7407
+15,healthfc,platt,0.4696,,0.3413,0.8109

@@ -1,0 +1,35 @@
+# Notebook 08 — end-to-end evaluation and ablations (RQ7 / H7). Experiment parameters only.
+# Labels: benchmark, synthetic and SILVER only (owner decision 2026-11-21, D7 kept: real-claim gold labels are deferred to clinical validation).
+snapshot: "2026-11-20"
+seed: 42
+
+benchmark:
+  claims: scifact_dev                 # 300 claim-level items (SUP / CON / INS incl. NEI claims; MIXED excluded), evidence retrieved over SciFact + CliniVer abstracts (NB05/NB06 pool)
+  context_items: nb04_synthetic       # NB04 synthetic context-dependent items (cache replay), for the contextualization ablation
+
+pipeline:                             # the approved configuration (ADR-0011 to ADR-0014)
+  query: standalone_rewrite
+  retrieval: hybrid_medcpt_rerank50
+  evidence: top1
+  verifier: fine_tuned_nli
+  calibration: temperature
+  second_opinion: qwen3-8b_below_q25
+  abstain_on_disagreement: true
+
+ablations:
+  retrieval: [bm25_only, dense_only, hybrid_no_rerank, hybrid_bge_base, weighted_hybrid]
+  evidence: [top3_naive]
+  verifier: [qwen_only, zero_shot_nli]
+  confidence: [uncalibrated, no_second_opinion, no_abstention]
+  context: [claim_only, question_plus_claim]   # on context-dependent items (oracle = original claim)
+  not_rerun: {graph_channel: "not retained (NB05, ADR-0012)", normalization_only: "evaluated at retrieval level in NB05", source_metadata: "not used by any decision rule"}
+
+silver:                               # Pillar 3: real generated answers vs the queries' reference statements (NLI judge from NB03)
+  judge: {repo: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli, revision: b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7}
+  entail_threshold: 0.5
+  sources: {kqa_golden: physician statements, other: "LLM-generated statements (MedLFQA authors); silver of lower quality"}
+
+n_boot: 2000
+decision_rules:                       # fixed before running
+  h7: "on SciFact dev end-to-end (pipeline configuration, no abstention): errors fixed by oracle (gold cited) evidence = retrieval-attributable; errors that remain with oracle evidence = verifier-attributable. H7 supported if the retrieval share > the verifier share with the 95% bootstrap CI of the difference > 0"
+  final_selection: "among the pipeline and its ablations: highest end-to-end macro-F1 on answered claims among configurations with false-support rate ≤ that of the approved pipeline and p95 latency ≤ 2.0 s per claim (excluding LLM second-opinion time, reported separately); ties within 0.01 → fewer components"

@@ -1,0 +1,42 @@
+{
+  "exp_id": "EXP-01-002",
+  "title": "NCBI E-utilities pacing under concurrency (429 check)",
+  "research_question": "Engineering check for NB01 acquisition",
+  "status": "completed",
+  "started_at": "2026-11-19T18:41:20+00:00",
+  "updated_at": "2026-11-19T18:42:06+00:00",
+  "seed": null,
+  "config": {
+    "min_interval_s": 0.5,
+    "max_in_flight": 2,
+    "jobs": 2,
+    "requests_per_job": 35
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "requests": "2.34.2",
+    "cliniver": "0.1.0"
+  }
+}

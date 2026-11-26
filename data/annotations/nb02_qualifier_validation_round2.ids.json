@@ -1,0 +1,1360 @@
+{
+ "round": 2,
+ "rules": "revised rules (kinds: effect, negation, population, quantity, threshold); see cliniver.processing.qualifiers",
+ "seed": 43,
+ "annotator": "AI developer (Claude) by reading each span in context; NOT a human or clinician annotation",
+ "criterion": "valid = the span is a genuine qualifier of the stated type in its sentence (core captured; long scopes accepted); boundary_ok = span ends where the qualifier ends",
+ "items": [
+  {
+   "doc_id": "openfda_label:5bac1e03-5062-a6b3-e063-6394a90aacf6",
+   "kind": "effect",
+   "start": 114967,
+   "end": 114994,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4270036",
+   "kind": "effect",
+   "start": 12162,
+   "end": 12192,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13545674",
+   "kind": "effect",
+   "start": 12430,
+   "end": 12461,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13545674",
+   "kind": "effect",
+   "start": 14995,
+   "end": 15026,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:10840285-52f3-4d61-800d-6e280488650e",
+   "kind": "effect",
+   "start": 111032,
+   "end": 111067,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6874523",
+   "kind": "effect",
+   "start": 13731,
+   "end": 13769,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13573484",
+   "kind": "effect",
+   "start": 26013,
+   "end": 26042,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6474939",
+   "kind": "effect",
+   "start": 19159,
+   "end": 19187,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC5801434",
+   "kind": "effect",
+   "start": 32481,
+   "end": 32507,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13555746",
+   "kind": "effect",
+   "start": 20342,
+   "end": 20391,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5bc230f9-4eb9-3de2-e063-6394a90aa3aa",
+   "kind": "effect",
+   "start": 95698,
+   "end": 95725,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6874523",
+   "kind": "effect",
+   "start": 3370,
+   "end": 3408,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6738514",
+   "kind": "effect",
+   "start": 22874,
+   "end": 22900,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2943164",
+   "kind": "effect",
+   "start": 21278,
+   "end": 21318,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6738514",
+   "kind": "effect",
+   "start": 23152,
+   "end": 23178,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5bac1e03-5062-a6b3-e063-6394a90aacf6",
+   "kind": "effect",
+   "start": 104840,
+   "end": 104867,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2632629",
+   "kind": "effect",
+   "start": 7013,
+   "end": 7064,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2801628",
+   "kind": "effect",
+   "start": 8237,
+   "end": 8266,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6738514",
+   "kind": "effect",
+   "start": 21064,
+   "end": 21090,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13573484",
+   "kind": "effect",
+   "start": 26102,
+   "end": 26131,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6738514",
+   "kind": "effect",
+   "start": 24508,
+   "end": 24534,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6738514",
+   "kind": "effect",
+   "start": 17222,
+   "end": 17248,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13545674",
+   "kind": "effect",
+   "start": 14806,
+   "end": 14837,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC3253766",
+   "kind": "effect",
+   "start": 17136,
+   "end": 17215,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13747799",
+   "kind": "effect",
+   "start": 25144,
+   "end": 25174,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a425ceed-bb59-48bb-be43-cf47dbe21fef",
+   "kind": "effect",
+   "start": 68926,
+   "end": 68953,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:74e3dfbf-03de-4d8f-b900-955d45db5ab6",
+   "kind": "effect",
+   "start": 117291,
+   "end": 117318,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5bc230f9-4eb9-3de2-e063-6394a90aa3aa",
+   "kind": "effect",
+   "start": 99686,
+   "end": 99713,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:10840285-52f3-4d61-800d-6e280488650e",
+   "kind": "effect",
+   "start": 98479,
+   "end": 98506,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13750263",
+   "kind": "effect",
+   "start": 21841,
+   "end": 21900,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:3880b55a-6fa6-06ed-e063-6294a90a548b",
+   "kind": "negation",
+   "start": 20672,
+   "end": 20759,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5b890016-800c-d4b5-e063-6294a90a6622",
+   "kind": "negation",
+   "start": 14217,
+   "end": 14319,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5f514e5b-69c2-8dbc-e063-6294a90a764d",
+   "kind": "negation",
+   "start": 34926,
+   "end": 34955,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13599594",
+   "kind": "negation",
+   "start": 49101,
+   "end": 49128,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:2a99e9e8-3d1b-ee0b-e063-6294a90ae4ef",
+   "kind": "negation",
+   "start": 33467,
+   "end": 33550,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13698657",
+   "kind": "negation",
+   "start": 33003,
+   "end": 33024,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5b37eaab-1b6f-d2c7-e063-6394a90a9ea4",
+   "kind": "negation",
+   "start": 61301,
+   "end": 61333,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4093b082-6e7b-4dea-b659-69b0b9bc84e0",
+   "kind": "negation",
+   "start": 34146,
+   "end": 34233,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC8075891",
+   "kind": "negation",
+   "start": 29641,
+   "end": 29714,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a425ceed-bb59-48bb-be43-cf47dbe21fef",
+   "kind": "negation",
+   "start": 37355,
+   "end": 37411,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:16f275d5-7526-4e7a-8776-665a9a6ae37a",
+   "kind": "negation",
+   "start": 28993,
+   "end": 29044,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:10840285-52f3-4d61-800d-6e280488650e",
+   "kind": "negation",
+   "start": 113010,
+   "end": 113033,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:462a6e34-b07c-965d-e063-6294a90ab52b",
+   "kind": "negation",
+   "start": 1689,
+   "end": 1769,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:593bc861-fc6b-408d-8a45-b08745301f02",
+   "kind": "negation",
+   "start": 14465,
+   "end": 14540,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:296e89a8-84fb-4431-85e5-46c2f7b1ded6",
+   "kind": "negation",
+   "start": 49648,
+   "end": 49711,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:34f7e985-f275-4c4b-ab35-ffa37e49052b",
+   "kind": "negation",
+   "start": 40800,
+   "end": 40877,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5294926b-7812-41da-a0e8-56f492198450",
+   "kind": "negation",
+   "start": 71573,
+   "end": 71589,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a934a344-0ee2-420c-980c-ae69581875fe",
+   "kind": "negation",
+   "start": 37857,
+   "end": 37917,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:49201ad7-68f7-407c-959f-852591703f96",
+   "kind": "negation",
+   "start": 1562,
+   "end": 1582,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:10840285-52f3-4d61-800d-6e280488650e",
+   "kind": "negation",
+   "start": 96054,
+   "end": 96089,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:1aa464bb-9ba7-45b3-b01a-a0982a20932c",
+   "kind": "negation",
+   "start": 11978,
+   "end": 12070,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13687583",
+   "kind": "negation",
+   "start": 117887,
+   "end": 117915,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6848431",
+   "kind": "negation",
+   "start": 22396,
+   "end": 22434,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC3814067",
+   "kind": "negation",
+   "start": 9528,
+   "end": 9609,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4069048",
+   "kind": "negation",
+   "start": 29043,
+   "end": 29133,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:296e89a8-84fb-4431-85e5-46c2f7b1ded6",
+   "kind": "negation",
+   "start": 90111,
+   "end": 90139,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:f1a0f370-c447-4acb-9b93-9f4302400c5d",
+   "kind": "negation",
+   "start": 1170,
+   "end": 1253,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:7ade72ef-d354-430d-afad-3b63b95f5b39",
+   "kind": "negation",
+   "start": 65741,
+   "end": 65843,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2752910",
+   "kind": "negation",
+   "start": 19159,
+   "end": 19231,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:95b8c81c-dfe3-4dd4-be06-8dd1d935f07e",
+   "kind": "negation",
+   "start": 9820,
+   "end": 9850,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13687583",
+   "kind": "population",
+   "start": 144243,
+   "end": 144311,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5c8734fd-776b-0dd0-e063-6394a90a97ba",
+   "kind": "population",
+   "start": 22550,
+   "end": 22584,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5fdc753e-fb1f-4235-e063-6394a90ad98a",
+   "kind": "population",
+   "start": 56949,
+   "end": 57037,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:dd3cca75-32f2-4e6d-8121-20f47e101495",
+   "kind": "population",
+   "start": 61974,
+   "end": 62015,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2685144",
+   "kind": "population",
+   "start": 11106,
+   "end": 11138,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:1cfa51fd-8406-404c-b2a8-0fc1068675fb",
+   "kind": "population",
+   "start": 49001,
+   "end": 49042,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2663445",
+   "kind": "population",
+   "start": 1247,
+   "end": 1287,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:aa02f4ad-f077-4884-a644-f7df5537ce5d",
+   "kind": "population",
+   "start": 94199,
+   "end": 94295,
+   "valid": true,
+   "boundary_ok": false,
+   "note": "scope runs into a table caption"
+  },
+  {
+   "doc_id": "openfda_label:c5361713-d587-4393-90a9-773cd77d232d",
+   "kind": "population",
+   "start": 11275,
+   "end": 11312,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6546192",
+   "kind": "population",
+   "start": 18777,
+   "end": 18799,
+   "valid": true,
+   "boundary_ok": false,
+   "note": "scope runs past a citation number ('men.27 In our study')"
+  },
+  {
+   "doc_id": "openfda_label:4d2909bd-31fd-4ddc-99b5-2fc99b35f5d4",
+   "kind": "population",
+   "start": 1089,
+   "end": 1131,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:45b28de4-8c3d-5d99-e063-6294a90a9a95",
+   "kind": "population",
+   "start": 19137,
+   "end": 19175,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:36ef9eed-221e-a76c-c2a3-80ab897bac8a",
+   "kind": "population",
+   "start": 8353,
+   "end": 8388,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC3172088",
+   "kind": "population",
+   "start": 27328,
+   "end": 27376,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:1ce8f03a-6918-908c-e063-6394a90a270c",
+   "kind": "population",
+   "start": 11030,
+   "end": 11074,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2788599",
+   "kind": "population",
+   "start": 21860,
+   "end": 21890,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:95b8c81c-dfe3-4dd4-be06-8dd1d935f07e",
+   "kind": "population",
+   "start": 72751,
+   "end": 72833,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:147f2538-e782-57d0-e063-6394a90ab598",
+   "kind": "population",
+   "start": 12855,
+   "end": 12911,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a38eca16-ef6d-40e4-8b6e-d62cd581f15e",
+   "kind": "population",
+   "start": 6958,
+   "end": 7047,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:531ccbe1-c1f4-46c9-bf98-9df46dafb23c",
+   "kind": "population",
+   "start": 17252,
+   "end": 17307,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:9468a2f3-3ebe-40bd-a3b4-d78d9eb47e04",
+   "kind": "population",
+   "start": 26179,
+   "end": 26206,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4260137",
+   "kind": "population",
+   "start": 19446,
+   "end": 19491,
+   "valid": true,
+   "boundary_ok": false,
+   "note": "scope runs past a citation number ('patients.29 In addition')"
+  },
+  {
+   "doc_id": "openfda_label:2d53fdee-0fc2-2c7f-e063-6294a90ab8f2",
+   "kind": "population",
+   "start": 1418,
+   "end": 1475,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a425ceed-bb59-48bb-be43-cf47dbe21fef",
+   "kind": "population",
+   "start": 21302,
+   "end": 21400,
+   "valid": true,
+   "boundary_ok": false,
+   "note": "scope runs into a table caption"
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6459431",
+   "kind": "population",
+   "start": 15069,
+   "end": 15109,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:57ef4d44-0cc5-db23-e063-6294a90a50cc",
+   "kind": "population",
+   "start": 48419,
+   "end": 48438,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4003262",
+   "kind": "population",
+   "start": 11734,
+   "end": 11781,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13725633",
+   "kind": "population",
+   "start": 30159,
+   "end": 30227,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:6023c38b-b347-48ad-bd0d-83452ffb1d00",
+   "kind": "population",
+   "start": 8196,
+   "end": 8212,
+   "valid": false,
+   "boundary_ok": false,
+   "note": "scope ends at ':'; the population list after the colon is not captured"
+  },
+  {
+   "doc_id": "openfda_label:a5dba1a3-f7f7-4b8d-b9f1-a09dcdc1b2fc",
+   "kind": "population",
+   "start": 69111,
+   "end": 69154,
+   "valid": true,
+   "boundary_ok": false,
+   "note": "scope runs into a table caption"
+  },
+  {
+   "doc_id": "openfda_label:5fdee739-2380-496e-e063-6394a90a5ecb",
+   "kind": "quantity",
+   "start": 41218,
+   "end": 41227,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:8979dbeb-3cf4-4548-93cc-82a911b58a26",
+   "kind": "quantity",
+   "start": 1243,
+   "end": 1251,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6132449",
+   "kind": "quantity",
+   "start": 42882,
+   "end": 42885,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5ef6e455-992a-55fe-e063-6394a90a2143",
+   "kind": "quantity",
+   "start": 65048,
+   "end": 65051,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5bc230f9-4eb9-3de2-e063-6394a90aa3aa",
+   "kind": "quantity",
+   "start": 21469,
+   "end": 21473,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13520245",
+   "kind": "quantity",
+   "start": 12036,
+   "end": 12046,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4d2a345b-54cc-2188-e063-6294a90ac6bf",
+   "kind": "quantity",
+   "start": 43904,
+   "end": 43910,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13278053",
+   "kind": "quantity",
+   "start": 2714,
+   "end": 2721,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2762855",
+   "kind": "quantity",
+   "start": 18417,
+   "end": 18422,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:ee7c997c-1b74-4c19-97cc-2408f932ea61",
+   "kind": "quantity",
+   "start": 76184,
+   "end": 76189,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:422a084f-5495-2335-e063-6394a90a8736",
+   "kind": "quantity",
+   "start": 36973,
+   "end": 36981,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6951065",
+   "kind": "quantity",
+   "start": 37958,
+   "end": 37967,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5c3dd175-ba67-d91d-e063-6294a90a045d",
+   "kind": "quantity",
+   "start": 44310,
+   "end": 44317,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a800a3b2-7a09-465b-b1ae-b76332fefdb5",
+   "kind": "quantity",
+   "start": 28895,
+   "end": 28903,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:11c471e0-6c64-4f13-b6ed-d2c80bc89f20",
+   "kind": "quantity",
+   "start": 53945,
+   "end": 53953,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4244213",
+   "kind": "quantity",
+   "start": 17447,
+   "end": 17453,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC4276981",
+   "kind": "quantity",
+   "start": 27116,
+   "end": 27124,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:99925b18-b0ac-49c2-8cd0-47ec54265506",
+   "kind": "quantity",
+   "start": 43907,
+   "end": 43915,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4e4a6a1a-6729-40b4-be88-43b1a11fcd24",
+   "kind": "quantity",
+   "start": 65026,
+   "end": 65029,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:b982da20-735c-49d8-ad1f-6a831194db87",
+   "kind": "quantity",
+   "start": 39721,
+   "end": 39724,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:74e3dfbf-03de-4d8f-b900-955d45db5ab6",
+   "kind": "quantity",
+   "start": 118548,
+   "end": 118551,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC7379114",
+   "kind": "quantity",
+   "start": 10937,
+   "end": 10947,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5c146e7a-0576-f0cf-e063-6394a90a661d",
+   "kind": "quantity",
+   "start": 17233,
+   "end": 17236,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:16f275d5-7526-4e7a-8776-665a9a6ae37a",
+   "kind": "quantity",
+   "start": 24036,
+   "end": 24040,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6522756",
+   "kind": "quantity",
+   "start": 6841,
+   "end": 6844,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:cfddaea0-134c-48f2-95df-3cff565e366e",
+   "kind": "quantity",
+   "start": 50988,
+   "end": 50996,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6463235",
+   "kind": "quantity",
+   "start": 12751,
+   "end": 12755,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4c5014c9-e8b8-a0bb-e063-6394a90a9d10",
+   "kind": "quantity",
+   "start": 32503,
+   "end": 32508,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:a934a344-0ee2-420c-980c-ae69581875fe",
+   "kind": "quantity",
+   "start": 50845,
+   "end": 50854,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13159943",
+   "kind": "quantity",
+   "start": 13102,
+   "end": 13107,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6756838",
+   "kind": "threshold",
+   "start": 49851,
+   "end": 49861,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4e68c6b7-2774-172e-e063-6294a90a0e57",
+   "kind": "threshold",
+   "start": 14994,
+   "end": 15004,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:569596ad-cf4a-80be-e063-6394a90aa2aa",
+   "kind": "threshold",
+   "start": 3683,
+   "end": 3691,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2663445",
+   "kind": "threshold",
+   "start": 34211,
+   "end": 34218,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13542026",
+   "kind": "threshold",
+   "start": 18098,
+   "end": 18103,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:c154911d-3174-409f-9619-3fe38dda4dbd",
+   "kind": "threshold",
+   "start": 16563,
+   "end": 16578,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:af904a13-cf99-4e52-8225-9074a05445a0",
+   "kind": "threshold",
+   "start": 43445,
+   "end": 43460,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:602d486f-a21d-8f23-e063-6294a90ae5dd",
+   "kind": "threshold",
+   "start": 37330,
+   "end": 37339,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:ec0339aa-f360-45c5-82f8-3f60df9c2cf7",
+   "kind": "threshold",
+   "start": 25276,
+   "end": 25278,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:44f3c6c6-160a-4cc8-8961-b4f7200b5ce5",
+   "kind": "threshold",
+   "start": 2534,
+   "end": 2542,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:74611f00-d9a2-44c0-952f-5ca7cbc39a34",
+   "kind": "threshold",
+   "start": 8168,
+   "end": 8179,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC2291331",
+   "kind": "threshold",
+   "start": 38404,
+   "end": 38413,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4e220385-b760-4a64-a1ca-84bd2bebe448",
+   "kind": "threshold",
+   "start": 3638,
+   "end": 3652,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5f4e3b3e-6e09-c37b-e063-6294a90a7a47",
+   "kind": "threshold",
+   "start": 39720,
+   "end": 39734,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:36bb4bba-545a-4786-b2a9-7281de0f7c09",
+   "kind": "threshold",
+   "start": 38168,
+   "end": 38176,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6607491",
+   "kind": "threshold",
+   "start": 9111,
+   "end": 9129,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:4f9c77d6-c13d-7ccb-e063-6394a90ae49f",
+   "kind": "threshold",
+   "start": 27790,
+   "end": 27799,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:dd011a82-7356-4b83-86c4-b21cd9138fc6",
+   "kind": "threshold",
+   "start": 30679,
+   "end": 30689,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:37380c18-7325-6166-e063-6294a90afbac",
+   "kind": "threshold",
+   "start": 14728,
+   "end": 14736,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:edb9906a-4007-40ff-a3dc-3083e50545ae",
+   "kind": "threshold",
+   "start": 18871,
+   "end": 18875,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5f4e3b3e-6e09-c37b-e063-6294a90a7a47",
+   "kind": "threshold",
+   "start": 39777,
+   "end": 39796,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:0d6183d3-e8e3-416e-a359-9348c61ac736",
+   "kind": "threshold",
+   "start": 14600,
+   "end": 14603,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:56b1a7c2-0afd-40c6-bda5-563e234a9f28",
+   "kind": "threshold",
+   "start": 50909,
+   "end": 50919,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:3f2f2d85-443a-46a1-a637-69b106156df4",
+   "kind": "threshold",
+   "start": 57286,
+   "end": 57299,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:0e31e187-683b-437f-91b6-d14cd11882bf",
+   "kind": "threshold",
+   "start": 5697,
+   "end": 5708,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:58968f11-76a2-4e8d-8414-dc636614dedb",
+   "kind": "threshold",
+   "start": 53667,
+   "end": 53679,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC13730988",
+   "kind": "threshold",
+   "start": 16706,
+   "end": 16716,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "europepmc_oa:PMC6734191",
+   "kind": "threshold",
+   "start": 7110,
+   "end": 7120,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5bac1e03-5062-a6b3-e063-6394a90aacf6",
+   "kind": "threshold",
+   "start": 11611,
+   "end": 11619,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  },
+  {
+   "doc_id": "openfda_label:5ef6e455-992a-55fe-e063-6394a90a2143",
+   "kind": "threshold",
+   "start": 83117,
+   "end": 83126,
+   "valid": true,
+   "boundary_ok": true,
+   "note": ""
+  }
+ ],
+ "text_removed": "span and context text removed for redistribution (third-party article text, ADR-0002); rebuild them from the corpus snapshot with doc_id + start/end"
+}

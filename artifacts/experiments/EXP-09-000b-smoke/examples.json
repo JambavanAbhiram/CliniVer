@@ -1,0 +1,103 @@
+[
+ {
+  "variant": "G0",
+  "question": "What are the common side effects of amlodipine?",
+  "answer": "The common side effects of amlodipine include dizziness and edema, as reported in controlled clinical trials where these were more frequently observed than with placebo [1][2]. Additional side effects mentioned in the literature include flushing, headache, and dizziness, particularly in the paediatric population [5]. The study on tolerability of side effects noted ankle swelling, headache, and other reported side effects, suggesting these may also be common [3]. While some side effects like oedema were noted to be less common in children compared to adults [5], the overall evidence highlights dizziness, edema, and flushing as the most commonly reported side effects. The severity of these side effects is generally mild or moderate, and discontinuation due to adverse reactions was low, around 1.5% of patients [1][2].",
+  "queries": [
+   "What are the common side effects of amlodipine?"
+  ]
+ },
+ {
+  "variant": "G4",
+  "question": "What are the common side effects of amlodipine?",
+  "answer": "The common side effects of amlodipine include dizziness, edema, and headache, as reported in controlled clinical trials (2). These side effects were generally mild or moderate in severity (2). Amlodipine was associated with a lower incidence of vasodilatory side effects compared to nifedipine retard, with headache and flushing occurring less frequently (1). Oedema was the most common reported side-effect, and it was seen slightly more often in elderly patients (5). The study also noted that ankle swelling, headache, and other side effects were measured using visual analogue scales (3). Overall, adverse experiences were reported by 19.3% of patients, with 6.7% discontinuing treatment due to adverse events (5).",
+  "queries": [
+   "What are the common side effects of amlodipine?",
+   "amlodipine common side effects",
+   "adverse effects of amlodipine in hypertension",
+   "side effects of amlodipine medication"
+  ]
+ },
+ {
+  "variant": "G0",
+  "question": "Who should not take amlodipine?",
+  "answer": "The evidence provided does not explicitly state who should not take amlodipine. However, it does mention that amlodipine and valsartan tablets, USP should be used based on an assessment of potential benefits and risks, considering whether the patient is likely to tolerate the lowest dose [1]. This implies that patients who cannot tolerate the lowest dose may not be suitable candidates for amlodipine. Additionally, the evidence discusses the use of amlodipine in combination with other medications, suggesting that it is generally used in patients with hypertension or angina [2]. There is no mention of contraindications or specific populations that should avoid amlodipine. Therefore, based on the provided evidence, it is not possible to determine who should not take amlodipine.",
+  "queries": [
+   "Who should not take amlodipine?"
+  ]
+ },
+ {
+  "variant": "G4",
+  "question": "Who should not take amlodipine?",
+  "answer": "Patients who are hypersensitive to amlodipine or any of its components should not take amlodipine. The passages do not specify other contraindications for amlodipine. The evidence provided focuses on dosing, combination therapy, and clinical trial methodologies, but does not address specific patient groups who should avoid amlodipine. Therefore, the information provided does not cover all potential contraindications, and a clinician should determine suitability based on individual patient factors.",
+  "queries": [
+   "Who should not take amlodipine?",
+   "amlodipine contraindications",
+   "patients who should not take amlodipine",
+   "amlodipine禁忌症"
+  ]
+ },
+ {
+  "variant": "G0",
+  "question": "what spices can be used while on warfarin",
+  "answer": "Spices and herbs can interact with warfarin, affecting its anticoagulant effects. Garlic is mentioned as potentially safe when used with warfarin, based on a study where no increased hemorrhage was observed [2]. However, some botanicals may have anticoagulant properties that could be additive to warfarin's effects, increasing the risk of bleeding [3]. Lycium barbarum L., a Chinese herb, was associated with an elevated INR in a patient on warfarin, suggesting potential interactions [4]. Common herbs like garlic, ginger, green tea, and papaya are frequently consumed by patients on warfarin, but their impact on anticoagulation control is not fully understood [5]. The evidence highlights the need for monitoring INR values and discussing herbal or spice use with healthcare providers while on warfarin therapy.",
+  "queries": [
+   "what spices can be used while on warfarin"
+  ]
+ },
+ {
+  "variant": "G4",
+  "question": "what spices can be used while on warfarin",
+  "answer": "Spices such as garlic, ginger, green tea, and papaya may interact with warfarin, potentially affecting its anticoagulant effect. [6] Garlic has antiplatelet properties, and while aged garlic extract was found to be safe in a study with warfarin, caution is advised. [5] Ginger and green tea are commonly consumed herbs that can influence warfarin's therapeutic effect. [6] Papaya is also noted as a herb consumed by a significant percentage of patients on warfarin. [6] However, the evidence does not specifically address spices other than these, and interactions with other spices remain unclear. [1][3][4] Clinicians should monitor patients closely when they use herbal or spice supplements alongside warfarin.",
+  "queries": [
+   "what spices can be used while on warfarin",
+   "warfarin drug interactions with spices",
+   "spices and warfarin interaction",
+   "clinical pharmacology of warfarin with dietary spices"
+  ]
+ },
+ {
+  "variant": "G0",
+  "question": "6,Can pulmonary hypertension be cured?",
+  "answer": "Currently, there is no known cure for pulmonary hypertension according to the evidence [1]. The condition results from various clinical conditions and may be idiopathic or associated with other diseases. The evidence states that current treatments aim to relax the vessels in the lung and lower blood pressure, but none target the causes of the disease [3]. Additionally, the evidence indicates that despite available treatments, the impact on mortality has been modest, with one third of patients still dying within two years of diagnosis [3]. While some treatments may slow the progression of the disease, they do not provide a cure. The evidence also mentions that there is no test currently that can easily and non-invasively detect abnormalities of the pulmonary circulation [1]. Therefore, based on the provided evidence, pulmonary hypertension cannot be cured.",
+  "queries": [
+   "6,Can pulmonary hypertension be cured?"
+  ]
+ },
+ {
+  "variant": "G4",
+  "question": "6,Can pulmonary hypertension be cured?",
+  "answer": "Pulmonary hypertension cannot be cured according to the evidence. The passage states that pulmonary arterial hypertension (PAH) is a progressive, hyperproliferative arterial process that leads to right heart failure and death if untreated. While effective management strategies and treatment protocols have improved outcomes, the disease remains challenging. For patients with progressive PAH who do not respond to medical therapy, lung transplantation is mentioned as an option. The evidence does not mention a cure for pulmonary hypertension.",
+  "queries": [
+   "6,Can pulmonary hypertension be cured?",
+   "pulmonary hypertension treatment guidelines",
+   "current therapeutic options for pulmonary hypertension",
+   "management of pulmonary hypertension in adults",
+   "Angiotensin Converting Enzyme Inhibitor for Hypertension",
+   "Angiotensin 2 Receptor Blocker for Hypertension",
+   "Dihydropyridine Calcium Channel Blocker for Hypertension",
+   "Calcium Channel Blocker for Hypertension",
+   "Thiazide Diuretic for Hypertension",
+   "Thiazide-like Diuretic for Hypertension"
+  ]
+ },
+ {
+  "variant": "G0",
+  "question": "88,What can suddenly cause low blood pressure?",
+  "answer": "Sudden low blood pressure can be caused by several factors. Procainamide, a medication used in cardioversion, can cause low blood pressure in about 10% of patients [5]. Sedation during medical procedures can also lead to low blood pressure in about 10% of patients [5]. Additionally, the sudden stoppage of torsemide, a diuretic used to treat hypertension, can result in blood pressure returning to pretreatment levels over several days [4]. Tourniquet-induced hypertension (TIH) is a condition where blood pressure rises sharply, but in some cases, the use of certain drugs like Dexmedetomidine can cause low blood pressure as a side effect [3]. These factors highlight various scenarios where sudden low blood pressure may occur.",
+  "queries": [
+   "88,What can suddenly cause low blood pressure?"
+  ]
+ },
+ {
+  "variant": "G4",
+  "question": "88,What can suddenly cause low blood pressure?",
+  "answer": "Sudden low blood pressure can be caused by factors such as inadequate blood pressure control in patients with hypertension, as indicated by less than 40% of sudden death victims with hypertension having controlled blood pressure prior to death [1]. Antihypertensive drug treatment, while aimed at preventing cardiac events, may also contribute to sudden hypotension, particularly if not properly managed [2]. Additionally, the use of certain medications like lisinopril can lead to symptomatic hypotension, especially in patients with specific risk factors such as heart failure, ischemic heart disease, or severe volume depletion [6]. The evidence does not specifically address other sudden causes of low blood pressure beyond these factors.",
+  "queries": [
+   "88,What can suddenly cause low blood pressure?",
+   "sudden hypotension causes",
+   "acute hypotension etiology",
+   "sudden drop in blood pressure causes"
+  ]
+ }
+]

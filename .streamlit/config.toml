@@ -1,0 +1,13 @@
+# Local research demo: localhost only, no telemetry. scripts/run_app.py passes the same settings explicitly.
+[server]
+address = "127.0.0.1"
+headless = true
+fileWatcherType = "none"   # the watcher inspects imported modules and breaks on torch
+runOnSave = false
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#0f6c7b"

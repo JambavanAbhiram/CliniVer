@@ -1,0 +1,36 @@
+# Notebook 03 — LLM responses and claim extraction (RQ2 / H2). Experiment parameters only.
+# Runtime and model pins: configs/llm.yaml.
+snapshot: "2026-11-20"
+seed: 42
+
+datasets:
+  kqa:
+    url: https://raw.githubusercontent.com/Itaymanes/K-QA/ef403d012e199fcfa0d8c02b38a96ff95164f4d0/dataset/questions_w_answers.jsonl
+    license: MIT
+  medlfqa:
+    base_url: https://huggingface.co/datasets/dmis-lab/MedLFQA/resolve/c3f55428864c4374ac84a86786fc9337afe34653
+    license: CC-BY-4.0 (dataset card); component datasets keep their own terms
+    files: [kqa_silver_wogold_test_MedLFQA, live_qa_test_MedLFQA, medication_qa_test_MedLFQA, healthsearch_qa_test_MedLFQA]
+
+generation:                       # Part A: answers to in-domain patient questions
+  generators: [qwen3-8b, qwen3-1.7b]   # stronger + weaker by design (research_foundation §9.3)
+  temperature: 0.7                # realistic sampling (natural errors); fixed seed per call
+  top_p: 0.9
+  max_tokens: 512
+  system_prompt: "You are a helpful medical assistant. Answer the patient's question accurately and concisely in at most 200 words."
+
+extraction:                       # Part B
+  candidates: [qwen3-8b, granite-3.3-8b, qwen3-1.7b]
+  dev_size: 60                    # K-QA golden answers used to SELECT the extractor model; the rest is the H2 test set
+  min_json_validity: 0.95         # a candidate must produce valid JSON this often to be eligible
+  selection_metric: f1            # harmonic mean of claim precision (faithfulness) and statement recall (coverage), method "qualified", dev
+  nli_model: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli
+  nli_revision: b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7
+  entail_threshold: 0.5
+
+h2:                               # pre-registered decision rule (fixed before running)
+  precision_margin: 0.03          # "without lower claim precision": qualified − atomic precision CI lower bound > −margin
+  n_boot: 2000
+
+nli_spot_check:
+  sample: 40                      # NLI judgements inspected manually (AI developer; not a human annotation)

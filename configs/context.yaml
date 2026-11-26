@@ -1,0 +1,24 @@
+# Notebook 04 — claim contextualization (RQ3 / H3a, H3b). Experiment parameters only.
+snapshot: "2026-11-20"
+seed: 42
+
+scifact:
+  url: https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz
+  license: "claims + evidence CC BY 4.0; abstracts ODC-By 1.0 (allenai/scifact LICENSE.md)"
+  tuning_fraction: 0.3            # claims split by claim id; strategy E weight and the overall selection use the tuning split only
+
+llm_model: qwen3-8b               # synthetic context generation and strategy F (ADR-0010)
+retrievers: [bm25, dense]         # fixed NB02 references (BM25 via bm25s; BAAI/bge-small-en-v1.5 pinned in configs/processing.yaml)
+candidate_depth: 1000             # per sub-query for fusion strategies D/E
+rrf_k: 60
+fusion_weights: [0.5, 0.6, 0.7, 0.8, 0.9]   # weight on the claim sub-query (strategy E), chosen on tuning
+
+decision_rules:                   # fixed before running
+  h3a: "context-dependent stratum, evaluation split: recall@10(B) − recall@10(A) > 0 with 95% CI excluding 0, for BOTH retrievers"
+  h3b: "self-contained stratum, evaluation split: nDCG@10(B) − nDCG@10(A) NOT significantly positive (CI lower bound ≤ 0) for BOTH retrievers; also reported for P@5"
+  selection: "strategy with the highest mean nDCG@10 over both strata and both retrievers on the tuning split"
+  n_boot: 2000
+
+real_claims:
+  tagger_spot_check: 40           # real claims whose context-dependence tag is inspected manually (AI developer)
+  self_contained_controls: 100    # self-contained real claims also rewritten by F (should come back unchanged)

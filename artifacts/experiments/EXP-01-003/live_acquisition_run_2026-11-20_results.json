@@ -1,0 +1,84 @@
+{
+  "acquisition_timing": {
+    "jobs_s": {
+      "pubmed_ids": 5.583097500000122,
+      "clinicaltrials": 5.842477099999996,
+      "openfda": 12.032874900000024,
+      "pubtator": 478.19101839999985,
+      "pubmed_efetch": 665.1148956,
+      "europepmc_oa": 2901.5063862000006
+    },
+    "wall_s": 2901.5115212,
+    "requests": {
+      "pubmed": {
+        "requests": 219,
+        "retries": 0,
+        "cache_hits": 592
+      },
+      "pubtator": {
+        "requests": 321,
+        "retries": 0,
+        "cache_hits": 930
+      },
+      "openfda": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 76
+      },
+      "clinicaltrials": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 52
+      },
+      "europepmc": {
+        "requests": 340,
+        "retries": 117,
+        "cache_hits": 195
+      }
+    }
+  },
+  "reconciliation": {
+    "pubmed_ids_unique": 125022,
+    "pubmed_ids_sum_over_conditions": 146156,
+    "pubmed_ids_per_condition": {
+      "t2d": 46538,
+      "hypertension": 44213,
+      "dyslipidaemia": 16695,
+      "af_anticoagulation": 18153,
+      "heart_failure": 20557
+    },
+    "pubmed_largest_year_slice": 3386,
+    "pubmed_esearch_cap": 9999,
+    "pubmed_parsed": 125022,
+    "pubmed_ids_without_record": 0,
+    "pubmed_population_counts_stageA": {
+      "t2d": 40779,
+      "hypertension": 40306,
+      "dyslipidaemia": 15107,
+      "af_anticoagulation": 15744,
+      "heart_failure": 18325
+    },
+    "pubtator_docs_returned": 124814,
+    "pubtator_missing": 208,
+    "openfda_labels": 4514,
+    "openfda_drugs_without_rx_label": [],
+    "openfda_drugs_truncated_at_limit": {},
+    "clinicaltrials_totals": {
+      "t2d": 4177,
+      "hypertension": 2971,
+      "dyslipidaemia": 1360,
+      "af_anticoagulation": 537,
+      "heart_failure": 1129
+    },
+    "clinicaltrials_unique": 9665,
+    "clinicaltrials_cross_condition_dups": 509,
+    "europepmc_fulltexts": 397,
+    "europepmc_failures": [
+      [
+        "PMC2777849",
+        "FetchError",
+        "europepmc: GET https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2777849/fullTextXML failed after 5 attempt(s): HTTPSC"
+      ]
+    ]
+  }
+}

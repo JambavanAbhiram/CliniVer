@@ -1,0 +1,4 @@
+method,model,answers,valid_json,claims,precision,recall,recall_must,recall_set,claims_per_sentence,words_per_claim,pronoun_start,latency_s,qualifier_preservation,f1
+atomic,qwen3-1.7b,4,1.0,7.75,1.0,0.843,0.932,0.917,0.934,18.015,0.0,1.578,1.0,0.915
+qualified,qwen3-1.7b,4,1.0,8.75,0.967,0.851,0.977,0.982,0.984,17.986,0.096,9.164,1.0,0.905
+sentence,,4,1.0,9.0,0.928,0.851,0.977,0.967,1.0,17.791,0.096,0.0,1.0,0.888

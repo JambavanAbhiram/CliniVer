@@ -1,0 +1,6 @@
+source,docs,words_median,words_p10,words_p90,words_max,sections_median,empty_text
+clinicaltrials,97,97.0,29.6,391.20000000000005,2146,2.0,0
+europepmc_oa,10,4298.5,2055.2,7647.099999999999,9934,8.5,0
+openfda_label,30,8603.5,5670.5,17121.0,19923,14.5,0
+pubmed,494,67.0,25.0,111.69999999999999,196,1.0,0
+who_gho,3444,30.0,29.0,36.0,36,1.0,0

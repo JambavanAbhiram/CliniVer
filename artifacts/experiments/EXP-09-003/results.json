@@ -1,0 +1,161 @@
+{
+  "routing": {
+    "route": {
+      "treatment_choice": "G3",
+      "default": "G0"
+    },
+    "share_routed_to_G3": {
+      "dev": 0.329,
+      "test": 0.162,
+      "fresh": 0.083,
+      "fresh2": 0.207
+    },
+    "intents": {
+      "test": {
+        "interactions": 21,
+        "treatment_choice": 22,
+        "dosing": 73,
+        "mechanism": 5,
+        "adverse_effects": 10,
+        "contraindications": 4,
+        "efficacy": 1
+      },
+      "fresh2": {
+        "dosing": 21,
+        "adverse_effects": 24,
+        "treatment_choice": 12,
+        "interactions": 1
+      }
+    }
+  },
+  "seen_test": {
+    "table": [
+      {
+        "variant": "G0",
+        "questions": 136.0,
+        "ref_recall": 0.437,
+        "ref_contradiction": 0.0483,
+        "drug_naming_templates": 0.7,
+        "drug_naming_real_treatment_q": 0.8,
+        "non_answer": 0.3309,
+        "words_median": 120.0,
+        "latency_median_s": 4.0627
+      },
+      {
+        "variant": "G3",
+        "questions": 136.0,
+        "ref_recall": 0.4499,
+        "ref_contradiction": 0.0918,
+        "drug_naming_templates": 1.0,
+        "drug_naming_real_treatment_q": 1.0,
+        "non_answer": 0.0956,
+        "words_median": 123.5,
+        "latency_median_s": 5.2764
+      },
+      {
+        "variant": "H1",
+        "questions": 136.0,
+        "ref_recall": 0.444,
+        "ref_contradiction": 0.0423,
+        "drug_naming_templates": 1.0,
+        "drug_naming_real_treatment_q": 0.8,
+        "non_answer": 0.3235,
+        "words_median": 121.5,
+        "latency_median_s": 4.1894
+      }
+    ],
+    "H1_vs_G0": {
+      "ref_recall": {
+        "delta": 0.007,
+        "ci": [
+          -0.0201,
+          0.0361
+        ],
+        "n": 126
+      },
+      "ref_contradiction": {
+        "delta": -0.006,
+        "ci": [
+          -0.0192,
+          0.004
+        ],
+        "n": 126
+      }
+    }
+  },
+  "drug_naming_all_treatment_questions": {
+    "G0": 0.725,
+    "G1": 1.0,
+    "G2": 1.0,
+    "G3": 1.0,
+    "G4": 1.0,
+    "H1": 1.0
+  },
+  "fresh_test_2": {
+    "questions": 58,
+    "verified": [
+      {
+        "variant": "G0",
+        "claims": 5.6897,
+        "supported": 0.9193,
+        "contradicted": 0.0147,
+        "insufficient": 0.066
+      },
+      {
+        "variant": "H1",
+        "claims": 5.9138,
+        "supported": 0.917,
+        "contradicted": 0.0137,
+        "insufficient": 0.0693
+      }
+    ],
+    "H1_vs_G0": {
+      "supported": {
+        "delta": -0.0023,
+        "ci": [
+          -0.0232,
+          0.0184
+        ],
+        "n": 58
+      },
+      "contradicted": {
+        "delta": -0.001,
+        "ci": [
+          -0.0103,
+          0.0074
+        ],
+        "n": 58
+      }
+    },
+    "non_answer": {
+      "G0": 0.1379,
+      "H1": 0.1379
+    }
+  },
+  "adoption": {
+    "seen_contradiction_ok": true,
+    "seen_recall_ok": true,
+    "fresh2_contradicted_ok": true,
+    "fresh2_supported_ok": true,
+    "drug_naming_ok": true,
+    "adopted": true,
+    "service_strategy": "H1",
+    "strategy_config": {
+      "route": {
+        "treatment_choice": {
+          "name": "G3",
+          "retrieval": "planned_concepts",
+          "k": 8,
+          "diverse": true,
+          "prompt": "v2"
+        },
+        "default": {
+          "name": "G0",
+          "retrieval": "question",
+          "k": 5,
+          "prompt": "v1"
+        }
+      }
+    }
+  }
+}

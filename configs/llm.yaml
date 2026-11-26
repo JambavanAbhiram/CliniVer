@@ -1,0 +1,44 @@
+# Notebook 03 — local LLM runtime and candidate models (ADR-0004: open weights, local, zero cost).
+# All weights are pinned to a Hugging Face commit. Licenses verified on the model cards on 2026-11-20.
+
+runtime:
+  name: llama.cpp
+  release: b12560                      # github.com/ggml-org/llama.cpp/releases/tag/b12560 (Windows, CUDA 13.5 build)
+  dir: tools/llama.cpp/b12560/bin      # git-ignored; binaries are not redistributed
+  sha256:
+    llama-b12560-bin-win-cuda-13.5-x64.zip: 536ca9415074e5b64e747f6c35d5c92786f092432c338da1edb725b4810cb97d
+    cudart-llama-bin-win-cuda-13.5-x64.zip: c2bf4cc202bfbaaa7a0b75f5082457c3811326947bb216059b72839d844e9cba
+  host: 127.0.0.1
+  port: 8089
+  ctx_size: 8192
+  gpu_layers: 999                      # offload everything that fits
+  vram_budget_gb: 6.0                  # configs/project.yaml hardware budget
+  extra_args: ["--flash-attn", "on", "--cache-type-k", "q8_0", "--cache-type-v", "q8_0", "--cache-ram", "0", "--timeout", "600"]   # 8-bit KV cache keeps an 8B Q4 model + 8k context inside the budget. --cache-ram 0: no host-RAM prompt cache (default 8 GB grew until the machine stalled during EXP-04-001, 2026-11-21); CliniVer caches responses itself
+
+models_dir: models                     # git-ignored
+
+models:
+  qwen3-1.7b:
+    repo: Qwen/Qwen3-1.7B-GGUF
+    revision: 90862c4b9d2787eaed51d12237eafdfe7c5f6077
+    file: Qwen3-1.7B-Q8_0.gguf
+    license: apache-2.0
+    role: "weaker generator (by design: natural errors)"
+  qwen3-8b:
+    repo: Qwen/Qwen3-8B-GGUF
+    revision: 7c41481f57cb95916b40956ab2f0b139b296d974
+    file: Qwen3-8B-Q4_K_M.gguf
+    license: apache-2.0
+    role: "stronger generator; extractor candidate"
+  qwen3-0.6b:
+    repo: Qwen/Qwen3-0.6B-GGUF
+    revision: 23749fefcc72300e3a2ad315e1317431b06b590a
+    file: Qwen3-0.6B-Q8_0.gguf
+    license: apache-2.0
+    role: "draft model for speculative decoding of qwen3-8b (latency experiment, configs/optimize_latency.yaml)"
+  granite-3.3-8b:
+    repo: ibm-granite/granite-3.3-8b-instruct-GGUF
+    revision: e40e9dd739c7be00fa965c16ce167088190ce114
+    file: granite-3.3-8b-instruct-Q4_K_M.gguf
+    license: apache-2.0
+    role: "second family (generator / extractor candidate; candidate NB06 verifier family)"

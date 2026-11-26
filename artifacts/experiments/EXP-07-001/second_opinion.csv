@@ -1,0 +1,4 @@
+set,n,routed_share,F1_nli,F1_qwen,F1_routed
+healthver_test,400,0.318,0.7563,0.5708,0.7323
+scifact_dev,340,0.224,0.7855,0.7624,0.7875
+healthfc,250,0.556,0.2759,0.6953,0.5429

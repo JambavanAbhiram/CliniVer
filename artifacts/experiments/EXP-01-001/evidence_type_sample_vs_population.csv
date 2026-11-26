@@ -1,0 +1,10 @@
+,sample_share,population_share_upper_bound
+review,0.486,0.258
+other,0.387,0.0
+case_report,0.107,0.041
+rct,0.006,0.179
+systematic_review,0.004,0.04
+guideline,0.004,0.003
+meta_analysis,0.004,0.048
+observational,0.002,0.036
+clinical_trial_other,0.0,0.042

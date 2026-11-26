@@ -1,0 +1,6 @@
+config,trunc_effect,trunc_negation,trunc_population,trunc_quantity,trunc_threshold,trunc_all,split_all
+section-256+hdr,0.0,0.0011,0.0009,0.0009,0.0022,0.0012,0.0012
+section-256,0.0,0.0011,0.0009,0.0009,0.0022,0.0012,0.0012
+semantic-128-p90,0.0,0.0179,0.0091,0.0037,0.0059,0.0077,0.0077
+fixed-256-o0,0.0,0.0456,0.0399,0.0108,0.0162,0.0227,0.0227
+fixed-128-o25,0.0,0.2245,0.2414,0.0452,0.0699,0.1122,0.0

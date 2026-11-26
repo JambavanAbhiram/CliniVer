@@ -1,0 +1,6 @@
+encoder,license,dim,params_M,index_MB_fp16,query_ms,tune_ndcg10_primary,tune_recall20_primary,eval_ndcg10_primary,eval_recall20_primary,eval_ndcg10_scifact_only,eval_recall20_scifact_only
+minilm,apache-2.0,384,23,95,0.06,0.7341,0.876,0.7177,0.8991,0.8085,0.9662
+e5-base,mit,768,109,191,0.03,0.8118,0.9338,0.8114,0.9431,0.8775,0.9876
+bge-small,mit,384,33,95,0.03,0.8181,0.9418,0.8315,0.9557,0.8923,0.9876
+bge-base,mit,768,109,191,0.03,0.8376,0.9524,0.8455,0.9553,0.9047,0.9921
+medcpt,public-domain (US Government work),768,219,191,0.03,0.8381,0.9466,0.8108,0.9409,0.8785,0.9948

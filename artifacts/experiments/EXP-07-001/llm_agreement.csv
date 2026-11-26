@@ -1,0 +1,4 @@
+,set,n,agreement,accuracy_when_agree,accuracy_when_disagree,AURC_conf,AURC_conf_plus_agree
+0,healthver_test,400,0.678,0.815,0.659,0.108,0.1197
+1,scifact_dev,340,0.735,0.904,0.5,0.0826,0.0677
+2,healthfc,250,0.488,0.615,0.055,0.6179,0.461

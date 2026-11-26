@@ -1,0 +1,6 @@
+source,docs,tokens_median,tokens_p90,tokens_max,share_gt_128,share_gt_256,share_gt_512,total_tokens_M
+pubmed,124918,375,537,2213,0.96,0.793,0.129,46.49
+clinicaltrials,9665,142,614,7702,0.526,0.326,0.137,2.67
+who_gho,3444,45,60,60,0.0,0.0,0.0,0.17
+europepmc_oa,398,6287,10431,38234,1.0,1.0,1.0,2.62
+openfda_label,339,11263,24272,38111,0.932,0.932,0.932,4.05

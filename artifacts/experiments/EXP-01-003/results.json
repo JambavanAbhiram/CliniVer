@@ -1,0 +1,393 @@
+{
+  "replay_timing": {
+    "jobs_s": {
+      "pubmed_ids": 8.818572399999539,
+      "clinicaltrials": 9.34540879999986,
+      "openfda": 15.072567200000776,
+      "europepmc_oa": 27.607277499999327,
+      "pubmed_efetch": 106.58722279999893,
+      "pubtator": 125.05273019999913
+    },
+    "wall_s": 125.0555439000018,
+    "requests": {
+      "pubmed": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 811
+      },
+      "pubtator": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 1251
+      },
+      "openfda": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 76
+      },
+      "clinicaltrials": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 52
+      },
+      "europepmc": {
+        "requests": 0,
+        "retries": 0,
+        "cache_hits": 418
+      }
+    }
+  },
+  "reconciliation": {
+    "pubmed_ids_unique": 125022,
+    "pubmed_ids_sum_over_conditions": 130261,
+    "pubmed_ids_per_condition": {
+      "t2d": 40779,
+      "hypertension": 40306,
+      "dyslipidaemia": 15107,
+      "af_anticoagulation": 15744,
+      "heart_failure": 18325
+    },
+    "pubmed_ids_in_two_year_slices": {
+      "t2d": 5759,
+      "hypertension": 3907,
+      "dyslipidaemia": 1588,
+      "af_anticoagulation": 2409,
+      "heart_failure": 2232
+    },
+    "pubmed_per_condition_equals_population_count": {
+      "t2d": true,
+      "hypertension": true,
+      "dyslipidaemia": true,
+      "af_anticoagulation": true,
+      "heart_failure": true
+    },
+    "pubmed_largest_year_slice": 3386,
+    "pubmed_esearch_cap": 9999,
+    "pubmed_parsed": 125022,
+    "pubmed_ids_without_record": 0,
+    "pubmed_population_counts_stageA": {
+      "t2d": 40779,
+      "hypertension": 40306,
+      "dyslipidaemia": 15107,
+      "af_anticoagulation": 15744,
+      "heart_failure": 18325
+    },
+    "pubtator_docs_returned": 124814,
+    "pubtator_missing": 208,
+    "openfda_labels_fetched": 4514,
+    "openfda_labels_unique": 4114,
+    "openfda_labels_under_several_query_drugs": 400,
+    "openfda_drugs_without_rx_label": [],
+    "openfda_drugs_truncated_at_limit": {},
+    "clinicaltrials_totals": {
+      "t2d": 4177,
+      "hypertension": 2971,
+      "dyslipidaemia": 1360,
+      "af_anticoagulation": 537,
+      "heart_failure": 1129
+    },
+    "clinicaltrials_unique": 9665,
+    "clinicaltrials_cross_condition_dups": 509,
+    "europepmc_fulltexts": 398,
+    "europepmc_failures": []
+  },
+  "deduplication": {
+    "pubmed_retracted_excluded": 104,
+    "pubmed_after_exclusion": 124918,
+    "pubmed_near_dup_checked_docs": 123583,
+    "pubmed_lsh_candidate_pairs": 401,
+    "pubmed_exact_checks": 382,
+    "pubmed_near_dup_edges_verified": 136,
+    "pubmed_near_dup_clusters": 125,
+    "pubmed_docs_in_near_dup_clusters": 261,
+    "pubmed_near_dup_seconds": 51.6,
+    "openfda_labels_before": 4114,
+    "openfda_labels_after": 339,
+    "openfda_clusters": 200,
+    "openfda_largest_cluster": 207,
+    "openfda_dedup_seconds": 97.8
+  },
+  "corpus_manifest": {
+    "snapshot": "2026-11-20",
+    "stage": "B",
+    "created_at": "2026-11-20T07:54:16+00:00",
+    "counts": {
+      "documents_interim_all": 142643,
+      "documents": 138764,
+      "concepts": 190,
+      "pubtator_entities": 3020745,
+      "pubtator_relations": 386627
+    },
+    "by_source": {
+      "pubmed": 124918,
+      "openfda_label": 339,
+      "clinicaltrials": 9665,
+      "europepmc_oa": 398,
+      "who_gho": 3444
+    },
+    "file_mb": {
+      "concepts.jsonl": 0.1,
+      "documents.jsonl": 662.4,
+      "pubtator_entities.jsonl": 427.0,
+      "pubtator_relations.jsonl": 46.7
+    },
+    "licenses": {
+      "NLM PubMed terms; abstract copyright may rest with publisher (not redistributed)": 124918,
+      "ClinicalTrials.gov terms and conditions (US government registry)": 9665,
+      "CC BY-NC-SA 3.0 IGO (WHO)": 3444,
+      "CC0 1.0 (openFDA)": 339,
+      "cc by-nc": 156,
+      "cc by": 139,
+      "cc by-nc-nd": 77,
+      "cc by-nc-sa": 24,
+      "cc0": 1,
+      "cc by-nd": 1
+    },
+    "source_snapshot_dates": {
+      "who_gho": "2026-11-20 (Stage A fetch)",
+      "concepts": "2026-11-20 (Stage A fetch)",
+      "others": "2026-11-20 (Stage B fetch)"
+    }
+  },
+  "composition": {
+    "clinicaltrials": {
+      "docs": 9665,
+      "words_median": 97.0,
+      "words_p10": 27.0,
+      "words_p90": 428.60000000000036,
+      "words_max": 5410,
+      "sections_median": 1.0,
+      "empty_text": 0
+    },
+    "europepmc_oa": {
+      "docs": 398,
+      "words_median": 4169.0,
+      "words_p10": 1705.8000000000002,
+      "words_p90": 6791.8,
+      "words_max": 24197,
+      "sections_median": 8.0,
+      "empty_text": 0
+    },
+    "openfda_label": {
+      "docs": 339,
+      "words_median": 7078.0,
+      "words_p10": 1371.4,
+      "words_p90": 15120.8,
+      "words_max": 23172,
+      "sections_median": 13.0,
+      "empty_text": 1
+    },
+    "pubmed": {
+      "docs": 124918,
+      "words_median": 251.0,
+      "words_p10": 131.0,
+      "words_p90": 337.0,
+      "words_max": 1414,
+      "sections_median": 3.0,
+      "empty_text": 0
+    },
+    "who_gho": {
+      "docs": 3444,
+      "words_median": 30.0,
+      "words_p10": 29.0,
+      "words_p90": 36.0,
+      "words_max": 36,
+      "sections_median": 1.0,
+      "empty_text": 0
+    }
+  },
+  "completeness": {
+    "pubmed": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 0.627,
+      "publication_types": 1.0,
+      "mesh_terms": 1.0,
+      "journal": 1.0,
+      "language": 1.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.931
+    },
+    "openfda_label": {
+      "title": 1.0,
+      "text": 0.997,
+      "pub_date": 1.0,
+      "date_day_precision": 1.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    },
+    "clinicaltrials": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 0.971,
+      "date_day_precision": 0.608,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    },
+    "europepmc_oa": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 1.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 1.0,
+      "language": 1.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.98
+    },
+    "who_gho": {
+      "title": 1.0,
+      "text": 1.0,
+      "pub_date": 1.0,
+      "date_day_precision": 0.0,
+      "publication_types": 1.0,
+      "mesh_terms": 0.0,
+      "journal": 0.0,
+      "language": 0.0,
+      "license": 1.0,
+      "url": 1.0,
+      "doi": 0.0
+    }
+  },
+  "evidence_strata": {
+    "other": {
+      "corpus_docs": 51621,
+      "corpus_share": 0.413,
+      "population_upper_bound_share": null
+    },
+    "review": {
+      "corpus_docs": 29096,
+      "corpus_share": 0.233,
+      "population_upper_bound_share": 0.258
+    },
+    "rct": {
+      "corpus_docs": 22339,
+      "corpus_share": 0.179,
+      "population_upper_bound_share": 0.179
+    },
+    "meta_analysis": {
+      "corpus_docs": 5418,
+      "corpus_share": 0.043,
+      "population_upper_bound_share": 0.048
+    },
+    "clinical_trial_other": {
+      "corpus_docs": 5306,
+      "corpus_share": 0.042,
+      "population_upper_bound_share": 0.042
+    },
+    "case_report": {
+      "corpus_docs": 4576,
+      "corpus_share": 0.037,
+      "population_upper_bound_share": 0.041
+    },
+    "observational": {
+      "corpus_docs": 4526,
+      "corpus_share": 0.036,
+      "population_upper_bound_share": 0.036
+    },
+    "systematic_review": {
+      "corpus_docs": 1730,
+      "corpus_share": 0.014,
+      "population_upper_bound_share": 0.04
+    },
+    "guideline": {
+      "corpus_docs": 306,
+      "corpus_share": 0.002,
+      "population_upper_bound_share": 0.003
+    }
+  },
+  "quality_flags": {
+    "pubmed_retracted": 104,
+    "pubmed_with_correction_or_concern": 2330,
+    "pubmed_structured_abstract_share": 0.51,
+    "pubmed_abstract_lt_50_words": 1207,
+    "pubmed_abstract_recovered_from_OtherAbstract": 34,
+    "pubmed_empty_abstract": 0,
+    "pubmed_non_english": 63,
+    "openfda_labels_missing_any_key_section": 48,
+    "openfda_otc_labels": 0,
+    "openfda_unstructured_labels_fallback": 22,
+    "openfda_empty_text": 1,
+    "openfda_combination_product_labels": 678,
+    "clinicaltrials_with_posted_results": 3300,
+    "clinicaltrials_without_detailed_description": 5036,
+    "clinicaltrials_with_result_publication_pmid": 1135,
+    "europepmc_oa_without_body": 0,
+    "europepmc_oa_empty_text": 0,
+    "europepmc_oa_tables_total": 1057
+  },
+  "pubtator_coverage": {
+    "docs": 124918,
+    "with_any_entity": 124075,
+    "with_chemical": 97079,
+    "with_disease": 120730,
+    "with_chemical_and_disease": 94429,
+    "mentioning_in_scope_drug_exact": 38557,
+    "chemical_mentions_with_identifier_share": 0.81,
+    "entity_types": {
+      "Disease": 1334825,
+      "Chemical": 889998,
+      "Species": 528504,
+      "Gene": 254829,
+      "Variant": 9580,
+      "CellLine": 2827,
+      "Chromosome": 166,
+      "RefSeq": 12,
+      "GenomicRegion": 4
+    },
+    "relation_types": {
+      "Negative_Correlation": 214721,
+      "Cotreatment": 11453,
+      "Association": 84905,
+      "Positive_Correlation": 60324,
+      "Comparison": 14534,
+      "Bind": 631,
+      "Drug_Interaction": 59
+    }
+  },
+  "cross_source_links": {
+    "trials_with_result_pmids": 1135,
+    "trials_with_result_pmid_in_corpus": 797,
+    "europepmc_oa_with_pmid_in_corpus": 132
+  },
+  "europepmc_subset": {
+    "2000-2009": {
+      "docs": 99,
+      "words_median": 3414.0,
+      "sections_median": 7.0,
+      "tables": 192
+    },
+    "2010-2014": {
+      "docs": 99,
+      "words_median": 3892.0,
+      "sections_median": 7.0,
+      "tables": 242
+    },
+    "2015-2019": {
+      "docs": 100,
+      "words_median": 3873.5,
+      "sections_median": 7.0,
+      "tables": 296
+    },
+    "2020-2026": {
+      "docs": 100,
+      "words_median": 4358.0,
+      "sections_median": 10.0,
+      "tables": 327
+    }
+  }
+}

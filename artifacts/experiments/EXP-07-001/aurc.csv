@@ -1,0 +1,6 @@
+set,AURC_verifier_conf,AURC_multi_signal,AURC_oracle,error_rate
+healthver_dev,0.0462,0.048,0.0122,0.1518
+healthver_test,0.0865,0.0839,0.0248,0.2139
+scifact_dev,0.0826,0.0956,0.0224,0.2029
+healthfc,0.6359,0.6336,0.2922,0.6587
+synthetic,0.7112,0.6728,0.3831,0.7348

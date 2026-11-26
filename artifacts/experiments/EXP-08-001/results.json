@@ -1,0 +1,249 @@
+{
+  "confidence_model": {
+    "temperature": 1.9999132745966723,
+    "route_threshold": 0.8055806842617087,
+    "abstain_threshold": 0.7410391066051759
+  },
+  "retrieval": {
+    "rerank_ms_per_claim": 234.9,
+    "top1_is_gold_evidence_doc": {
+      "pipeline": 0.4866666666666667,
+      "bm25_only": 0.38666666666666666,
+      "dense_only": 0.44666666666666666,
+      "hybrid_no_rerank": 0.44333333333333336,
+      "hybrid_bge_base": 0.48333333333333334,
+      "weighted_hybrid": 0.4866666666666667
+    }
+  },
+  "e2e_ablations": [
+    {
+      "config": "pipeline",
+      "coverage": 0.88,
+      "macro_F1_answered": 0.7624,
+      "macro_F1_e2e": 0.7136,
+      "FSR_answered": 0.1908,
+      "accuracy_answered": 0.7689
+    },
+    {
+      "config": "bm25_only",
+      "coverage": 0.883,
+      "macro_F1_answered": 0.6987,
+      "macro_F1_e2e": 0.6526,
+      "FSR_answered": 0.1806,
+      "accuracy_answered": 0.7057
+    },
+    {
+      "config": "dense_only",
+      "coverage": 0.873,
+      "macro_F1_answered": 0.727,
+      "macro_F1_e2e": 0.6793,
+      "FSR_answered": 0.1842,
+      "accuracy_answered": 0.7328
+    },
+    {
+      "config": "hybrid_no_rerank",
+      "coverage": 0.873,
+      "macro_F1_answered": 0.7113,
+      "macro_F1_e2e": 0.6637,
+      "FSR_answered": 0.2105,
+      "accuracy_answered": 0.7214
+    },
+    {
+      "config": "hybrid_bge_base",
+      "coverage": 0.883,
+      "macro_F1_answered": 0.7506,
+      "macro_F1_e2e": 0.7045,
+      "FSR_answered": 0.2026,
+      "accuracy_answered": 0.7585
+    },
+    {
+      "config": "weighted_hybrid",
+      "coverage": 0.877,
+      "macro_F1_answered": 0.7604,
+      "macro_F1_e2e": 0.7105,
+      "FSR_answered": 0.1854,
+      "accuracy_answered": 0.7681
+    },
+    {
+      "config": "top3_naive",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.6816,
+      "macro_F1_e2e": 0.6816,
+      "FSR_answered": 0.2727,
+      "accuracy_answered": 0.69
+    },
+    {
+      "config": "qwen_only",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7175,
+      "macro_F1_e2e": 0.7175,
+      "FSR_answered": 0.25,
+      "accuracy_answered": 0.7333
+    },
+    {
+      "config": "zero_shot_nli",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.6748,
+      "macro_F1_e2e": 0.6748,
+      "FSR_answered": 0.1534,
+      "accuracy_answered": 0.6833
+    },
+    {
+      "config": "uncalibrated",
+      "coverage": 0.847,
+      "macro_F1_answered": 0.773,
+      "macro_F1_e2e": 0.7068,
+      "FSR_answered": 0.1748,
+      "accuracy_answered": 0.7795
+    },
+    {
+      "config": "no_second_opinion",
+      "coverage": 0.81,
+      "macro_F1_answered": 0.7529,
+      "macro_F1_e2e": 0.673,
+      "FSR_answered": 0.1714,
+      "accuracy_answered": 0.7613
+    },
+    {
+      "config": "no_abstention",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7153,
+      "macro_F1_e2e": 0.7153,
+      "FSR_answered": 0.1989,
+      "accuracy_answered": 0.7267
+    },
+    {
+      "config": "nli_only_no_conf",
+      "coverage": 1.0,
+      "macro_F1_answered": 0.7259,
+      "macro_F1_e2e": 0.7259,
+      "FSR_answered": 0.1875,
+      "accuracy_answered": 0.73
+    }
+  ],
+  "H7": {
+    "errors": 81,
+    "retrieval_attributable": 34,
+    "verifier_attributable": 47,
+    "retrieval_share": 0.42,
+    "share_difference_ci": [
+      -0.381,
+      0.051
+    ],
+    "oracle_evidence_macro_F1": 0.7864,
+    "retrieved_macro_F1": 0.7259,
+    "errors_by_gold": {
+      "SUP": {
+        "retrieval": 7,
+        "verifier": 21
+      },
+      "CON": {
+        "retrieval": 3,
+        "verifier": 13
+      },
+      "INS": {
+        "retrieval": 24,
+        "verifier": 13
+      }
+    },
+    "supported": false
+  },
+  "context_ablation": {
+    "items": 476,
+    "macro_F1_SUP_CON": {
+      "claim_only (verify as written)": 0.7145,
+      "question+claim (verify as written)": 0.7938,
+      "rewrite F (verify as written)": 0.8198,
+      "rewrite F (verify the rewrite)": 0.896,
+      "oracle original claim": 0.8972
+    },
+    "llm_replay_live_server": false
+  },
+  "silver": {
+    "LLM-generated (MedLFQA)": {
+      "claims": 2563,
+      "silver_labelled": 814,
+      "silver_SUP": 644,
+      "silver_CON": 170,
+      "pipeline_SUP_given_silver_SUP": 0.7,
+      "pipeline_SUP_given_silver_CON (silver false support)": 0.465,
+      "pipeline_CON_or_ABST_given_silver_CON": 0.288
+    },
+    "physician (K-QA)": {
+      "claims": 214,
+      "silver_labelled": 89,
+      "silver_SUP": 58,
+      "silver_CON": 31,
+      "pipeline_SUP_given_silver_SUP": 0.638,
+      "pipeline_SUP_given_silver_CON (silver false support)": 0.452,
+      "pipeline_CON_or_ABST_given_silver_CON": 0.387
+    }
+  },
+  "cost": {
+    "llm_stage_stats": {
+      "answer_generation (NB03)": {
+        "calls": 186,
+        "median_s": 3.65,
+        "p95_s": 4.84,
+        "not_stopped": 0
+      },
+      "claim_extraction (NB03)": {
+        "calls": 372,
+        "median_s": 18.76,
+        "p95_s": 30.2,
+        "not_stopped": 0
+      },
+      "standalone_rewrite (NB04)": {
+        "calls": 1382,
+        "median_s": 0.88,
+        "p95_s": 1.33,
+        "not_stopped": 0
+      },
+      "second_opinion (NB07)": {
+        "calls": 968,
+        "median_s": 2.33,
+        "p95_s": 3.9,
+        "not_stopped": 0
+      }
+    },
+    "per_claim": {
+      "rewrite_s": 0.88,
+      "retrieval_p95_s": 0.369,
+      "second_opinion_expected_s": 0.82
+    },
+    "vram_mb": {
+      "llm_qwen3_8b_server": {
+        "model": "qwen3-8b",
+        "load_s": 3.1,
+        "gpu_baseline_mb": 196,
+        "gpu_peak_mb": 5391,
+        "gpu_peak_minus_baseline_mb": 5195
+      },
+      "retrieval_peak_mb": 2381
+    },
+    "routed_share": 0.354
+  },
+  "final_selection": {
+    "candidates_meeting_constraints": [
+      "pipeline",
+      "bm25_only",
+      "dense_only",
+      "weighted_hybrid",
+      "zero_shot_nli",
+      "uncalibrated",
+      "no_second_opinion",
+      "nli_only_no_conf"
+    ],
+    "within_0.01_of_best": [
+      "uncalibrated"
+    ],
+    "selected": "uncalibrated",
+    "selected_metrics": {
+      "coverage": 0.847,
+      "macro_F1_answered": 0.773,
+      "macro_F1_e2e": 0.7068,
+      "FSR_answered": 0.1748,
+      "accuracy_answered": 0.7795
+    }
+  }
+}

@@ -1,0 +1,3 @@
+generator,answers,words_median,truncated,empty,tokens_per_s,latency_s_median
+qwen3-1.7b,186,84,0,0,139.29,0.865
+qwen3-8b,186,145,0,0,52.66,3.6505

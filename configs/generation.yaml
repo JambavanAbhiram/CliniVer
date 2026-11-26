@@ -1,0 +1,89 @@
+# Notebook 09: evidence-grounded answer generation (owner request 2026-11-22; dedicated notebook approved by the owner).
+# Written BEFORE building or running any variant.
+# Trigger: "What is the medicine for high blood pressure?" was answered without naming a single drug. The retrieved
+# passages were general blood-pressure literature, and the prompt did not require a direct answer.
+snapshot: "2026-11-20"
+seed: 42
+
+questions:
+  real: nb03_domain_queries          # the 186 in-domain questions of NB03 (K-QA golden: physician statements; others: MedLFQA statements)
+  split: {dev: 60, test: 126}        # seeded split by question
+  treatment_templates:               # treatment-intent questions, built from the corpus vocabulary (the observed failure)
+    phrasings:
+      - "What is the medicine for {condition}?"
+      - "Which drugs are used to treat {condition}?"
+      - "What medication is prescribed for {condition}?"
+      - "What are the treatment options with drugs for {condition}?"
+    dev_phrasings: [0, 1]            # phrasings 0-1 → dev; 2-3 → test
+    condition_names: {t2d: type 2 diabetes, hypertension: high blood pressure, dyslipidaemia: high cholesterol,
+                      af_anticoagulation: atrial fibrillation, heart_failure: heart failure}
+
+condition_terms:                     # question → condition (for concept expansion and for the drug-naming metric)
+  t2d: [type 2 diabetes, diabetes, t2d, t2dm, blood sugar, blood glucose, hba1c]
+  hypertension: [hypertension, high blood pressure, blood pressure, hypertensive]
+  dyslipidaemia: [cholesterol, dyslipidemia, dyslipidaemia, hyperlipidemia, ldl, triglycerides, lipids]
+  af_anticoagulation: [atrial fibrillation, afib, a-fib, anticoagulation, blood thinner, stroke prevention]
+  heart_failure: [heart failure, cardiac failure, hfref, hfpef, congestive heart]
+
+variants:                            # fixed before running
+  G0: {retrieval: question, k: 5, prompt: v1}                      # current service (ADR-0017)
+  G1: {retrieval: question, k: 8, diverse: true, prompt: v2}       # direct-answer prompt + more, diverse passages
+  G2: {retrieval: planned, k: 8, diverse: true, prompt: v2}        # + LLM query planner (3 search queries, RRF fusion)
+  G3: {retrieval: planned_concepts, k: 8, diverse: true, prompt: v2}   # + condition → drug-class queries from the corpus vocabulary (RxClass EPC classes of the in-scope drugs)
+
+metrics:
+  reference_recall: "share of the question's reference statements entailed by the answer (NLI judge of NB03, P(entail) ≥ 0.5; premise = answer)"
+  reference_contradiction: "share of reference statements contradicted by the answer (P(contradiction) ≥ 0.5): a hallucination proxy (K-QA style)"
+  drug_naming: "treatment questions only: the answer names ≥ 1 in-scope drug or drug class of the question's condition"
+  non_answer: "the answer says the passages do not answer the question"
+  verified_support: "test only, subset: share of the answer's claims that CliniVer (baseline v2) labels Supported / Contradicted"
+  latency: "seconds per answer (planning + retrieval + generation)"
+judge: {repo: MoritzLaurer/DeBERTa-v3-large-mnli-fever-anli-ling-wanli, revision: b3546ea6b0346eb6f8d5d68b13c7dc6d0376b3d7, threshold: 0.5}
+verification_subset: 50              # test questions verified end to end per compared variant
+n_boot: 2000
+
+decision_rules:
+  selection: "on dev: highest mean reference_recall among variants whose reference_contradiction ≤ G0 + 0.02 AND whose drug_naming on the treatment questions ≥ G0's; ties within 0.01 → fewer LLM calls"
+  adoption: "the selected variant replaces G0 in the service if, on test, reference_recall − G0 > 0 (paired bootstrap point estimate, 95% CI reported), reference_contradiction ≤ G0 + 0.02, and drug_naming on the test treatment questions ≥ G0's"
+
+# ---------------------------------------------------------------------------------------------------------------
+# Round 2 (EXP-09-002). Written 2026-11-22 AFTER the EXP-09-001 test results and the error analysis of G3's
+# contradictions, BEFORE building or running G4.
+# EXP-09-001: G3 fixed drug naming (test 70% → 100%) and non-answers (33% → 10%), but raised reference contradictions
+# 0.048 → 0.092 (CI +0.010…+0.078), so the rule did not adopt it.
+# Error pattern in G3's new contradictions:
+#   (1) facts from outside the passages, with a citation attached (retinopathy stages, CYP2D6);
+#   (2) answering a neighbouring aspect (pharmacokinetic onset instead of the time to effect);
+#   (3) off-topic passages from drug-class expansion on non-treatment questions;
+#   about half are judge or reference artefacts.
+round2:
+  variants:
+    G4: {retrieval: planned_concepts, k: 6, diverse: true, prompt: v3, concept_intents: [treatment_choice]}   # expansion only for "which treatment" questions; stricter grounding prompt
+  evaluation:
+    dev: "EXP-09-001 dev questions (G4 vs the cached G0 / G3 answers): sanity check only, no selection"
+    seen_test: "EXP-09-001 test questions: SEEN (the error analysis read them), reported as seen; human-written reference statements"
+    fresh_test:
+      seed: 7
+      drugs_sampled: 25                # from configs/data.yaml drugs (49), seeded
+      drug_questions: ["What are the common side effects of {drug}?", "Who should not take {drug}?"]
+      treatment_questions: ["What drugs are available for {condition}?", "How is {condition} treated with medication?"]
+      metrics: "CliniVer verification of every answer (baseline v2): share of claims Supported / Contradicted; drug naming on the treatment questions; non-answers"
+  adoption: "G4 replaces G0 in the service if ALL hold: (a) seen test: reference_contradiction ≤ G0 + 0.02 and reference_recall ≥ G0 − 0.01 (point estimates; CIs reported); (b) fresh test: verified Contradicted share ≤ G0 + 0.02 and verified Supported share ≥ G0 − 0.02; (c) drug naming on all treatment questions ≥ G0's"
+
+# ---------------------------------------------------------------------------------------------------------------
+# Round 3 (EXP-09-003). Written 2026-11-22 16:30 AFTER the EXP-09-002 results, BEFORE any round-3 run.
+# EXP-09-002: G4 not adopted (fresh verified Supported 0.775 vs G0 0.819). On the fresh set G3 was best on every
+# measure (Supported 0.873, Contradicted 0.028, non-answers 7%, drug naming 100%). Its round-1 failure (reference
+# contradictions) came mostly from NON-treatment questions (error analysis).
+# Hypothesis: route by the planner's intent: G3 for "treatment_choice" questions, G0 for everything else.
+round3:
+  variants:
+    H1: {route: {treatment_choice: G3, default: G0}}
+  evaluation:
+    seen: "EXP-09-001 test questions and the EXP-09-002 fresh questions: SEEN; routed answers reuse the cached G0 / G3 answers"
+    fresh_test_2:
+      drugs: remaining          # the in-scope drugs NOT sampled in EXP-09-002
+      drug_questions: ["What is {drug} used for?", "What are the serious risks of {drug}?"]
+      treatment_questions: ["Which medications treat {condition}?", "What are the first-line drugs for {condition}?"]
+      metrics: "CliniVer verification of every answer (G0 vs H1): share of claims Supported / Contradicted; drug naming; non-answers"
+  adoption: "H1 replaces G0 in the service if ALL hold: (a) EXP-09-001 test: reference_contradiction ≤ G0 + 0.02 and reference_recall ≥ G0 − 0.01; (b) fresh_test_2: verified Contradicted share ≤ G0 + 0.02 and verified Supported share ≥ G0 − 0.02; (c) drug naming on all treatment questions ≥ G0's"

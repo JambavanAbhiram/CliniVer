@@ -1,0 +1,282 @@
+{
+  "exp_id": "EXP-01-001",
+  "title": "Stage A multi-source acquisition and corpus quality analysis",
+  "research_question": "RQ0 (partial): corpus composition, quality and normalization coverage",
+  "status": "completed",
+  "started_at": "2026-11-20T07:49:28+00:00",
+  "updated_at": "2026-11-20T07:49:30+00:00",
+  "seed": 42,
+  "config": {
+    "snapshot": "2026-11-20",
+    "stage": "B",
+    "stage_b": {
+      "pubmed_years": [
+        1990,
+        2026
+      ],
+      "openfda_rx_only": true,
+      "openfda_max_labels_per_drug": 1000,
+      "near_dup_threshold": 0.8,
+      "near_dup_min_words": 50,
+      "clinicaltrials_page_size": 200,
+      "europepmc_year_strata": [
+        [
+          2000,
+          2009
+        ],
+        [
+          2010,
+          2014
+        ],
+        [
+          2015,
+          2019
+        ],
+        [
+          2020,
+          2026
+        ]
+      ],
+      "europepmc_per_stratum": 20,
+      "exclude_retracted": true
+    },
+    "concurrency": {
+      "sources_in_parallel": 6,
+      "workers_per_source": 4
+    },
+    "pubmed": {
+      "base_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "min_interval_s": 0.5,
+      "max_in_flight": 2,
+      "efetch_batch": 200,
+      "tool": "cliniver",
+      "common_filter": "AND humans[MeSH Terms] AND english[Language] AND hasabstract AND (\"1990/01/01\"[Date - Publication] : \"3000\"[Date - Publication])",
+      "conditions": {
+        "t2d": "\"Diabetes Mellitus, Type 2/drug therapy\"[MeSH Terms]",
+        "hypertension": "\"Hypertension/drug therapy\"[MeSH Terms]",
+        "dyslipidaemia": "\"Dyslipidemias/drug therapy\"[MeSH Terms]",
+        "af_anticoagulation": "(\"Atrial Fibrillation/drug therapy\"[MeSH Terms] OR (\"Atrial Fibrillation\"[MeSH Terms] AND \"Anticoagulants\"[MeSH Terms]))",
+        "heart_failure": "\"Heart Failure/drug therapy\"[MeSH Terms]"
+      },
+      "publication_type_strata": {
+        "meta_analysis": "Meta-Analysis[Publication Type]",
+        "systematic_review": "Systematic Review[Publication Type]",
+        "rct": "Randomized Controlled Trial[Publication Type]",
+        "clinical_trial_other": "(Clinical Trial[Publication Type] NOT Randomized Controlled Trial[Publication Type])",
+        "observational": "Observational Study[Publication Type]",
+        "review": "(Review[Publication Type] NOT Systematic Review[Publication Type])",
+        "guideline": "(Practice Guideline[Publication Type] OR Guideline[Publication Type])",
+        "case_report": "Case Reports[Publication Type]"
+      },
+      "decades": [
+        [
+          1990,
+          1999
+        ],
+        [
+          2000,
+          2009
+        ],
+        [
+          2010,
+          2019
+        ],
+        [
+          2020,
+          2026
+        ]
+      ],
+      "sample_per_condition": 100,
+      "sample_sort": "relevance"
+    },
+    "drugs": {
+      "t2d": [
+        "metformin",
+        "empagliflozin",
+        "dapagliflozin",
+        "canagliflozin",
+        "semaglutide",
+        "liraglutide",
+        "dulaglutide",
+        "tirzepatide",
+        "sitagliptin",
+        "linagliptin",
+        "glimepiride",
+        "glipizide",
+        "pioglitazone",
+        "insulin glargine"
+      ],
+      "hypertension": [
+        "lisinopril",
+        "enalapril",
+        "ramipril",
+        "losartan",
+        "valsartan",
+        "candesartan",
+        "amlodipine",
+        "nifedipine",
+        "hydrochlorothiazide",
+        "chlorthalidone",
+        "indapamide",
+        "metoprolol",
+        "bisoprolol",
+        "carvedilol"
+      ],
+      "dyslipidaemia": [
+        "atorvastatin",
+        "rosuvastatin",
+        "simvastatin",
+        "pravastatin",
+        "ezetimibe",
+        "evolocumab",
+        "alirocumab"
+      ],
+      "af_anticoagulation": [
+        "warfarin",
+        "apixaban",
+        "rivaroxaban",
+        "dabigatran",
+        "edoxaban",
+        "aspirin",
+        "clopidogrel"
+      ],
+      "heart_failure": [
+        "sacubitril",
+        "spironolactone",
+        "eplerenone",
+        "furosemide",
+        "torsemide",
+        "ivabradine",
+        "digoxin"
+      ]
+    },
+    "openfda": {
+      "base_url": "https://api.fda.gov/drug/label.json",
+      "min_interval_s": 0.5,
+      "max_in_flight": null,
+      "labels_per_drug": 3,
+      "sample_drugs_per_condition": 2,
+      "sections": [
+        "indications_and_usage",
+        "dosage_and_administration",
+        "dosage_forms_and_strengths",
+        "contraindications",
+        "warnings_and_cautions",
+        "warnings",
+        "boxed_warning",
+        "adverse_reactions",
+        "drug_interactions",
+        "use_in_specific_populations",
+        "pregnancy",
+        "pediatric_use",
+        "geriatric_use",
+        "clinical_pharmacology",
+        "mechanism_of_action",
+        "clinical_studies"
+      ]
+    },
+    "clinicaltrials": {
+      "base_url": "https://clinicaltrials.gov/api/v2/studies",
+      "min_interval_s": 1.3,
+      "max_in_flight": null,
+      "sample_per_condition": 20,
+      "conditions": {
+        "t2d": "Type 2 Diabetes",
+        "hypertension": "Hypertension",
+        "dyslipidaemia": "Dyslipidemia",
+        "af_anticoagulation": "Atrial Fibrillation",
+        "heart_failure": "Heart Failure"
+      },
+      "intervention_type": "DRUG"
+    },
+    "pubtator": {
+      "base_url": "https://www.ncbi.nlm.nih.gov/research/pubtator3-api",
+      "min_interval_s": 0.5,
+      "max_in_flight": 2,
+      "batch": 100
+    },
+    "rxnav": {
+      "base_url": "https://rxnav.nlm.nih.gov/REST",
+      "min_interval_s": 0.1,
+      "max_in_flight": null,
+      "class_sources": [
+        "ATC",
+        "FDASPL"
+      ]
+    },
+    "pubchem": {
+      "base_url": "https://pubchem.ncbi.nlm.nih.gov/rest/pug",
+      "min_interval_s": 0.25,
+      "max_in_flight": null,
+      "max_synonyms": 25
+    },
+    "europepmc": {
+      "base_url": "https://www.ebi.ac.uk/europepmc/webservices/rest",
+      "min_interval_s": 0.2,
+      "max_in_flight": null,
+      "licenses": [
+        "cc by",
+        "cc0",
+        "cc by-sa",
+        "cc by-nc",
+        "cc by-nc-sa",
+        "cc by-nd",
+        "cc by-nc-nd"
+      ],
+      "sample_per_condition": 2,
+      "condition_queries": {
+        "t2d": "\"type 2 diabetes\" AND (metformin OR \"SGLT2\" OR \"GLP-1\")",
+        "hypertension": "hypertension AND (antihypertensive OR \"ACE inhibitor\" OR \"angiotensin receptor blocker\")",
+        "dyslipidaemia": "(dyslipidemia OR hypercholesterolemia) AND (statin OR ezetimibe OR PCSK9)",
+        "af_anticoagulation": "\"atrial fibrillation\" AND (anticoagulant OR apixaban OR warfarin)",
+        "heart_failure": "\"heart failure\" AND (sacubitril OR \"SGLT2\" OR spironolactone OR \"beta-blocker\")"
+      }
+    },
+    "who_gho": {
+      "base_url": "https://ghoapi.azureedge.net/api",
+      "min_interval_s": 0.5,
+      "max_in_flight": null,
+      "indicator_keywords": [
+        "raised blood pressure",
+        "raised fasting blood glucose",
+        "diabetes",
+        "raised total cholesterol"
+      ],
+      "spatial_types": [
+        "GLOBAL",
+        "REGION"
+      ]
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "pandas": "3.1.1",
+    "requests": "2.34.2",
+    "pydantic": "2.14.4",
+    "matplotlib": "3.11.2",
+    "cliniver": "0.1.0"
+  }
+}

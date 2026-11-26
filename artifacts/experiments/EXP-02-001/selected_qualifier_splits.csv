@@ -1,0 +1,11 @@
+source,kind,sum,count,mean
+europepmc_oa,effect,1,146,0.0068
+europepmc_oa,negation,116,12332,0.0094
+europepmc_oa,population,127,6599,0.0192
+europepmc_oa,quantity,51,26850,0.0019
+europepmc_oa,threshold,28,8935,0.0031
+openfda_label,effect,1,70,0.0143
+openfda_label,negation,101,20503,0.0049
+openfda_label,population,80,14282,0.0056
+openfda_label,quantity,233,79168,0.0029
+openfda_label,threshold,44,13584,0.0032

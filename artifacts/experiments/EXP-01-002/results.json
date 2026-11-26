@@ -1,0 +1,7 @@
+{
+  "requests_sent": 70,
+  "successful_queries": 70,
+  "http_429_or_retries": 0,
+  "seconds": 41.7,
+  "effective_req_per_s": 1.68
+}

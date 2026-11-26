@@ -1,0 +1,2 @@
+model,calls,completion_tokens,gpu_seconds,tokens_per_s_median
+qwen3-1.7b,26,12536,102.92599999999999,125.08

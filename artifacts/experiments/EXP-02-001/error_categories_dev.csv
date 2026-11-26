@@ -1,0 +1,5 @@
+,bm25,dense
+hit,530,469
+"right document, wrong chunk",77,85
+split (chunking),35,35
+wrong document,94,147

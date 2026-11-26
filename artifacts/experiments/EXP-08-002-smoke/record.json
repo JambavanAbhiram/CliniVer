@@ -1,0 +1,119 @@
+{
+  "exp_id": "EXP-08-002-smoke",
+  "title": "Optimization round 1 (post-hoc, owner request)",
+  "research_question": "RQ5\u2013RQ7 optimization",
+  "status": "completed",
+  "started_at": "2026-11-21T20:44:09+00:00",
+  "updated_at": "2026-11-21T20:45:42+00:00",
+  "seed": 42,
+  "config": {
+    "optimize": {
+      "snapshot": "2026-11-20",
+      "seed": 42,
+      "splits": {
+        "scifact_train_claims": {
+          "train": 0.5,
+          "dev": 0.2,
+          "test": 0.3
+        }
+      },
+      "fresh_tests": {
+        "scifact_train_test": "the 30% held-out SciFact train claims, end to end (retrieval over the NB05 primary corpus; same claim filter as NB08)",
+        "pubhealth": {
+          "repo": "ImperialCollegeLondon/health_fact",
+          "revision": "7f898a16838e708a4597986e3fab8af05b710ba4",
+          "file": "default/test/0000.parquet",
+          "license": "MIT (github.com/neemakot/Health-Fact-Checking LICENSE)",
+          "label_map": {
+            "2": "SUP",
+            "0": "CON",
+            "3": "INS"
+          },
+          "evidence_field": "explanation"
+        }
+      },
+      "verifiers": {
+        "v1r": "v1 recipe retrained on HealthVer train + SciFact train-split pairs (clean baseline: has not seen the test claims)",
+        "v2": "v1r data + augmentation"
+      },
+      "augmentation": {
+        "perturbations": {
+          "negation": "CON",
+          "number": "CON",
+          "hedge": "INS",
+          "population": "INS",
+          "paraphrase": "SUP"
+        },
+        "perturb_fraction": 0.5,
+        "hard_negatives_per_claim": 2,
+        "hard_negative_depth": 5
+      },
+      "search_space": {
+        "verifier": [
+          "v1r",
+          "v2"
+        ],
+        "numeric_guard": [
+          false,
+          true
+        ],
+        "ins_threshold_quantile": [
+          null,
+          0.1,
+          0.2,
+          0.3
+        ],
+        "second_opinion": [
+          "none",
+          "abstain",
+          "llm_label"
+        ]
+      },
+      "baseline": {
+        "verifier": "v1r",
+        "numeric_guard": false,
+        "ins_threshold_quantile": null,
+        "second_opinion": "abstain"
+      },
+      "n_boot": 2000,
+      "decision_rules": {
+        "selection": "on the dev split: highest END-TO-END macro-F1 (abstained = error) among configurations with false-support rate (answered) \u2264 the baseline's dev FSR; ties within 0.01 \u2192 fewer components",
+        "adoption": "the selected configuration becomes baseline v2 if, on the fresh SciFact test split, its end-to-end macro-F1 \u2212 the baseline's > 0 (paired bootstrap point estimate; 95% CI reported) AND its FSR \u2264 baseline FSR + 0.02, AND its PUBHEALTH macro-F1 is not lower than the baseline's by more than 0.02",
+        "policy_change": "verify the standalone rewrite (evidence: EXP-08-001 context ablation); reported with the selected verifier on the NB04 context items (seen)"
+      }
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "bm25s": "0.3.16",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.1.1",
+    "pyarrow": "22.0.0",
+    "cliniver": "0.1.0"
+  }
+}

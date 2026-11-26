@@ -1,0 +1,86 @@
+{
+  "exp_id": "EXP-08-003-smoke",
+  "title": "Optimization round 1: latency",
+  "research_question": "latency (owner request 2026-11-22)",
+  "status": "completed",
+  "started_at": "2026-11-21T20:45:42+00:00",
+  "updated_at": "2026-11-21T20:55:05+00:00",
+  "seed": 42,
+  "config": {
+    "optimize_latency": {
+      "snapshot": "2026-11-20",
+      "seed": 42,
+      "dev_answers": 40,
+      "dev_claims": "dev",
+      "test_claims": "test",
+      "levers": {
+        "L1_speculative_decoding": {
+          "what": "Qwen3-0.6B (Q8_0) as draft model for Qwen3-8B in llama-server (--model-draft); greedy decoding, JSON-schema constrained",
+          "draft_model": "qwen3-0.6b",
+          "draft_max": [
+            8,
+            16
+          ],
+          "ngram_variant": "--spec-type ngram-simple (no draft model, no extra GPU memory; extraction copies spans of the answer). Added 2026-11-22 before any latency measurement",
+          "quality_check": "extraction outputs on the dev answers: share byte-identical to the baseline output; if not identical, claim-level F1 vs the baseline claims (NLI judge, as NB03) \u2265 0.98",
+          "vram_check": "peak GPU memory of the server \u2264 6.0 GB budget"
+        },
+        "L2_rerank_pool": {
+          "what": "cross-encoder re-rank pool size",
+          "values": [
+            50,
+            30,
+            20
+          ],
+          "quality_check": "end-to-end macro-F1 on the dev split with the selected EXP-08-002 configuration: \u0394 \u2265 \u22120.01 vs pool 50"
+        },
+        "L3_batched_retrieval": {
+          "what": "one BM25 / dense / cross-encoder call for all claims of an answer instead of one per claim",
+          "quality_check": "retrieved rankings identical (up to fp16 tie order) to per-claim retrieval"
+        },
+        "L4_warm_server": {
+          "what": "demo: keep the LLM server running between requests; the PyTorch models stay on the GPU if the total peak \u2264 6.0 GB, otherwise the unit embeddings are searched on the CPU",
+          "quality_check": "outputs identical (same models, same inputs)"
+        },
+        "L5_second_opinion_tokens": {
+          "what": "second-opinion max_tokens 300 \u2192 160 (shorter rationale)",
+          "quality_check": "label agreement with the 300-token run on the routed dev pairs \u2265 0.98"
+        }
+      },
+      "decision_rules": {
+        "adoption": "a lever is adopted if its quality check passes AND it reduces the median latency of its stage by \u2265 10% on the dev set; the final per-answer latency (median, p95) is reported on the test answers / claims with all adopted levers",
+        "reporting": "every latency figure is measured on this laptop and logged with the hardware record; no estimated figure is reported as measured"
+      }
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "bm25s": "0.3.16",
+    "cliniver": "0.1.0"
+  }
+}

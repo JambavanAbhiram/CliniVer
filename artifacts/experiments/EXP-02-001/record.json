@@ -1,0 +1,91 @@
+{
+  "exp_id": "EXP-02-001",
+  "title": "Document processing and chunking: strategy comparison and corpus chunking",
+  "research_question": "RQ1 / H1",
+  "status": "completed",
+  "started_at": "2026-11-20T08:56:38+00:00",
+  "updated_at": "2026-11-20T09:23:07+00:00",
+  "seed": 42,
+  "config": {
+    "corpus_snapshot": "2026-11-20",
+    "retriever": {
+      "dense_model": "BAAI/bge-small-en-v1.5",
+      "dense_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "batch_size": 64
+    },
+    "benchmark": {
+      "name": "COVID-QA",
+      "url": "https://raw.githubusercontent.com/deepset-ai/COVID-QA/master/data/question-answering/COVID-QA.json",
+      "dev_fraction": 0.3,
+      "top_k": 100
+    },
+    "grid": {
+      "fixed_sizes": [
+        128,
+        256,
+        512
+      ],
+      "fixed_overlaps": [
+        0.0,
+        0.15,
+        0.25
+      ],
+      "structured_sizes": [
+        128,
+        256,
+        512
+      ],
+      "semantic_pcts": [
+        90.0
+      ],
+      "header_variants": true
+    },
+    "budgets": [
+      512,
+      1024,
+      2048
+    ],
+    "primary_metric": "hit@1024t",
+    "qualifiers": {
+      "validation_sample": 150,
+      "max_words": 12
+    },
+    "final": {
+      "max_tokens_whole_doc": 512
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "transformers": "5.23.0",
+    "sentence-transformers": "6.3.0",
+    "tokenizers": "0.23.3",
+    "bm25s": "0.3.16",
+    "pysbd": "0.3.4",
+    "pandas": "3.1.1",
+    "cliniver": "0.1.0"
+  }
+}

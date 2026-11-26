@@ -1,0 +1,440 @@
+{
+  "data": {
+    "claims": 693,
+    "tuning": 208,
+    "evaluation": 485,
+    "scifact_docs": 5183,
+    "distractors": 124883,
+    "distractors_dropped_title_match": 35,
+    "primary_corpus_docs": 130066,
+    "relevant_per_claim_mean": 1.12
+  },
+  "entities": {
+    "dictionary_link_s": 100.8,
+    "relations": 104837,
+    "scifact_docs_with_concepts": 1.0,
+    "distractor_docs_with_concepts": 1.0,
+    "concepts_per_doc_scifact": 19.1,
+    "concepts_per_doc_distractor": 24.6,
+    "concepts": 14565,
+    "edges": 3272762,
+    "graph_build_s": 10.2,
+    "linker_surfaces": 30474,
+    "claims_with_link": 664,
+    "claims_multi_concept": 538
+  },
+  "strata": {
+    "synonym-variant": 522,
+    "multi-entity": 538,
+    "class-level": 23,
+    "single-entity": 78,
+    "unlinked": 29
+  },
+  "encode_stats_e5-base": {
+    "docs": 130066,
+    "encode_s": 526.3,
+    "docs_per_s": 247.1,
+    "peak_vram_mb": 1039
+  },
+  "encode_stats_bge-small": {
+    "docs": 130066,
+    "encode_s": 200.8,
+    "docs_per_s": 647.7,
+    "peak_vram_mb": 498
+  },
+  "encode_stats_bge-base": {
+    "docs": 130066,
+    "encode_s": 670.5,
+    "docs_per_s": 194.0,
+    "peak_vram_mb": 1039
+  },
+  "encode_stats_medcpt": {
+    "docs": 130066,
+    "encode_s": 1263.5,
+    "docs_per_s": 102.9,
+    "peak_vram_mb": 7282
+  },
+  "encoders": [
+    {
+      "encoder": "minilm",
+      "license": "apache-2.0",
+      "dim": 384,
+      "params_M": 23,
+      "index_MB_fp16": 95,
+      "query_ms": 0.06,
+      "tune_ndcg10_primary": 0.7341,
+      "tune_recall20_primary": 0.876,
+      "eval_ndcg10_primary": 0.7177,
+      "eval_recall20_primary": 0.8991,
+      "eval_ndcg10_scifact_only": 0.8085,
+      "eval_recall20_scifact_only": 0.9662
+    },
+    {
+      "encoder": "e5-base",
+      "license": "mit",
+      "dim": 768,
+      "params_M": 109,
+      "index_MB_fp16": 191,
+      "query_ms": 0.03,
+      "tune_ndcg10_primary": 0.8118,
+      "tune_recall20_primary": 0.9338,
+      "eval_ndcg10_primary": 0.8114,
+      "eval_recall20_primary": 0.9431,
+      "eval_ndcg10_scifact_only": 0.8775,
+      "eval_recall20_scifact_only": 0.9876
+    },
+    {
+      "encoder": "bge-small",
+      "license": "mit",
+      "dim": 384,
+      "params_M": 33,
+      "index_MB_fp16": 95,
+      "query_ms": 0.03,
+      "tune_ndcg10_primary": 0.8181,
+      "tune_recall20_primary": 0.9418,
+      "eval_ndcg10_primary": 0.8315,
+      "eval_recall20_primary": 0.9557,
+      "eval_ndcg10_scifact_only": 0.8923,
+      "eval_recall20_scifact_only": 0.9876
+    },
+    {
+      "encoder": "bge-base",
+      "license": "mit",
+      "dim": 768,
+      "params_M": 109,
+      "index_MB_fp16": 191,
+      "query_ms": 0.03,
+      "tune_ndcg10_primary": 0.8376,
+      "tune_recall20_primary": 0.9524,
+      "eval_ndcg10_primary": 0.8455,
+      "eval_recall20_primary": 0.9553,
+      "eval_ndcg10_scifact_only": 0.9047,
+      "eval_recall20_scifact_only": 0.9921
+    },
+    {
+      "encoder": "medcpt",
+      "license": "public-domain (US Government work)",
+      "dim": 768,
+      "params_M": 219,
+      "index_MB_fp16": 191,
+      "query_ms": 0.03,
+      "tune_ndcg10_primary": 0.8381,
+      "tune_recall20_primary": 0.9466,
+      "eval_ndcg10_primary": 0.8108,
+      "eval_recall20_primary": 0.9409,
+      "eval_ndcg10_scifact_only": 0.8785,
+      "eval_recall20_scifact_only": 0.9948
+    }
+  ],
+  "dense_selected": "medcpt",
+  "bm25_variants": {
+    "default": {
+      "index_s": 41.3,
+      "query_ms": 3.35,
+      "tuning_ndcg@10": 0.7587,
+      "tuning_recall@20": 0.8786,
+      "evaluation_ndcg@10": 0.7537,
+      "evaluation_recall@20": 0.8734
+    },
+    "clinical": {
+      "index_s": 69.1,
+      "query_ms": 3.96,
+      "tuning_ndcg@10": 0.7327,
+      "tuning_recall@20": 0.8618,
+      "evaluation_ndcg@10": 0.7389,
+      "evaluation_recall@20": 0.8656
+    }
+  },
+  "sparse_selected": "default",
+  "graph_channel": {
+    "ppr_ms_per_claim": 468.5,
+    "claims_with_graph_results": 664,
+    "graph_eval_recall@20": 0.3978,
+    "graph_eval_ndcg@10": 0.1902,
+    "queries_expanded": 624
+  },
+  "hybrid_weight": {
+    "dense_weight": 0.6,
+    "tuning_ndcg@10": {
+      "0.1": 0.7702,
+      "0.2": 0.7912,
+      "0.3": 0.8107,
+      "0.4": 0.8338,
+      "0.5": 0.8482,
+      "0.6": 0.8558,
+      "0.7": 0.8546,
+      "0.8": 0.8525,
+      "0.9": 0.8513
+    }
+  },
+  "rerankers": [
+    {
+      "config": "hybrid+minilm-ce@20",
+      "reranker": "minilm-ce",
+      "pool": 20,
+      "ms_per_claim": 46.3,
+      "tuning_ndcg@10": 0.8,
+      "tuning_recall@20": 0.9406,
+      "tuning_p@5": 0.1808,
+      "evaluation_ndcg@10": 0.8267,
+      "evaluation_recall@20": 0.9491,
+      "evaluation_p@5": 0.1946
+    },
+    {
+      "config": "hybrid+minilm-ce@50",
+      "reranker": "minilm-ce",
+      "pool": 50,
+      "ms_per_claim": 105.8,
+      "tuning_ndcg@10": 0.8016,
+      "tuning_recall@20": 0.9312,
+      "tuning_p@5": 0.1846,
+      "evaluation_ndcg@10": 0.8202,
+      "evaluation_recall@20": 0.9476,
+      "evaluation_p@5": 0.1889
+    },
+    {
+      "config": "hybrid+minilm-ce@100",
+      "reranker": "minilm-ce",
+      "pool": 100,
+      "ms_per_claim": 171.9,
+      "tuning_ndcg@10": 0.7967,
+      "tuning_recall@20": 0.9361,
+      "tuning_p@5": 0.1817,
+      "evaluation_ndcg@10": 0.8181,
+      "evaluation_recall@20": 0.9424,
+      "evaluation_p@5": 0.1876
+    },
+    {
+      "config": "hybrid+bge-rerank@20",
+      "reranker": "bge-rerank",
+      "pool": 20,
+      "ms_per_claim": 140.7,
+      "tuning_ndcg@10": 0.8203,
+      "tuning_recall@20": 0.9406,
+      "tuning_p@5": 0.1846,
+      "evaluation_ndcg@10": 0.8355,
+      "evaluation_recall@20": 0.9491,
+      "evaluation_p@5": 0.1938
+    },
+    {
+      "config": "hybrid+bge-rerank@50",
+      "reranker": "bge-rerank",
+      "pool": 50,
+      "ms_per_claim": 341.1,
+      "tuning_ndcg@10": 0.8301,
+      "tuning_recall@20": 0.9418,
+      "tuning_p@5": 0.1856,
+      "evaluation_ndcg@10": 0.8214,
+      "evaluation_recall@20": 0.9473,
+      "evaluation_p@5": 0.193
+    },
+    {
+      "config": "hybrid+bge-rerank@100",
+      "reranker": "bge-rerank",
+      "pool": 100,
+      "ms_per_claim": 548.6,
+      "tuning_ndcg@10": 0.8249,
+      "tuning_recall@20": 0.9279,
+      "tuning_p@5": 0.1856,
+      "evaluation_ndcg@10": 0.8134,
+      "evaluation_recall@20": 0.94,
+      "evaluation_p@5": 0.1913
+    },
+    {
+      "config": "hybrid+medcpt-ce@20",
+      "reranker": "medcpt-ce",
+      "pool": 20,
+      "ms_per_claim": 94.0,
+      "tuning_ndcg@10": 0.8624,
+      "tuning_recall@20": 0.9406,
+      "tuning_p@5": 0.1962,
+      "evaluation_ndcg@10": 0.867,
+      "evaluation_recall@20": 0.9491,
+      "evaluation_p@5": 0.2016
+    },
+    {
+      "config": "hybrid+medcpt-ce@50",
+      "reranker": "medcpt-ce",
+      "pool": 50,
+      "ms_per_claim": 243.6,
+      "tuning_ndcg@10": 0.8748,
+      "tuning_recall@20": 0.9683,
+      "tuning_p@5": 0.1981,
+      "evaluation_ndcg@10": 0.871,
+      "evaluation_recall@20": 0.9694,
+      "evaluation_p@5": 0.2033
+    },
+    {
+      "config": "hybrid+medcpt-ce@100",
+      "reranker": "medcpt-ce",
+      "pool": 100,
+      "ms_per_claim": 425.6,
+      "tuning_ndcg@10": 0.8721,
+      "tuning_recall@20": 0.9683,
+      "tuning_p@5": 0.1981,
+      "evaluation_ndcg@10": 0.869,
+      "evaluation_recall@20": 0.9711,
+      "evaluation_p@5": 0.2033
+    }
+  ],
+  "reranker_selected": "hybrid+medcpt-ce@50",
+  "hypotheses": {
+    "H4a": {
+      "vs": "dense",
+      "diff": 0.0082,
+      "ci_low": -0.01,
+      "ci_high": 0.0277,
+      "p_two_sided": 0.409,
+      "n_clusters": 485,
+      "supported": true
+    },
+    "H4b": {
+      "class-level": {
+        "diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "p_two_sided": 1.0,
+        "n_clusters": 20
+      },
+      "synonym-variant": {
+        "diff": -0.0256,
+        "ci_low": -0.0442,
+        "ci_high": -0.009,
+        "p_two_sided": 0.0,
+        "n_clusters": 362
+      },
+      "overall": {
+        "diff": -0.0232,
+        "ci_low": -0.0387,
+        "ci_high": -0.0103,
+        "p_two_sided": 0.0,
+        "n_clusters": 485
+      },
+      "supported": false
+    },
+    "H4c": {
+      "norm_vs_hybrid_overall": {
+        "diff": -0.0784,
+        "ci_low": -0.1043,
+        "ci_high": -0.054,
+        "p_two_sided": 0.0,
+        "n_clusters": 485
+      },
+      "structure_overall": {
+        "diff": 0.0552,
+        "ci_low": 0.0306,
+        "ci_high": 0.0814,
+        "p_two_sided": 0.0,
+        "n_clusters": 485
+      },
+      "structure_class-level": {
+        "diff": 0.1,
+        "ci_low": 0.0,
+        "ci_high": 0.25,
+        "p_two_sided": 0.22,
+        "n_clusters": 20
+      },
+      "structure_synonym-variant": {
+        "diff": 0.0546,
+        "ci_low": 0.0267,
+        "ci_high": 0.0856,
+        "p_two_sided": 0.0,
+        "n_clusters": 362
+      },
+      "structure_multi-entity": {
+        "diff": 0.0543,
+        "ci_low": 0.0264,
+        "ci_high": 0.0836,
+        "p_two_sided": 0.0,
+        "n_clusters": 373
+      },
+      "norm_class-level": {
+        "diff": -0.1,
+        "ci_low": -0.25,
+        "ci_high": 0.0,
+        "p_two_sided": 0.22,
+        "n_clusters": 20
+      },
+      "norm_synonym-variant": {
+        "diff": -0.0801,
+        "ci_low": -0.1114,
+        "ci_high": -0.0523,
+        "p_two_sided": 0.0,
+        "n_clusters": 362
+      },
+      "norm_multi-entity": {
+        "diff": -0.0764,
+        "ci_low": -0.1059,
+        "ci_high": -0.0483,
+        "p_two_sided": 0.0,
+        "n_clusters": 373
+      },
+      "structure_adds_value": true
+    },
+    "H4d": {
+      "reranker": "hybrid+medcpt-ce@50",
+      "diff": 0.0545,
+      "ci_low": 0.0337,
+      "ci_high": 0.0759,
+      "p_two_sided": 0.0,
+      "n_clusters": 485,
+      "ms_per_claim_scifact_primary": 243.6,
+      "supported": true
+    },
+    "graph_retained": false
+  },
+  "selection": {
+    "best_on_tuning": "hybrid+medcpt-ce@50",
+    "within_ci_of_best": [
+      "hybrid+medcpt-ce@50"
+    ],
+    "selected": "hybrid+medcpt-ce@50",
+    "graph_retained": false
+  },
+  "nb02_units": {
+    "chunks": 15352,
+    "table": [
+      {
+        "channel": "bm25",
+        "unit": "whole",
+        "recall@20": 0.9545,
+        "ndcg@10": 0.8268
+      },
+      {
+        "channel": "bm25",
+        "unit": "paragraph-128",
+        "recall@20": 0.9311,
+        "ndcg@10": 0.7977
+      },
+      {
+        "channel": "dense",
+        "unit": "whole",
+        "recall@20": 0.9948,
+        "ndcg@10": 0.8785
+      },
+      {
+        "channel": "dense",
+        "unit": "paragraph-128",
+        "recall@20": 0.9887,
+        "ndcg@10": 0.8744
+      }
+    ]
+  },
+  "cliniver_retrieval": {
+    "chunks": 592930,
+    "claims": 2777,
+    "bm25_index_s": 24.5,
+    "dense_index_s": 578.1,
+    "dense_index_MB_fp16": 869,
+    "latency_p50_s": 0.086,
+    "latency_p95_s": 0.11,
+    "meets_budget": true,
+    "peak_vram_mb": 2902
+  },
+  "cliniver_top5_sources": {
+    "openfda_label": 3486,
+    "clinicaltrials": 1632,
+    "pubmed": 7809,
+    "europepmc_oa": 958
+  }
+}

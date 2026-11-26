@@ -1,0 +1,87 @@
+{
+  "exp_id": "EXP-04-001",
+  "title": "Claim contextualization",
+  "research_question": "RQ3 / H3a, H3b",
+  "status": "completed",
+  "started_at": "2026-11-21T07:50:54+00:00",
+  "updated_at": "2026-11-21T07:51:38+00:00",
+  "seed": 42,
+  "config": {
+    "context": {
+      "snapshot": "2026-11-20",
+      "seed": 42,
+      "scifact": {
+        "url": "https://scifact.s3-us-west-2.amazonaws.com/release/latest/data.tar.gz",
+        "license": "claims + evidence CC BY 4.0; abstracts ODC-By 1.0 (allenai/scifact LICENSE.md)",
+        "tuning_fraction": 0.3
+      },
+      "llm_model": "qwen3-8b",
+      "retrievers": [
+        "bm25",
+        "dense"
+      ],
+      "candidate_depth": 1000,
+      "rrf_k": 60,
+      "fusion_weights": [
+        0.5,
+        0.6,
+        0.7,
+        0.8,
+        0.9
+      ],
+      "decision_rules": {
+        "h3a": "context-dependent stratum, evaluation split: recall@10(B) \u2212 recall@10(A) > 0 with 95% CI excluding 0, for BOTH retrievers",
+        "h3b": "self-contained stratum, evaluation split: nDCG@10(B) \u2212 nDCG@10(A) NOT significantly positive (CI lower bound \u2264 0) for BOTH retrievers; also reported for P@5",
+        "selection": "strategy with the highest mean nDCG@10 over both strata and both retrievers on the tuning split",
+        "n_boot": 2000
+      },
+      "real_claims": {
+        "tagger_spot_check": 40,
+        "self_contained_controls": 100
+      }
+    },
+    "llm_model": {
+      "repo": "Qwen/Qwen3-8B-GGUF",
+      "revision": "7c41481f57cb95916b40956ab2f0b139b296d974",
+      "file": "Qwen3-8B-Q4_K_M.gguf",
+      "license": "apache-2.0",
+      "role": "stronger generator; extractor candidate"
+    },
+    "dense": {
+      "dense_model": "BAAI/bge-small-en-v1.5",
+      "dense_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "batch_size": 64
+    }
+  },
+  "git": {
+    "commit": "HEAD",
+    "dirty": true
+  },
+  "hardware": {
+    "python_version": "3.12.0",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+    "cpu_logical_cores": 16,
+    "ram_total_gb": 31.4,
+    "torch_version": "2.14.1+cu130",
+    "torch_cuda_build": "13.0",
+    "cuda_available": true,
+    "cudnn_version": 92400,
+    "gpus": [
+      {
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "compute_capability": "12.0",
+        "total_vram_gb": 7.96
+      }
+    ]
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "sentence-transformers": "6.3.0",
+    "bm25s": "0.3.16",
+    "pandas": "3.1.1",
+    "cliniver": "0.1.0"
+  }
+}

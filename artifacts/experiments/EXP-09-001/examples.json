@@ -1,0 +1,204 @@
+[
+ {
+  "question": "What is the medicine for high blood pressure?",
+  "variant": "G0",
+  "answer": "The medicine for high blood pressure involves antihypertensive treatments that have been shown to substantially improve cardiovascular outcomes [4]. These treatments are particularly important for high-risk patients, such as those with type 2 diabetes mellitus, where even small reductions in blood pressure can lead to significant reductions in cardiovascular risk [4]. National and international guidelines recommend rigorous blood pressure targets, although these are rarely achieved globally [4]. The evidence highlights the importance of optimal blood pressure control, emphasizing that lower blood pressure levels are associated with less morbidity and mortality even within the nonhypertensive range [1]. However, the specific medications and dosages are not detailed in the provided passages.",
+  "queries": [
+   "What is the medicine for high blood pressure?"
+  ],
+  "passages": [
+   "pubmed 2003-05-01: What is normal blood pressure?",
+   "pubmed 2018-10-01: Beyond the new blood pressure guidelines: the beat goes on.",
+   "pubmed 2025-08-28: Debate on the 2025 Guideline for the Prevention, Detection, Evaluation, and Management of ",
+   "pubmed 2004-01-01: How important is optimal blood pressure control?",
+   "pubmed 2017-11-06: Personalized medicine-a modern approach for the diagnosis and management of hypertension."
+  ]
+ },
+ {
+  "question": "What is the medicine for high blood pressure?",
+  "variant": "G3",
+  "answer": "The medicine for high blood pressure includes ACE inhibitors such as lisinopril, angiotensin receptor blockers (ARBs), long-acting dihydropyridine calcium-channel blockers, and thiazide-type diuretics [1]. For stage-2 hypertension, initial treatment typically involves two first-line agents from different classes, often as a fixed-dose combination [1]. Combination therapy, such as ACE inhibitor/calcium channel blocker or ARB/diuretic, has shown better efficacy in reducing blood pressure and cardiovascular events compared to monotherapy [2][4]. Thiazide diuretics remain a cornerstone of hypertension treatment, with thiazide-like diuretics like chlortalidone and indapamide preferred in the UK [3]. Calcium channel blockers are more effective than ARBs in reducing stroke and myocardial infarction, though both classes have similar effects on mortality [5]. Guidelines emphasize the importance of selecting the right antihypertensive drug based on individual patient factors and comorbidities [6].",
+  "queries": [
+   "What is the medicine for high blood pressure?",
+   "hypertension drug therapy",
+   "first line treatment for hypertension",
+   "antihypertensive medications",
+   "Angiotensin Converting Enzyme Inhibitor for Hypertension",
+   "Angiotensin 2 Receptor Blocker for Hypertension",
+   "Dihydropyridine Calcium Channel Blocker for Hypertension",
+   "Calcium Channel Blocker for Hypertension",
+   "Thiazide Diuretic for Hypertension",
+   "Thiazide-like Diuretic for Hypertension"
+  ],
+  "passages": [
+   "europepmc_oa 2026-09-07: The 2025 AHA/ACC Hypertension Guidelines: Key Updates, Historical Context, and Clinical Im",
+   "pubmed 2008-09-01: Evaluation of recent fixed-dose combination therapies in the management of hypertension.",
+   "pubmed 2019-12-09: A review of the prescribing trend of thiazide-type and thiazide-like diuretics in hyperten",
+   "pubmed 2008-01-01: Combined therapy with a calcium channel blocker and an angiotensin II type 1 receptor bloc",
+   "pubmed 2014-08-07: Calcium channel blocker compared with angiotensin receptor blocker for patients with hyper",
+   "pubmed 2020-01-01: Hypertension Drug Therapy.",
+   "pubmed 2003-05-01: What is normal blood pressure?",
+   "pubmed 2004-10-01: Drug treatment of essential hypertension: the case for initial combination therapy."
+  ]
+ },
+ {
+  "question": "What medication is prescribed for type 2 diabetes?",
+  "variant": "G0",
+  "answer": "Medication for type 2 diabetes includes a variety of options, with metformin recommended as the initial oral antihyperglycemic drug across guidelines [5]. Other medications such as sulfonylureas, DPP-4 inhibitors, and insulin may be used depending on the patient's needs and guidelines [1][5]. The choice of medication involves considering factors like cardiovascular outcomes, HbA1c reduction goals, side effects, and cost [4]. Polypharmacy is common, with patients often prescribed multiple drug compounds, tablets, and injections daily [2]. Adherence to prescribed therapies is crucial but often challenging due to complex dosing regimens and other barriers [3]. Guidelines emphasize individualized treatment approaches and comprehensive care [5].",
+  "queries": [
+   "What medication is prescribed for type 2 diabetes?"
+  ],
+  "passages": [
+   "pubmed 2010-01-01: Prescribing in type 2 diabetes: choices and challenges.",
+   "pubmed 2014-06-11: Polypharmacy in people with Type 1 and Type 2 diabetes is justified by current guidelines-",
+   "pubmed 2011-03-01: Patient adherence to medication requirements for therapy of type 2 diabetes.",
+   "pubmed 2016-02-02: Type 2 Diabetes Medication Review.",
+   "pubmed 2016-02-18: Comparison of use of diabetic medication and clinical guidelines in four Nordic countries."
+  ]
+ },
+ {
+  "question": "What medication is prescribed for type 2 diabetes?",
+  "variant": "G3",
+  "answer": "Metformin is prescribed for type 2 diabetes, and tirzepatide is also used [3][1]. Metformin is recommended as a first-line treatment for most people with type 2 diabetes and is well-tolerated when prescribed appropriately [3]. Tirzepatide, a GIP/GLP-1 receptor agonist, was approved by the FDA in 2022 for once-weekly subcutaneous injections and leads to clinically significant reductions in glycemic parameters and body weight [1]. Other medications like dapagliflozin, a sodium glucose cotransporter 2 inhibitor, are also used as monotherapy or add-on therapy [7]. GLP-1 receptor agonists, such as liraglutide and exenatide, are effective in glycemic control and weight loss [8]. The choice of medication depends on individual factors, and clinicians should personalize treatment goals based on benefits and harms [4].",
+  "queries": [
+   "What medication is prescribed for type 2 diabetes?",
+   "metformin type 2 diabetes treatment guidelines",
+   "clinical guidelines for pharmacotherapy of type 2 diabetes",
+   "drug therapy for type 2 diabetes mellitus",
+   "Biguanide for Type 2 Diabetes",
+   "Sodium-Glucose Cotransporter 2 Inhibitor for Type 2 Diabetes",
+   "GLP-1 Receptor Agonist for Type 2 Diabetes",
+   "Glucose-dependent Insulinotropic Polypeptide Receptor Agonist for Type 2 Diabetes",
+   "Dipeptidyl Peptidase 4 Inhibitor for Type 2 Diabetes",
+   "Sulfonylurea for Type 2 Diabetes"
+  ],
+  "passages": [
+   "pubmed 2022-10-13: Clinical perspectives on the use of the GIP/GLP-1 receptor agonist tirzepatide for the tre",
+   "pubmed 2010-01-01: Prescribing in type 2 diabetes: choices and challenges.",
+   "pubmed 2025-03-31: Prescribing metformin for patients with non-diabetic hyperglycaemia or type 2 diabetes.",
+   "pubmed 2018-03-06: Hemoglobin A1c Targets for Glycemic Control With Pharmacologic Therapy for Nonpregnant Adu",
+   "pubmed 2005-01-01: Drug treatment of type 2 diabetes in adults.",
+   "europepmc_oa 2019-04-01: Nonglycemic Outcomes of Antidiabetic Medications.",
+   "pubmed 2015-01-21: Dapagliflozin: A Sodium Glucose Cotransporter 2 Inhibitor for the Treatment of Diabetes Me",
+   "pubmed 2011-11-24: Novel GLP-1 receptor agonists for diabetes."
+  ]
+ },
+ {
+  "question": "What are the treatment options with drugs for heart failure?",
+  "variant": "G0",
+  "answer": "The treatment options for heart failure with drugs include diuretics, vasodilators, ACE-inhibitors, and digitalis glycosides [4]. Diuretics, vasodilators, and ACE-inhibitors are now accepted as standard treatment, particularly when used in combination [4]. Digitalis glycosides improve symptoms in some patients but their impact on morbidity and mortality risks is still controversial [4]. New pharmacological therapies for the treatment of HF have emerged since the previous sets of guidelines [1]. The framework for approaching heart failure patients includes early recognition of patients at risk for developing heart failure and stage-appropriate management of patients with established heart failure [2]. The targets for therapeutic intervention may be categorized into haemodynamic, neuroendocrine and metabolic disorders, symptoms and quality of life, and morbidity and mortality risks [4]. The selection of anti-heart failure drugs should be based on knowledge of the impact on the pathophysiological disorders and on the morbidity and mortality risks [4].",
+  "queries": [
+   "What are the treatment options with drugs for heart failure?"
+  ],
+  "passages": [
+   "pubmed 2016-09-14: 2016 ESC and ACC/AHA/HFSA heart failure guideline update - what is new and why is it impor",
+   "pubmed 2010-02-01: Current treatment of heart failure in the USA.",
+   "pubmed 2005-05-01: Recent diagnostic and therapeutic innovations in heart failure management.",
+   "pubmed 1996-04-01: Congestive heart failure. Towards a comprehensive treatment.",
+   "pubmed 2002-01-01: Treatment gaps in the pharmacologic management of heart failure."
+  ]
+ },
+ {
+  "question": "What are the treatment options with drugs for heart failure?",
+  "variant": "G3",
+  "answer": "The treatment options with drugs for heart failure include ACE inhibitors such as lisinopril, beta-blockers like metoprolol, and aldosterone antagonists such as spironolactone [7]. These medications are recommended for chronic heart failure with reduced ejection fraction, and they help improve survival and reduce hospitalizations [1]. In acute decompensated heart failure, the evidence for drug efficacy is less clear, and the focus is often on symptom management and preventing further deterioration [1]. Loop diuretics are used to manage congestion but have been associated with increased mortality, so their use is carefully monitored [8]. For elderly patients, drug therapy should consider comorbidities like impaired renal function, which may affect drug choice and dosage [4]. New pharmacological therapies are being developed to better tailor treatment to individual needs and improve outcomes [2]. Guidelines emphasize the importance of adhering to evidence-based treatments, but adherence remains suboptimal [5].",
+  "queries": [
+   "What are the treatment options with drugs for heart failure?",
+   "heart failure drug therapy",
+   "pharmacological treatment of heart failure",
+   "medications for heart failure management",
+   "Aldosterone Antagonist for Heart Failure",
+   "Loop Diuretic for Heart Failure",
+   "Hyperpolarization-activated Cyclic Nucleotide-gated Channel Blocker for Heart Failure",
+   "Cardiac Glycoside for Heart Failure"
+  ],
+  "passages": [
+   "pubmed 2019-03-09: Heart failure drug treatment.",
+   "pubmed 2003-11-01: Novel pharmacological treatments for heart failure.",
+   "pubmed 2016-09-14: 2016 ESC and ACC/AHA/HFSA heart failure guideline update - what is new and why is it impor",
+   "pubmed 2018-05-01: Drug treatment of heart failure in the elderly.",
+   "pubmed 2017-03-27: Current Pharmacological Therapies in Heart Failure Patients.",
+   "pubmed 2017-09-01: Symptom management challenges in heart failure: pharmacotherapy considerations.",
+   "pubmed 2013-01-01: Aldosterone antagonists in heart failure.",
+   "pubmed 2018-10-15: Decrease in loop diuretic treatment from 2005 to 2014 in Swedish real-life patients with c"
+  ]
+ },
+ {
+  "question": "what spices can be used while on warfarin",
+  "variant": "G0",
+  "answer": "Spices and herbs can interact with warfarin, affecting its anticoagulant effects. Garlic is mentioned as potentially safe when used with warfarin, based on a study where no increased hemorrhage was observed [2]. However, some botanicals may have anticoagulant properties that could be additive to warfarin's effects, increasing the risk of bleeding [3]. Lycium barbarum L., a Chinese herb, was associated with an elevated INR in a patient on warfarin, suggesting potential interactions [4]. Common herbs like garlic, ginger, green tea, and papaya are frequently consumed by patients on warfarin, but their impact on anticoagulation control is not fully understood [5]. The evidence highlights the need for monitoring INR values and discussing herbal or spice use with healthcare providers while on warfarin therapy.",
+  "queries": [
+   "what spices can be used while on warfarin"
+  ],
+  "passages": [
+   "pubmed 2007-09-01: Knowledges about herbal products among subjects on warfarin therapy and patient-physician ",
+   "pubmed 2006-03-01: Aged garlic extract may be safe for patients on warfarin therapy.",
+   "openfda_label 2026-11-09: Warfarin Sodium (WARFARIN SODIUM) prescribing information",
+   "pubmed 2001-10-01: Possible interaction between warfarin and Lycium barbarum L.",
+   "pubmed 2011-07-01: Effect of herbal consumption on time in therapeutic range of warfarin therapy in patients "
+  ]
+ },
+ {
+  "question": "what spices can be used while on warfarin",
+  "variant": "G3",
+  "answer": "Spices such as garlic, ginger, green tea, and papaya may interact with warfarin, potentially increasing the risk of bleeding or altering anticoagulation effects [6]. Aged garlic extract was found to be safe in combination with warfarin, with no increased hemorrhage observed in a study of 48 patients [5]. However, other herbs like boldo and fenugreek have been associated with increased bleeding time in patients on warfarin [3]. Lycium barbarum L. (Chinese herbal tea) has also been linked to elevated INR levels in a patient on warfarin [1]. Cranberry products may increase INR values in patients on warfarin, as seen in a case report [8]. Warfarin's response is susceptible to dietary variations, including the consumption of certain herbs and spices [2]. Clinicians should be vigilant when patients on warfarin use herbal agents, as interactions can affect anticoagulation control [6].",
+  "queries": [
+   "what spices can be used while on warfarin",
+   "warfarin drug interactions with spices",
+   "spices and warfarin interaction",
+   "clinical pharmacology of warfarin with dietary spices"
+  ],
+  "passages": [
+   "pubmed 2001-10-01: Possible interaction between warfarin and Lycium barbarum L.",
+   "europepmc_oa 2014-12-01: Physician's fear of anticoagulant therapy in nonvalvular atrial fibrillation.",
+   "pubmed 2001-04-01: Potential interaction between warfarin and boldo-fenugreek.",
+   "europepmc_oa 2013-10-31: A new era of stroke prevention in atrial fibrillation: comparing a new generation of oral ",
+   "pubmed 2006-03-01: Aged garlic extract may be safe for patients on warfarin therapy.",
+   "pubmed 2011-07-01: Effect of herbal consumption on time in therapeutic range of warfarin therapy in patients ",
+   "pubmed 2007-09-01: Knowledges about herbal products among subjects on warfarin therapy and patient-physician ",
+   "pubmed 2012-01-01: Cranberry and warfarin interaction: a case report and review of the literature."
+  ]
+ },
+ {
+  "question": "6,Can pulmonary hypertension be cured?",
+  "variant": "G0",
+  "answer": "Currently, there is no known cure for pulmonary hypertension according to the evidence [1]. The condition results from various clinical conditions and may be idiopathic or associated with other diseases. The evidence states that current treatments aim to relax the vessels in the lung and lower blood pressure, but none target the causes of the disease [3]. Additionally, the evidence indicates that despite available treatments, the impact on mortality has been modest, with one third of patients still dying within two years of diagnosis [3]. While some treatments may slow the progression of the disease, they do not provide a cure. The evidence also mentions that there is no test currently that can easily and non-invasively detect abnormalities of the pulmonary circulation [1]. Therefore, based on the provided evidence, pulmonary hypertension cannot be cured.",
+  "queries": [
+   "6,Can pulmonary hypertension be cured?"
+  ],
+  "passages": [
+   "clinicaltrials 2015-09-01: Phase-II Study of the Use of PulmoBind for Molecular Imaging of Pulmonary Hypertension",
+   "pubmed 2012-01-10: Can \"inoperable\" congenital heart defects become operable in patients with pulmonary arter",
+   "clinicaltrials 2018-02-18: A Therapeutic Open Label Study of Tocilizumab in the Treatment of Pulmonary Arterial Hyper",
+   "clinicaltrials 2026-07-12: Effect of (Sacubitril-Valsartan) Drug on Estimated Pulmonary Artery Systolic Pressure",
+   "pubmed 2016-03-12: Treatment of pulmonary hypertension."
+  ]
+ },
+ {
+  "question": "6,Can pulmonary hypertension be cured?",
+  "variant": "G3",
+  "answer": "Pulmonary hypertension cannot be cured. [7] The evidence indicates that while there are treatment options to manage symptoms and slow disease progression, there is no known cure. Pulmonary hypertension is classified based on its underlying causes, and treatment strategies depend on the specific type and severity of the condition. For pulmonary arterial hypertension (PAH), targeted therapies have improved outcomes, but these treatments do not cure the disease. [4] In severe cases, lung transplantation may be considered as a last resort. [4] Current research focuses on developing drugs that can halt or reverse the disease process, but no such cure has been established. [7]",
+  "queries": [
+   "6,Can pulmonary hypertension be cured?",
+   "pulmonary hypertension treatment guidelines",
+   "current therapeutic options for pulmonary hypertension",
+   "management of pulmonary hypertension in adults",
+   "Angiotensin Converting Enzyme Inhibitor for Hypertension",
+   "Angiotensin 2 Receptor Blocker for Hypertension",
+   "Dihydropyridine Calcium Channel Blocker for Hypertension",
+   "Calcium Channel Blocker for Hypertension",
+   "Thiazide Diuretic for Hypertension",
+   "Thiazide-like Diuretic for Hypertension"
+  ],
+  "passages": [
+   "pubmed 2008-09-01: Evaluation of recent fixed-dose combination therapies in the management of hypertension.",
+   "pubmed 2019-12-09: A review of the prescribing trend of thiazide-type and thiazide-like diuretics in hyperten",
+   "pubmed 2008-01-01: Combined therapy with a calcium channel blocker and an angiotensin II type 1 receptor bloc",
+   "pubmed 2023-03-03: The Evolving Management and Treatment Options for Patients with Pulmonary Hypertension: Cu",
+   "pubmed 2014-08-07: Calcium channel blocker compared with angiotensin receptor blocker for patients with hyper",
+   "europepmc_oa 2026-09-07: The 2025 AHA/ACC Hypertension Guidelines: Key Updates, Historical Context, and Clinical Im",
+   "clinicaltrials 2015-09-01: Phase-II Study of the Use of PulmoBind for Molecular Imaging of Pulmonary Hypertension",
+   "pubmed 2011-12-01: Treatment of pulmonary arterial hypertension (PAH): updated Recommendations of the Cologne"
+  ]
+ }
+]

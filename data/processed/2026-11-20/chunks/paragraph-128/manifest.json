@@ -1,0 +1,18 @@
+{
+ "config": "paragraph-128",
+ "snapshot": "2026-11-20",
+ "tokenizer": "BAAI/bge-small-en-v1.5@5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+ "documents": 138763,
+ "chunks": 592930,
+ "seconds": 683,
+ "pubtator_mentions": 2712609,
+ "pubtator_unaligned": 16169,
+ "rxnorm_mentions": 326250,
+ "mentions_cut_by_chunking": 975,
+ "skipped_empty_documents": 1,
+ "pubtator_alignment_rate": 0.994,
+ "files_mb": {
+  "chunks.jsonl": 593.5,
+  "chunk_entities.jsonl": 772.1
+ }
+}

@@ -1,0 +1,14 @@
+[
+ {
+  "variant": "G0",
+  "routed_to": null,
+  "question": "What are the serious risks of alirocumab?",
+  "answer": "The serious risks of alirocumab include hypersensitivity reactions such as hypersensitivity vasculitis, angioedema, and reactions requiring hospitalization [2]. There are concerns about long-term risks of neurocognitive events and developing diabetes based on short-term studies [1]. In Taiwanese patients, the rate of serious treatment-emergent adverse events (TEAEs) was more frequent with alirocumab compared to placebo, with 21.1% versus 8.5% respectively [5]. While PCSK9 inhibitors like alirocumab have an acceptable safety profile with no significant elevations in Creatine Kinase or serious adverse events in some studies [3], the evidence suggests a higher incidence of serious adverse events in certain populations. The safety data is limited, and long-term effects remain uncertain [1]."
+ },
+ {
+  "variant": "H1",
+  "routed_to": "G0",
+  "question": "What are the serious risks of alirocumab?",
+  "answer": "The serious risks of alirocumab include hypersensitivity reactions such as hypersensitivity vasculitis, angioedema, and reactions requiring hospitalization [2]. There are concerns about long-term risks of neurocognitive events and developing diabetes based on short-term studies [1]. In Taiwanese patients, the rate of serious treatment-emergent adverse events (TEAEs) was more frequent with alirocumab compared to placebo, with 21.1% versus 8.5% respectively [5]. While PCSK9 inhibitors like alirocumab have an acceptable safety profile with no significant elevations in Creatine Kinase or serious adverse events in some studies [3], the evidence suggests a higher incidence of serious adverse events in certain populations. The safety data is limited, and long-term effects remain uncertain [1]."
+ }
+]

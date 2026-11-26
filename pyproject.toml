@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cliniver"
+version = "0.1.0"
+description = "CliniVer: evidence-grounded verification of claims in AI-generated clinical responses (research prototype)."
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+# License: not yet decided (see README). Added as an SPDX expression once chosen.
+# Runtime dependencies are managed through requirements.txt (pip + venv workflow).
+# PyTorch is installed separately by scripts/setup_environment.py because the
+# CUDA build comes from the PyTorch package index, not PyPI.
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "gpu: test requires a CUDA GPU (skipped automatically when unavailable)",
+]

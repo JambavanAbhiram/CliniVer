@@ -1,0 +1,8 @@
+,seconds
+rxnav+pubchem,0.4
+pubmed_counts,0.4
+pubmed_sample+pubtator,0.4
+europepmc_oa,0.2
+who_gho,0.2
+openfda,0.1
+clinicaltrials,0.0
